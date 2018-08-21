@@ -1,0 +1,17 @@
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: block; }
+
+.clearfix:after {
+  clear: both; }
+
+.vertical-helper {
+  display: inline-block;
+  width: 0;
+  height: 100%;
+  vertical-align: middle; }
+
+.vertical-content {
+  display: inline-block;
+  width: 99%;
+  vertical-align: middle; }

@@ -8,8 +8,11 @@
     "react-scripts": "1.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build-css": "node-sass-chokidar src/assets/sass/app.scss src/assets/css/app.css --output-style compressed",
+    "watch-css": "yarn build-css && node-sass-chokidar src/assets/sass/app.scss src/assets/css/app.css --watch --recursive",
+    "start-js": "react-scripts start",
+    "start": "npm-run-all -p watch-css start-js",
+    "build": "npm run build-css && react-scripts build -p",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
