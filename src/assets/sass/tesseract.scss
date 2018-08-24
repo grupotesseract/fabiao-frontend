@@ -1,0 +1,190 @@
+body {
+    margin: 0;
+    font-family: $main-font;
+
+    .content-wrapper {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+
+        &.quiz-page {
+            .green-bg {
+                height: 50vh;
+
+                p {
+                    width: 100%;
+                }
+            }
+            .lighgray-bg {
+                height: 50vh;
+            }
+            .question-box-container {
+                display: flex;
+                flex-direction: row;
+                position: relative;
+                z-index: 2;
+
+                .question-box {
+                    width: calc(50% - 3px);
+
+                    &:first-of-type {
+                        margin-right: 3px;
+                    }
+                    &:last-of-type {
+                        margin-left: 3px;
+                    }
+                    h3 {
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+        .main-header {
+            position: relative;
+            z-index: 2;
+
+            @include phone {
+                height: 32px;
+                top: -10px;
+                padding: 15px 10px 5px;
+            }
+            &:before {
+                @extend %bfaf;
+                background-color: $pe-darkgray;
+                width: 100%;
+                height: 100%;
+                transform: skewY(-3deg);
+                z-index: 0;
+                left: 0;
+                top: 0;
+            }
+            img {
+                position: relative;
+                z-index: 1;
+                height: 40px;
+            }
+        }
+        .red-bg {
+            background-color: $pe-red;
+        }
+        .blue-bg {
+            background-color: $pe-blue;
+        }
+        .red-text {
+            color: $pe-red;
+        }
+        .blue-text {
+            color: $pe-blue;
+        }
+        .radial-bg {
+            display: flex;
+            flex-direction: column;
+            color: #fff;
+            position: relative;
+
+            @include phone {
+                top: -11px;
+                padding: 0 30px 0;
+            }
+            &:before {
+                @extend %bfaf;
+                z-index: 0;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                transform: skewY(-3deg);
+            }
+            &.green-bg {
+                &:before {
+                    background: linear-gradient(#a0c966, $pe-green);
+                    box-shadow: 0px -6px 28px 8px rgba(#000, 0.7);
+                    z-index: 1;
+                }
+                p {
+                    font-size: 20px;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+            &.lighgray-bg {
+                @include phone {
+                    flex-direction: column;
+                    padding-top: 10px;
+                    padding-bottom: 35px;
+                }
+
+                &:before {
+                    background: $pe-lightgray;
+                }
+                p {
+                    color: $pe-darkgray;
+                    font-size: 14px;
+                }
+                input {
+                    background-color: #fff;
+                    z-index: 1;
+                    position: relative;
+                    border: none;
+                    font-family: $main-font;
+
+                    @include phone {
+                        height: 20px;
+                        padding: 5px 10px;
+                    }
+                }
+            }
+            &.darkgray-bg {
+                flex-direction: column;
+                border: none;
+
+                @include phone {
+                    padding: 0 40px;
+                    height: 100%;
+                }
+                &:before {
+                    background-color: $pe-yellow;
+                    top: -2px;
+                }
+                &.disabled {
+                    cursor: not-allowed;
+                    pointer-events: none;
+
+                    &:before {
+                        background-color: #9B9898;
+                    }
+                }
+                button {
+                    color: $pe-darkgray;
+                    position: absolute;
+                    z-index: 1;
+                    width: 100%;
+                    height: 13vh;
+                    top: 0;
+                    left: 0;
+                    background-color: transparent;
+                    border: none;
+                    outline: none;
+                    text-align: left;
+                    padding: 0 45px;
+                    text-transform: uppercase;
+                    font-size: 20px;
+
+                    &:after {
+                        @extend %bfaf;
+                    }
+                    &:focus, &:hover, &:active {
+                        border: none;
+                        outline: none;
+                    }
+                }
+            }
+            p {
+                position: relative;
+                z-index: 1;
+            }
+        }
+    }
+}
