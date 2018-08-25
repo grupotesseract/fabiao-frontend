@@ -37,8 +37,8 @@ class IndexPage extends Component {
                     <input type="email" placeholder="Email" />
                 </div>
 
-                <div className="darkgray-bg radial-bg disabled">
-                    <button disabled>Começar</button>
+                <div className="darkgray-bg radial-bg">
+                    <Link to="/quiz" className="begin-btn">Começar</Link>
                 </div>
             </div>
         );

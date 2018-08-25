@@ -27,7 +27,7 @@ class QuizPage extends Component {
 
                     <div className="question-box-container">
                         <div className="question-box">
-                            <div className="red-bg">
+                            <div className="red-bg question-header">
                                 <h3>Maior <span>exposição</span></h3>
                             </div>
                             <div className="info-box">
@@ -36,7 +36,7 @@ class QuizPage extends Component {
                         </div>
 
                         <div className="question-box">
-                            <div className="blue-bg">
+                            <div className="blue-bg question-header">
                                 <h3>Menor <span>exposição</span></h3>
                             </div>
                             <div className="info-box">

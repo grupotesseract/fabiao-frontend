@@ -7,9 +7,23 @@ class CuboTesseract extends Component {
 
 
         return (
-            <div>
-                Cubo
-            </div>
+            <div className="cubo-wrapper">
+
+
+
+        		<div class="container">
+        			<figure class="cube">
+        				<div class="front"></div>
+        				<div class="left"></div>
+        				<div class="right"></div>
+        				<div class="top"></div>
+        				<div class="bottom"></div>
+        				<div class="back"></div>
+        			</figure>
+        		</div>
+
+        	</div>
+
         );
     }
 }
