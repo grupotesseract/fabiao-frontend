@@ -10,6 +10,9 @@ body .content-wrapper .main-header:before, body .content-wrapper .radial-bg:befo
 .clearfix:after {
   clear: both; }
 
+.hidden {
+  display: none !important; }
+
 .vertical-helper {
   display: inline-block;
   width: 0;
@@ -28,8 +31,11 @@ body {
     width: 100vw;
     height: 100vh;
     overflow: hidden; }
+    body .content-wrapper.quiz-page .radial-bg.lighgray-bg {
+      height: 65vh;
+      padding-top: 130px; }
     body .content-wrapper.quiz-page .green-bg {
-      height: 50vh; }
+      height: 35vh; }
       body .content-wrapper.quiz-page .green-bg p {
         width: 100%; }
         body .content-wrapper.quiz-page .green-bg p:first-of-type {
@@ -38,13 +44,13 @@ body {
         body .content-wrapper.quiz-page .green-bg p:nth-child(2) {
           margin: 10px 0;
           font-size: 12px; }
-    body .content-wrapper.quiz-page .lighgray-bg {
-      height: 50vh; }
+    body .content-wrapper.quiz-page #question-3 .question-box-container .question-box .info-box {
+      height: 13vh; }
     body .content-wrapper.quiz-page .question-box-container {
-      display: flex;
-      flex-direction: row;
       position: relative;
-      z-index: 2; }
+      z-index: 2;
+      display: flex;
+      flex-direction: row; }
       body .content-wrapper.quiz-page .question-box-container .question-box {
         width: calc(50% - 3px); }
         body .content-wrapper.quiz-page .question-box-container .question-box:first-of-type {
@@ -52,7 +58,10 @@ body {
         body .content-wrapper.quiz-page .question-box-container .question-box:last-of-type {
           margin-left: 3px; }
         body .content-wrapper.quiz-page .question-box-container .question-box .question-header {
-          padding: 1px 10px; }
+          height: 100px;
+          display: flex;
+          align-items: center;
+          justify-content: center; }
           body .content-wrapper.quiz-page .question-box-container .question-box .question-header h3 {
             text-transform: uppercase;
             font-size: 24px;
@@ -65,7 +74,7 @@ body {
           padding: 10px 5px; }
           body .content-wrapper.quiz-page .question-box-container .question-box .info-box p {
             margin: 0;
-            font-size: 10px; }
+            font-size: 9px; }
     body .content-wrapper .main-header {
       position: relative;
       z-index: 2; }
@@ -184,47 +193,67 @@ body {
       body .content-wrapper .cubo-wrapper .container {
         width: 100%;
         height: 110px;
-        margin: 90px auto 0;
         perspective: 1100px;
         perspective-origin: -50% -50%;
         float: left; }
       body .content-wrapper .cubo-wrapper .cube {
         transform-style: preserve-3d;
+        transform: rotateY(35deg) rotateX(-13deg) rotateZ(-15deg);
         left: 15%;
-        position: relative;
+        position: absolute;
         margin: 0;
-        width: 100%;
-        height: 100%;
+        width: 100px;
+        height: 100px;
         transition: 1s; }
-        body .content-wrapper .cubo-wrapper .cube div {
-          width: 80px;
-          height: 50px;
-          background: rgba(73, 70, 68, 0.8);
+        body .content-wrapper .cubo-wrapper .cube.first-role.top.left {
+          z-index: 3; }
+        body .content-wrapper .cubo-wrapper .cube.first-role.top.right {
+          left: 32%;
+          z-index: 4;
+          top: 20%; }
+        body .content-wrapper .cubo-wrapper .cube.first-role.bottom.left {
+          z-index: 2;
+          top: 77%; }
+        body .content-wrapper .cubo-wrapper .cube.first-role.bottom.right {
+          left: 32%;
+          z-index: 3;
+          top: 77%; }
+        body .content-wrapper .cubo-wrapper .cube.first-role.blue .side.front {
+          background-color: #4C59A4; }
+        body .content-wrapper .cubo-wrapper .cube.first-role.blue .side.right {
+          background-color: #42519F; }
+        body .content-wrapper .cubo-wrapper .cube.first-role.blue .side.top {
+          background-color: #536AB1; }
+        body .content-wrapper .cubo-wrapper .cube.first-role.red .side.front {
+          background-color: #E2293F; }
+        body .content-wrapper .cubo-wrapper .cube.first-role.red .side.right {
+          background-color: #A80519; }
+        body .content-wrapper .cubo-wrapper .cube.first-role.red .side.top {
+          background-color: #E2293F; }
+        body .content-wrapper .cubo-wrapper .cube.first-role .side {
+          background: rgba(255, 255, 255, 0.6); }
+          body .content-wrapper .cubo-wrapper .cube.first-role .side.front {
+            background-color: #f2f2f2; }
+          body .content-wrapper .cubo-wrapper .cube.first-role .side.right {
+            background-color: #CFCECE; }
+          body .content-wrapper .cubo-wrapper .cube.first-role .side.top {
+            background-color: #fff; }
+        body .content-wrapper .cubo-wrapper .cube .side {
           position: absolute;
-          border: 1px solid #494644;
-          text-align: center;
-          padding-top: 15px;
-          color: #fff;
-          font: 3em arial; }
-        body .content-wrapper .cubo-wrapper .cube .front {
-          transform: rotateX(-10deg) rotateY(-70deg) translateZ(15px); }
-        body .content-wrapper .cubo-wrapper .cube .left {
-          transform: rotateY(-125deg) translateZ(30px);
-          display: none; }
-        body .content-wrapper .cubo-wrapper .cube .right {
-          transform: rotateX(-2deg) rotateY(54deg) rotateZ(-4deg) translateZ(46px);
-          top: -7px; }
-        body .content-wrapper .cubo-wrapper .cube .top {
-          transform: rotateX(85deg) rotateY(-4deg) rotateZ(38deg) translateZ(48px);
-          left: 16px;
-          width: 70px;
-          display: none; }
-        body .content-wrapper .cubo-wrapper .cube .bottom {
-          transform: rotateX(-90deg) translateZ(150px);
-          display: none; }
-        body .content-wrapper .cubo-wrapper .cube .back {
-          transform: rotateY(180deg) translateZ(150px);
-          display: none; }
+          width: 4em;
+          height: 4em; }
+          body .content-wrapper .cubo-wrapper .cube .side.front {
+            transform: rotateY(-90deg) translateZ(2em); }
+          body .content-wrapper .cubo-wrapper .cube .side.right {
+            transform: translateZ(2em); }
+          body .content-wrapper .cubo-wrapper .cube .side.back {
+            transform: rotateY(90deg) translateZ(2em); }
+          body .content-wrapper .cubo-wrapper .cube .side.top {
+            transform: rotateX(90deg) translateZ(2em); }
+          body .content-wrapper .cubo-wrapper .cube .side.bottom {
+            transform: rotateX(-90deg) translateZ(2em); }
+          body .content-wrapper .cubo-wrapper .cube .side.left {
+            transform: rotateY(-180deg) translateZ(2em); }
       body .content-wrapper .cubo-wrapper label {
         cursor: pointer;
         border-radius: 10px;

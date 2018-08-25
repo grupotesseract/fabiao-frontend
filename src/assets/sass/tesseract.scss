@@ -8,8 +8,14 @@ body {
         overflow: hidden;
 
         &.quiz-page {
+            .radial-bg {
+                &.lighgray-bg {
+                    height: 65vh;
+                    padding-top: 130px;
+                }
+            }
             .green-bg {
-                height: 50vh;
+                height: 35vh;
 
                 p {
                     width: 100%;
@@ -24,14 +30,21 @@ body {
                     }
                 }
             }
-            .lighgray-bg {
-                height: 50vh;
+
+            #question-3 {
+                .question-box-container {
+                    .question-box {
+                        .info-box {
+                            height: 13vh;
+                        }
+                    }
+                }
             }
             .question-box-container {
-                display: flex;
-                flex-direction: row;
                 position: relative;
                 z-index: 2;
+                display: flex;
+                flex-direction: row;
 
                 .question-box {
                     width: calc(50% - 3px);
@@ -43,7 +56,10 @@ body {
                         margin-left: 3px;
                     }
                     .question-header {
-                        padding: 1px 10px;
+                        height: 100px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
 
                         h3 {
                             text-transform: uppercase;
@@ -63,7 +79,7 @@ body {
 
                         p {
                             margin: 0;
-                            font-size: 10px;
+                            font-size: 9px;
                         }
                     }
                 }
@@ -227,7 +243,7 @@ body {
             .container {
         		width: 100%;
         		height: 110px;
-        		margin: 90px auto 0;
+        		// margin: 160px auto 0;
         		perspective: 1100px;
         		perspective-origin: -50% -50%;
         		float: left;
@@ -235,55 +251,106 @@ body {
 
     		.cube {
     			transform-style: preserve-3d;
-    			// transform: translateZ(-150px);
+    			transform: rotateY(35deg) rotateX(-13deg) rotateZ(-15deg);
     			left: 15%;
-    			position: relative;
+    			position: absolute;
     			margin: 0;
-    			width: 100%;
-    			height: 100%;
+    			width: 100px;
+    			height: 100px;
     			transition: 1s;
 
-                div {
-                    width: 80px;
-    				height: 50px;
-    				background: rgba($pe-darkgray, 0.8);
-    				position: absolute;
-    				border: 1px solid $pe-darkgray;
-    				text-align: center;
-    				padding-top: 15px;
-    				color: #fff;
-    				font: 3em arial;
+                &.first-role {
+                    &.top {
+                        &.left {
+                            z-index: 3;
+                        }
+                        &.right {
+                            left: 32%;
+                            z-index: 4;
+                            top: 20%;
+                        }
+                    }
+                    &.bottom {
+                        &.left {
+                            z-index: 2;
+                            top: 77%;
+                        }
+                        &.right {
+                            left: 32%;
+                            z-index: 3;
+                            top: 77%;
+                        }
+                    }
+                    &.blue {
+                        .side {
+                            &.front {
+                                background-color: #4C59A4;
+                            }
+                            &.right {
+                                background-color: #42519F;
+                            }
+                            &.top {
+                                background-color: #536AB1;
+                            }
+                        }
+                    }
+                    &.red {
+                        .side {
+                            &.front {
+                                background-color: #E2293F;
+                            }
+                            &.right {
+                                background-color: #A80519;
+                            }
+                            &.top {
+                                background-color: #E2293F;
+                            }
+                        }
+                    }
+                    .side {
+                        background: rgba(#fff, .6);
+
+                        &.front {
+                            background-color: #f2f2f2;
+
+
+                        }
+                        &.right {
+                            background-color: #CFCECE;
+
+
+                        }
+                        &.top {
+                            background-color: #fff;
+                        }
+                    }
                 }
-                .front {
-    				transform: rotateX(-10deg) rotateY(-70deg) translateZ(15px);
-    			}
+                &.back-role {
+                }
+                .side {
+                    position: absolute;
+                    width: 4em;
+                    height: 4em;
 
-    			.left {
-    				transform: rotateY(-125deg) translateZ(30px);
-                    display: none;
-    			}
-
-    			.right {
-    				transform: rotateX(-2deg) rotateY(54deg) rotateZ(-4deg) translateZ(46px);
-                    top: -7px;
-    			}
-
-    			.top {
-    				transform: rotateX(85deg) rotateY(-4deg) rotateZ(38deg) translateZ(48px);
-                    left: 16px;
-                    width: 70px;
-                    display: none;
-    			}
-
-    			.bottom {
-    				transform: rotateX(-90deg) translateZ(150px);
-                    display: none;
-    			}
-
-    			.back {
-    				transform: rotateY(180deg) translateZ(150px);
-                    display: none;
-    			}
+                    &.front {
+                        transform: rotateY(-90deg) translateZ(2em);
+                    }
+                    &.right  {
+                        transform: translateZ(2em);
+                    }
+                    &.back {
+                        transform: rotateY( 90deg) translateZ(2em);
+                    }
+                    &.top {
+                        transform: rotateX( 90deg) translateZ(2em);
+                    }
+                    &.bottom {
+                        transform: rotateX(-90deg) translateZ(2em);
+                    }
+                    &.left {
+                        transform: rotateY(-180deg) translateZ(2em);
+                    }
+                }
     		}
 
 			label {
