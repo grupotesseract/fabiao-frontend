@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import NomeAppImg from '../../../assets/img/nome_app.png';
 import Header from '../header';
 import CuboTesseract from '../../cubo';
 import ProgressBar from '../../progressbar';

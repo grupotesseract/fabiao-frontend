@@ -11,70 +11,70 @@ class CuboTesseract extends Component {
 
 
 
-        		<div class="container">
-                    <figure class="cube first-role top left">
-        				<div class="side front"></div>
-        				<div class="side left"></div>
-        				<div class="side right"></div>
-        				<div class="side top"></div>
-        				<div class="side bottom"></div>
-        				<div class="side back"></div>
+        		<div className="container">
+                    <figure className="cube first-role top left">
+        				<div className="side front"></div>
+        				<div className="side left"></div>
+        				<div className="side right"></div>
+        				<div className="side top"></div>
+        				<div className="side bottom"></div>
+        				<div className="side back"></div>
         			</figure>
-                    <figure class="cube first-role top right blue">
-        				<div class="side front"></div>
-        				<div class="side left"></div>
-        				<div class="side right"></div>
-        				<div class="side top"></div>
-        				<div class="side bottom"></div>
-        				<div class="side back"></div>
+                    <figure className="cube first-role top right blue">
+        				<div className="side front"></div>
+        				<div className="side left"></div>
+        				<div className="side right"></div>
+        				<div className="side top"></div>
+        				<div className="side bottom"></div>
+        				<div className="side back"></div>
         			</figure>
-                    <figure class="cube first-role bottom left">
-        				<div class="side front"></div>
-        				<div class="side left"></div>
-        				<div class="side right"></div>
-        				<div class="side top"></div>
-        				<div class="side bottom"></div>
-        				<div class="side back"></div>
+                    <figure className="cube first-role bottom left">
+        				<div className="side front"></div>
+        				<div className="side left"></div>
+        				<div className="side right"></div>
+        				<div className="side top"></div>
+        				<div className="side bottom"></div>
+        				<div className="side back"></div>
         			</figure>
-                    <figure class="cube first-role bottom right blue">
-        				<div class="side front"></div>
-        				<div class="side left"></div>
-        				<div class="side right"></div>
-        				<div class="side top"></div>
-        				<div class="side bottom"></div>
-        				<div class="side back"></div>
+                    <figure className="cube first-role bottom right blue">
+        				<div className="side front"></div>
+        				<div className="side left"></div>
+        				<div className="side right"></div>
+        				<div className="side top"></div>
+        				<div className="side bottom"></div>
+        				<div className="side back"></div>
         			</figure>
-                    <figure class="cube back-role top left ">
-        				<div class="side front"></div>
-        				<div class="side left"></div>
-        				<div class="side right"></div>
-        				<div class="side top"></div>
-        				<div class="side bottom"></div>
-        				<div class="side back"></div>
+                    <figure className="cube back-role top left ">
+        				<div className="side front"></div>
+        				<div className="side left"></div>
+        				<div className="side right"></div>
+        				<div className="side top"></div>
+        				<div className="side bottom"></div>
+        				<div className="side back"></div>
         			</figure>
-                    <figure class="cube back-role top right red">
-        				<div class="side front"></div>
-        				<div class="side left"></div>
-        				<div class="side right"></div>
-        				<div class="side top"></div>
-        				<div class="side bottom"></div>
-        				<div class="side back"></div>
+                    <figure className="cube back-role top right red">
+        				<div className="side front"></div>
+        				<div className="side left"></div>
+        				<div className="side right"></div>
+        				<div className="side top"></div>
+        				<div className="side bottom"></div>
+        				<div className="side back"></div>
         			</figure>
-                    <figure class="cube back-role bottom left red">
-        				<div class="side front"></div>
-        				<div class="side left"></div>
-        				<div class="side right"></div>
-        				<div class="side top"></div>
-        				<div class="side bottom"></div>
-        				<div class="side back"></div>
+                    <figure className="cube back-role bottom left red">
+        				<div className="side front"></div>
+        				<div className="side left"></div>
+        				<div className="side right"></div>
+        				<div className="side top"></div>
+        				<div className="side bottom"></div>
+        				<div className="side back"></div>
         			</figure>
-                    <figure class="cube back-role bottom right red">
-        				<div class="side front"></div>
-        				<div class="side left"></div>
-        				<div class="side right"></div>
-        				<div class="side top"></div>
-        				<div class="side bottom"></div>
-        				<div class="side back"></div>
+                    <figure className="cube back-role bottom right red">
+        				<div className="side front"></div>
+        				<div className="side left"></div>
+        				<div className="side right"></div>
+        				<div className="side top"></div>
+        				<div className="side bottom"></div>
+        				<div className="side back"></div>
         			</figure>
         		</div>
 

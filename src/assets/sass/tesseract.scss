@@ -7,6 +7,76 @@ body {
         height: 100vh;
         overflow: hidden;
 
+        // GERAIS
+        .red-bg {
+            background-color: $pe-red;
+        }
+        .blue-bg {
+            background-color: $pe-blue;
+        }
+        .red-text {
+            color: $pe-red;
+        }
+        .blue-text {
+            color: $pe-blue;
+        }
+        .main-btn {
+            position: absolute;
+            bottom: 7.8vh;
+            left: 0;
+            background-color: $pe-yellow;
+            color: $pe-darkgray;
+            width: calc(100vw - 95px);
+            padding: 20px 70px 20px 35px;
+            text-transform: uppercase;
+            font-size: 18px;
+            text-decoration: none;
+            box-shadow: inset -4px 4px 10px 0 rgba(black, 0.4);
+
+            &:after {
+                @extend %bfaf;
+                background-image: url('https://res.cloudinary.com/hugo-cicarelli/image/upload/v1535311969/errow.png');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
+                top: 20px;
+                right: 35px;
+                height: calc(100% - 40px);
+                width: 20px;
+            }
+        }
+        // BARRA PROGRESSO
+        .progress-bar {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            padding-top: 45px;
+
+            .item {
+                background-color: #333;
+                height: 15px;
+                width: calc((100% / 3) - 20px);
+                // float: left;
+
+                &:nth-child(2) {
+                    margin: 0 10px;
+                }
+                &.completed {
+                    background-color: $pe-yellow;
+                }
+            }
+        }
+        &.begin-page {
+            .radial-bg {
+                &.green-bg {
+                    height: 45vh;
+                }
+                &.lighgray-bg {
+                    height: 24.5vh;
+                }
+            }
+        }
+        // QUIZ
         &.quiz-page {
             .radial-bg {
                 &.lighgray-bg {
@@ -85,6 +155,67 @@ body {
                 }
             }
         }
+        // PÁGINA DO RESULTADO
+        &.resultado-page {
+            .lighgray-bg {
+                height: calc(100vh - 70px);
+
+                & > * {
+                    z-index: 1;
+                }
+                h3 {
+                    font-weight: 900;
+                    font-size: 17px;
+                    text-transform: uppercase;
+                    text-align: center;
+                    line-height: 24px;
+                    margin-bottom: 25px;
+
+                    span {
+                        display: block;
+                        font-size: 29px;
+                    }
+                }
+                .perfil-resultado {
+                    width: calc(100% - 40px);
+                    height: 45%;
+                    padding: 20px;
+                    background-color: rgba($pe-darkgray, .2);
+
+                    .perfil-cube {
+                        width: 100%;
+                        height: 100%;
+                        box-shadow: 3px 3px 7px 0 rgba(black, 0.5);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        &.blue {
+                            background-color: $pe-blue;
+                        }
+                        &.red {
+                            background-color: $pe-red;
+                        }
+                        p {
+                            color: white;
+                            font-weight: 900;
+                            font-size: 26px;
+                            text-transform: uppercase;
+                            text-align: center;
+                            padding: 0 50px;
+                        }
+                    }
+                }
+            }
+        }
+        &.detalhes-page {
+            .radial-bg {
+                &.green-bg {
+                    height: 80vh;
+                }
+            }
+        }
+        // MENU
         .main-header {
             position: relative;
             z-index: 2;
@@ -110,18 +241,6 @@ body {
                 height: 40px;
             }
         }
-        .red-bg {
-            background-color: $pe-red;
-        }
-        .blue-bg {
-            background-color: $pe-blue;
-        }
-        .red-text {
-            color: $pe-red;
-        }
-        .blue-text {
-            color: $pe-blue;
-        }
         .radial-bg {
             display: flex;
             flex-direction: column;
@@ -143,7 +262,7 @@ body {
             }
             &.green-bg {
                 &:before {
-                    background: linear-gradient(#a0c966, $pe-green);
+                    background: radial-gradient(#a0c966, $pe-green);
                     box-shadow: 0px -6px 28px 8px rgba(#000, 0.7);
                     z-index: 1;
                 }
@@ -158,8 +277,8 @@ body {
             &.lighgray-bg {
                 @include phone {
                     flex-direction: column;
-                    padding-top: 10px;
-                    padding-bottom: 35px;
+                    padding-top: 4vh;
+                    padding-bottom: 9vh;
                 }
 
                 &:before {
@@ -188,11 +307,10 @@ body {
                 position: relative;
 
                 @include phone {
-                    height: 100%;
+                    padding: 35px 0 40px;
                 }
                 &:before {
-                    background-color: $pe-yellow;
-                    top: -2px;
+                    content: none;
                 }
                 &.disabled {
                     cursor: not-allowed;
@@ -203,32 +321,9 @@ body {
                     }
                 }
                 .begin-btn {
-                    color: $pe-darkgray;
-                    position: relative;
-                    z-index: 1;
-                    width: 100%;
-                    height: 100%;
-                    top: 0;
-                    left: 0;
-                    background-color: transparent;
-                    border: none;
-                    outline: none;
-                    text-align: left;
-                    padding: 0 25px;
-                    text-transform: uppercase;
-                    font-size: 20px;
-                    text-decoration: none;
-                    display: flex;
-                    align-items: center;
-                    cursor: pointer;
-
-                    &:after {
-                        @extend %bfaf;
-                    }
-                    &:focus, &:hover, &:active {
-                        border: none;
-                        outline: none;
-                    }
+                    bottom: 4px;
+                    padding-top: 30px;
+                    padding-bottom: 30px;
                 }
             }
             p {

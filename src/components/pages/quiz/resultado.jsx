@@ -9,11 +9,23 @@ class QuizResultado extends Component {
 
 
         return (
-            <div className="content-wrapper quiz-page">
+            <div className="content-wrapper resultado-page">
                 <Header />
 
                 <div className="lighgray-bg radial-bg">
+                    <h3 className="blue-text">
+                        Estratégia mais <span>relevante</span> para você vencer.
+                    </h3>
 
+                    <div className="perfil-resultado">
+                        <div className="perfil-cube blue">
+                            <p>Reabastecer o tanque</p>
+                        </div>
+                    </div>
+
+                    <Link to="/" className="main-btn yellow">
+                        Veja as melhores ações para sua empresa
+                    </Link>
                 </div>
             </div>
         );

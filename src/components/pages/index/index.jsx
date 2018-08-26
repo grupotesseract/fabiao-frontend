@@ -10,7 +10,7 @@ class IndexPage extends Component {
 
 
         return (
-            <div className="content-wrapper">
+            <div className="content-wrapper begin-page">
                 <Header></Header>
 
                 <div className="green-bg radial-bg">
@@ -38,7 +38,7 @@ class IndexPage extends Component {
                 </div>
 
                 <div className="darkgray-bg radial-bg">
-                    <Link to="/quiz" className="begin-btn">Começar</Link>
+                    <Link to="/quiz" className="begin-btn main-btn">Começar</Link>
                 </div>
             </div>
         );
