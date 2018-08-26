@@ -11,7 +11,7 @@ body {
             .radial-bg {
                 &.lighgray-bg {
                     height: 65vh;
-                    padding-top: 130px;
+                    padding-top: 145px;
                 }
             }
             .green-bg {
@@ -252,8 +252,9 @@ body {
     		.cube {
     			transform-style: preserve-3d;
     			transform: rotateY(35deg) rotateX(-13deg) rotateZ(-15deg);
-    			left: 15%;
-    			position: absolute;
+                position: absolute;
+                top: 4%;
+    			left: 28%;
     			margin: 0;
     			width: 100px;
     			height: 100px;
@@ -265,140 +266,104 @@ body {
                             z-index: 3;
                         }
                         &.right {
-                            left: 32%;
-                            z-index: 4;
                             top: 20%;
+                            left: 42%;
+                            z-index: 4;
                         }
                     }
                     &.bottom {
                         &.left {
                             z-index: 2;
-                            top: 77%;
+                            top: 47%;
                         }
                         &.right {
-                            left: 32%;
+                            top: 63%;
+                            left: 42%;
                             z-index: 3;
-                            top: 77%;
-                        }
-                    }
-                    &.blue {
-                        .side {
-                            &.front {
-                                background-color: #4C59A4;
-                            }
-                            &.right {
-                                background-color: #42519F;
-                            }
-                            &.top {
-                                background-color: #536AB1;
-                            }
-                        }
-                    }
-                    &.red {
-                        .side {
-                            &.front {
-                                background-color: #E2293F;
-                            }
-                            &.right {
-                                background-color: #A80519;
-                            }
-                            &.top {
-                                background-color: #E2293F;
-                            }
-                        }
-                    }
-                    .side {
-                        background: rgba(#fff, .6);
-
-                        &.front {
-                            background-color: #f2f2f2;
-
-
-                        }
-                        &.right {
-                            background-color: #CFCECE;
-
-
-                        }
-                        &.top {
-                            background-color: #fff;
                         }
                     }
                 }
                 &.back-role {
+                    &.top {
+                        &.left {
+                            z-index: 1;
+                            left: 40.4%;
+                            top: -12%;
+                        }
+                        &.right {
+                            top: 4%;
+                            left: 53.4%;
+                            z-index: 2;
+                        }
+                    }
+                    &.bottom {
+                        &.left {
+                            z-index: 1;
+                            top: 47%;
+                            left: 42%;
+                        }
+                        &.right {
+                            top: 47%;
+                            left: 53.2%;
+                            z-index: 1;
+                        }
+                    }
+                }
+                &.blue {
+                    .side {
+                        &.front {
+                            background-color: #4C59A4;
+                        }
+                        &.right {
+                            background-color: #42519F;
+                        }
+                        &.top {
+                            background-color: #536AB1;
+                        }
+                    }
+                }
+                &.red {
+                    .side {
+                        &.front {
+                            background-color: #CB151A;
+                        }
+                        &.right {
+                            background-color: #A80519;
+                        }
+                        &.top {
+                            background-color: #E2293F;
+                        }
+                    }
                 }
                 .side {
                     position: absolute;
-                    width: 4em;
-                    height: 4em;
+                    width: 3em;
+                    height: 3em;
+                    background: rgba(#fff, .6);
 
                     &.front {
-                        transform: rotateY(-90deg) translateZ(2em);
+                        transform: rotateY(-90deg) translateZ(1.5em);
+                        background-color: #f2f2f2;
                     }
                     &.right  {
-                        transform: translateZ(2em);
+                        transform: translateZ(1.5em);
+                        background-color: #CFCECE;
                     }
                     &.back {
-                        transform: rotateY( 90deg) translateZ(2em);
+                        transform: rotateY( 90deg) translateZ(1.5em);
                     }
                     &.top {
-                        transform: rotateX( 90deg) translateZ(2em);
+                        transform: rotateX( 90deg) translateZ(1.5em);
+                        background-color: #fff;
                     }
                     &.bottom {
-                        transform: rotateX(-90deg) translateZ(2em);
+                        transform: rotateX(-90deg) translateZ(1.5em);
                     }
                     &.left {
-                        transform: rotateY(-180deg) translateZ(2em);
+                        transform: rotateY(-180deg) translateZ(1.5em);
                     }
                 }
     		}
-
-			label {
-				cursor: pointer;
-				border-radius: 10px;
-				padding: 10px;
-				background: #f5f5f5;
-				float: left;
-				text-align: center;
-				margin-right: 5px;
-			}
-
-			label:hover {
-				background: #eee;
-			}
-
-			input {
-				position: absolute;
-				left: -9999px;
-			}
-
-			input:checked + label {
-				font-weight: bold;
-			}
-
-			input[value="front"]:checked ~ .container .cube {
-				transform: translateZ(-150px) rotateY(0);
-			}
-
-			input[value="left"]:checked ~ .container .cube {
-				transform: translateZ(-150px) rotateY(90deg);
-			}
-
-			input[value="right"]:checked ~ .container .cube {
-				transform: translateZ(-150px) rotateY(-90deg);
-			}
-
-			input[value="top"]:checked ~ .container .cube {
-				transform: translateZ(-150px) rotateX(-90deg);
-			}
-
-			input[value="bottom"]:checked ~ .container .cube {
-				transform: translateZ(-150px) rotateX(90deg);
-			}
-
-			input[value="back"]:checked ~ .container .cube {
-				transform: translateZ(-150px) rotateY(180deg);
-			}
         }
     }
 }

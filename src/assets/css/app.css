@@ -33,7 +33,7 @@ body {
     overflow: hidden; }
     body .content-wrapper.quiz-page .radial-bg.lighgray-bg {
       height: 65vh;
-      padding-top: 130px; }
+      padding-top: 145px; }
     body .content-wrapper.quiz-page .green-bg {
       height: 35vh; }
       body .content-wrapper.quiz-page .green-bg p {
@@ -199,8 +199,9 @@ body {
       body .content-wrapper .cubo-wrapper .cube {
         transform-style: preserve-3d;
         transform: rotateY(35deg) rotateX(-13deg) rotateZ(-15deg);
-        left: 15%;
         position: absolute;
+        top: 4%;
+        left: 28%;
         margin: 0;
         width: 100px;
         height: 100px;
@@ -208,76 +209,61 @@ body {
         body .content-wrapper .cubo-wrapper .cube.first-role.top.left {
           z-index: 3; }
         body .content-wrapper .cubo-wrapper .cube.first-role.top.right {
-          left: 32%;
-          z-index: 4;
-          top: 20%; }
+          top: 20%;
+          left: 42%;
+          z-index: 4; }
         body .content-wrapper .cubo-wrapper .cube.first-role.bottom.left {
           z-index: 2;
-          top: 77%; }
+          top: 47%; }
         body .content-wrapper .cubo-wrapper .cube.first-role.bottom.right {
-          left: 32%;
-          z-index: 3;
-          top: 77%; }
-        body .content-wrapper .cubo-wrapper .cube.first-role.blue .side.front {
+          top: 63%;
+          left: 42%;
+          z-index: 3; }
+        body .content-wrapper .cubo-wrapper .cube.back-role.top.left {
+          z-index: 1;
+          left: 40.4%;
+          top: -12%; }
+        body .content-wrapper .cubo-wrapper .cube.back-role.top.right {
+          top: 4%;
+          left: 53.4%;
+          z-index: 2; }
+        body .content-wrapper .cubo-wrapper .cube.back-role.bottom.left {
+          z-index: 1;
+          top: 47%;
+          left: 42%; }
+        body .content-wrapper .cubo-wrapper .cube.back-role.bottom.right {
+          top: 47%;
+          left: 53.2%;
+          z-index: 1; }
+        body .content-wrapper .cubo-wrapper .cube.blue .side.front {
           background-color: #4C59A4; }
-        body .content-wrapper .cubo-wrapper .cube.first-role.blue .side.right {
+        body .content-wrapper .cubo-wrapper .cube.blue .side.right {
           background-color: #42519F; }
-        body .content-wrapper .cubo-wrapper .cube.first-role.blue .side.top {
+        body .content-wrapper .cubo-wrapper .cube.blue .side.top {
           background-color: #536AB1; }
-        body .content-wrapper .cubo-wrapper .cube.first-role.red .side.front {
-          background-color: #E2293F; }
-        body .content-wrapper .cubo-wrapper .cube.first-role.red .side.right {
+        body .content-wrapper .cubo-wrapper .cube.red .side.front {
+          background-color: #CB151A; }
+        body .content-wrapper .cubo-wrapper .cube.red .side.right {
           background-color: #A80519; }
-        body .content-wrapper .cubo-wrapper .cube.first-role.red .side.top {
+        body .content-wrapper .cubo-wrapper .cube.red .side.top {
           background-color: #E2293F; }
-        body .content-wrapper .cubo-wrapper .cube.first-role .side {
-          background: rgba(255, 255, 255, 0.6); }
-          body .content-wrapper .cubo-wrapper .cube.first-role .side.front {
-            background-color: #f2f2f2; }
-          body .content-wrapper .cubo-wrapper .cube.first-role .side.right {
-            background-color: #CFCECE; }
-          body .content-wrapper .cubo-wrapper .cube.first-role .side.top {
-            background-color: #fff; }
         body .content-wrapper .cubo-wrapper .cube .side {
           position: absolute;
-          width: 4em;
-          height: 4em; }
+          width: 3em;
+          height: 3em;
+          background: rgba(255, 255, 255, 0.6); }
           body .content-wrapper .cubo-wrapper .cube .side.front {
-            transform: rotateY(-90deg) translateZ(2em); }
+            transform: rotateY(-90deg) translateZ(1.5em);
+            background-color: #f2f2f2; }
           body .content-wrapper .cubo-wrapper .cube .side.right {
-            transform: translateZ(2em); }
+            transform: translateZ(1.5em);
+            background-color: #CFCECE; }
           body .content-wrapper .cubo-wrapper .cube .side.back {
-            transform: rotateY(90deg) translateZ(2em); }
+            transform: rotateY(90deg) translateZ(1.5em); }
           body .content-wrapper .cubo-wrapper .cube .side.top {
-            transform: rotateX(90deg) translateZ(2em); }
+            transform: rotateX(90deg) translateZ(1.5em);
+            background-color: #fff; }
           body .content-wrapper .cubo-wrapper .cube .side.bottom {
-            transform: rotateX(-90deg) translateZ(2em); }
+            transform: rotateX(-90deg) translateZ(1.5em); }
           body .content-wrapper .cubo-wrapper .cube .side.left {
-            transform: rotateY(-180deg) translateZ(2em); }
-      body .content-wrapper .cubo-wrapper label {
-        cursor: pointer;
-        border-radius: 10px;
-        padding: 10px;
-        background: #f5f5f5;
-        float: left;
-        text-align: center;
-        margin-right: 5px; }
-      body .content-wrapper .cubo-wrapper label:hover {
-        background: #eee; }
-      body .content-wrapper .cubo-wrapper input {
-        position: absolute;
-        left: -9999px; }
-      body .content-wrapper .cubo-wrapper input:checked + label {
-        font-weight: bold; }
-      body .content-wrapper .cubo-wrapper input[value="front"]:checked ~ .container .cube {
-        transform: translateZ(-150px) rotateY(0); }
-      body .content-wrapper .cubo-wrapper input[value="left"]:checked ~ .container .cube {
-        transform: translateZ(-150px) rotateY(90deg); }
-      body .content-wrapper .cubo-wrapper input[value="right"]:checked ~ .container .cube {
-        transform: translateZ(-150px) rotateY(-90deg); }
-      body .content-wrapper .cubo-wrapper input[value="top"]:checked ~ .container .cube {
-        transform: translateZ(-150px) rotateX(-90deg); }
-      body .content-wrapper .cubo-wrapper input[value="bottom"]:checked ~ .container .cube {
-        transform: translateZ(-150px) rotateX(90deg); }
-      body .content-wrapper .cubo-wrapper input[value="back"]:checked ~ .container .cube {
-        transform: translateZ(-150px) rotateY(180deg); }
+            transform: rotateY(-180deg) translateZ(1.5em); }

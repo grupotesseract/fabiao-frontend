@@ -12,7 +12,7 @@ class CuboTesseract extends Component {
 
 
         		<div class="container">
-                    <figure class="cube first-role top left blue">
+                    <figure class="cube first-role top left">
         				<div class="side front"></div>
         				<div class="side left"></div>
         				<div class="side right"></div>
@@ -28,7 +28,7 @@ class CuboTesseract extends Component {
         				<div class="side bottom"></div>
         				<div class="side back"></div>
         			</figure>
-                    <figure class="cube first-role bottom left blue">
+                    <figure class="cube first-role bottom left">
         				<div class="side front"></div>
         				<div class="side left"></div>
         				<div class="side right"></div>
@@ -44,7 +44,7 @@ class CuboTesseract extends Component {
         				<div class="side bottom"></div>
         				<div class="side back"></div>
         			</figure>
-                    <figure class="cube back-role top left blue">
+                    <figure class="cube back-role top left ">
         				<div class="side front"></div>
         				<div class="side left"></div>
         				<div class="side right"></div>
@@ -52,7 +52,7 @@ class CuboTesseract extends Component {
         				<div class="side bottom"></div>
         				<div class="side back"></div>
         			</figure>
-                    <figure class="cube back-role top right blue">
+                    <figure class="cube back-role top right red">
         				<div class="side front"></div>
         				<div class="side left"></div>
         				<div class="side right"></div>
@@ -60,7 +60,7 @@ class CuboTesseract extends Component {
         				<div class="side bottom"></div>
         				<div class="side back"></div>
         			</figure>
-                    <figure class="cube back-role bottom left blue">
+                    <figure class="cube back-role bottom left red">
         				<div class="side front"></div>
         				<div class="side left"></div>
         				<div class="side right"></div>
@@ -68,7 +68,7 @@ class CuboTesseract extends Component {
         				<div class="side bottom"></div>
         				<div class="side back"></div>
         			</figure>
-                    <figure class="cube back-role bottom right blue">
+                    <figure class="cube back-role bottom right red">
         				<div class="side front"></div>
         				<div class="side left"></div>
         				<div class="side right"></div>
