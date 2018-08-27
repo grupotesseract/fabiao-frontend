@@ -209,9 +209,125 @@ body {
             }
         }
         &.detalhes-page {
+            .prioridade {
+                height: 100%;
+                width: 15px;
+                display: inline-flex;
+                vertical-align: middle;
+                margin-right: 5px;
+
+                &.primeira {
+                    background-color: $pe-blue;
+                }
+                &.segunda {
+                    background-color: #00B1EB;
+                }
+            }
             .radial-bg {
                 &.green-bg {
                     height: 80vh;
+                    padding-top: 25px;
+
+                    &:before {
+                        height: 101%;
+                    }
+                    .detalhe-header {
+                        z-index: 1;
+                        background-color: $pe-lightgray;
+                        font-size: 17px;
+                        font-weight: 900;
+                        text-transform: uppercase;
+                        padding: 13px 0;
+                        text-align: center;
+
+                        &.blue {
+                            background-color: $pe-blue;
+                        }
+                        &.red {
+                            background-color: $pe-red;
+                        }
+                    }
+                    .legenda {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+
+                        p {
+                            font-size: 12px;
+                            margin: 0 15px;
+                            height: 20px;
+                            font-weight: 100;
+                        }
+                    }
+                    .items-wrapper {
+                        .item {
+                            .item-header {
+                                position: relative;
+                                z-index: 1;
+                                font-size: 17px;
+                                font-weight: 900;
+
+                                h4 {
+                                    margin-bottom: 0;
+                                }
+                            }
+                            .item-content {
+                                p {
+                                    height: 30px;
+                                    background-color: rgba(white, .4);
+                                    font-size: 11px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .btn-wrapper {
+                height: calc(20vh - 42px);
+                position: relative;
+                top: -10px;
+                z-index: 1;
+
+                .main-btn {
+                    bottom: 15px;
+                    padding-top: 35px;
+                    padding-bottom: 35px;
+                }
+            }
+        }
+        &.contato-page {
+            .lighgray-bg {
+                height: 100vh;
+
+                & > * {
+                    z-index: 1;
+                }
+                .logo {
+                    width: 145px;
+                    margin: 0 auto;
+                }
+                .contato-email {
+                    background-color: #fff;
+                    width: calc(100% - 60px);
+                    margin: 60px auto 25px;
+                    padding: 5px 15px;
+                    font-weight: 900;
+                    font-size: 12px;
+                    text-align: center;
+                }
+                .socail-medias {
+                    width: calc(100% - 35px);
+                    margin: 0 auto;
+                    display: flex;
+
+                    .social-media {
+                        width: (100% / 3);
+                        text-align: center;
+
+                        img {
+                            width: 40px;
+                        }
+                    }
                 }
             }
         }

@@ -2,6 +2,7 @@ import Index from '../components/pages/index';
 import QuizPage from '../components/pages/quiz';
 import QuizResultado from '../components/pages/quiz/resultado';
 import QuizResultadoDetalhes from '../components/pages/quiz/detalhes';
+import ContatoPage from '../components/pages/contato';
 import PageNotFound from '../components/errors/404';
 
 export default [
@@ -28,6 +29,12 @@ export default [
         exact: true,
         component: QuizResultadoDetalhes,
         key: 'quiz.detalhes'
+    },
+    {
+        path: '/contato',
+        exact: true,
+        component: ContatoPage,
+        key: 'contato.index'
     },
     {
         component: PageNotFound,
