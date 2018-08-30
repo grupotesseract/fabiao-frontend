@@ -20,6 +20,20 @@ body {
         .blue-text {
             color: $pe-blue;
         }
+        .prioridade {
+            height: 100%;
+            width: 15px;
+            display: inline-flex;
+            vertical-align: middle;
+            margin-right: 5px;
+
+            &.primeira {
+                background-color: $pe-blue;
+            }
+            &.segunda {
+                background-color: #00B1EB;
+            }
+        }
         .main-btn {
             position: absolute;
             bottom: 7.8vh;
@@ -70,6 +84,14 @@ body {
             .radial-bg {
                 &.green-bg {
                     height: 45vh;
+
+                    p {
+                        padding-right: 80px;
+
+                        img {
+                            margin-top: 10px;
+                        }
+                    }
                 }
                 &.lighgray-bg {
                     height: 24.5vh;
@@ -209,20 +231,6 @@ body {
             }
         }
         &.detalhes-page {
-            .prioridade {
-                height: 100%;
-                width: 15px;
-                display: inline-flex;
-                vertical-align: middle;
-                margin-right: 5px;
-
-                &.primeira {
-                    background-color: $pe-blue;
-                }
-                &.segunda {
-                    background-color: #00B1EB;
-                }
-            }
             .radial-bg {
                 &.green-bg {
                     height: 80vh;
@@ -292,6 +300,124 @@ body {
                     bottom: 15px;
                     padding-top: 35px;
                     padding-bottom: 35px;
+                }
+            }
+        }
+        &.analise-page {
+            .radial-bg {
+                &.green-bg {
+                    background: radial-gradient(#a0c966, $pe-green);
+                    box-shadow: 0px -6px 28px 8px rgba(0, 0, 0, 0.7);
+                    z-index: 1;
+                    margin-top: -15px;
+                    padding-top: 30px;
+                    padding-bottom: 20px;
+
+                    &:before {
+                        content: none;
+                    }
+                    .main-btn {
+                        position: absolute;
+                        bottom: auto;
+                        top: 50px;
+                        right: 0;
+                        left: auto;
+                        width: 50px;
+                        height: 50px;
+                        padding: 0;
+                        z-index: 2;
+                        box-shadow: none;
+                        background-color: $pe-lightgray;
+
+                        &:after {
+                            top: calc(50% - 20px);
+                            right: calc(50% - 13px);
+                            height: calc(100% - 10px);
+                        }
+                    }
+                    .content-header {
+                        h3 {
+                            position: relative;
+                            width: 100%;
+                            text-transform: uppercase;
+                            padding-left: 40px;
+                            width: calc(100% - 100px);
+                            font-size: 20px;
+                            line-height: 25px;
+
+                            .prioridade {
+                                width: 32px;
+                                height: 50px;
+                                position: absolute;
+                                left: 0;
+                                top: 7px;
+                            }
+                        }
+                    }
+                    .content-body {
+                        .item {
+                            background-color: rgba($pe-lightgray, .4);
+                            color: $pe-darkgray;
+                            margin: 3px auto;
+                            padding: 7px 12px;
+                            font-size: 14px;
+                        }
+                    }
+                }
+                &.lighgray-bg {
+                    background-color: $pe-lightgray;
+
+                    &:before {
+                        content: none;
+                    }
+                }
+            }
+        }
+        &.agradecimento-page {
+            .radial-bg {
+                &.green-bg {
+                    h3 {
+                        font-size: 25px;
+                        text-transform: uppercase;
+                        margin-bottom: 0;
+                        margin-top: 30px;
+                    }
+                    p {
+                        font-size: 20px;
+                        margin-top: 10px;
+                        margin-bottom: 30px;
+                        padding-right: 80px;
+                    }
+                }
+                &.lighgray-bg {
+                    height: 60vh;
+
+                    .download-text {
+                        font-size: 18px;
+                        padding-right: 95px;
+                        margin-bottom: 40px;
+                    }
+                    .download-btn-container {
+                        display: flex;
+
+                        .download-btn {
+                            background-color: #9B9998;
+                            margin: 0 5px;
+                            color: #fff;
+                            text-decoration: none;
+                            padding: 25px 30px 15px;
+                            text-align: center;
+                            font-weight: 700;
+                            font-size: 17px;
+                            line-height: 17px;
+                            box-shadow: -3px 3px 15px 0 rgba(black, .4);
+
+                            img {
+                                height: 40px;
+                                margin-bottom: 10px;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -375,6 +501,9 @@ body {
                 top: 0;
                 left: 0;
                 transform: skewY(-3deg);
+            }
+            & > * {
+                z-index: 1;
             }
             &.green-bg {
                 &:before {

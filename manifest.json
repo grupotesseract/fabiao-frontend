@@ -10,13 +10,8 @@
   "background_color": "#ffffff",
   "icons": [
     {
-      "src": "https://res.cloudinary.com/hugo-cicarelli/image/upload/v1535065332/android_logo_192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "https://res.cloudinary.com/hugo-cicarelli/image/upload/v1535065332/android_logo_512.png",
-      "sizes": "512x512",
+      "src": "https://res.cloudinary.com/hugo-cicarelli/image/upload/v1535588229/Anima%C3%A7%C3%A3o_Splash_2.gif",
+      "sizes": "600x600",
       "type": "image/png"
     }
   ]

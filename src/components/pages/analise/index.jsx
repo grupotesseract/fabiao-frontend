@@ -10,35 +10,40 @@ class AnalisePage extends Component {
 
 
         return (
-            <div className="content-wrapper begin-page">
+            <div className="content-wrapper analise-page">
                 <Header></Header>
 
                 <div className="green-bg radial-bg">
-                    <p>
-                        <strong>Descubra</strong> <br/>
-                        através de uma rápida <br/>
-                        análise, qual o <br/>
-                        <img src={NomeAppImg} alt="posicionamento estratégico"/>
-                        da sua Empresa e o <br/>
-                        momento que ela <br/>
-                        se encontra.
-                    </p>
+                    <div className="next main-btn"></div>
+                    <div className="content-header">
+                        <h3><span className="prioridade primeira"></span>Gerenciar Custo e Fluxo de Caixa</h3>
+                    </div>
+
+                    <div className="content-body">
+                        <div className="item">Planejamento de Caixa Futuro</div>
+                        <div className="item">Análise do Ponto de Equilíbrio</div>
+                        <div className="item">Aporte de Capital</div>
+                        <div className="item">Empréstimos e Financiamentos</div>
+                        <div className="item">Vendas à Vista / Prazos Reduzidos</div>
+                        <div className="item">Juros Recebidos de Cliente</div>
+                        <div className="item">Rendimento de Aplicações</div>
+                        <div className="item">Processos de Cobrança Otimizado</div>
+                        <div className="item">Estoques Mínimos</div>
+                        <div className="item">Prazos de Pagamentos Renegociados</div>
+                    </div>
                 </div>
 
                 <div className="lighgray-bg radial-bg">
-                    <p>
-                        Após este estudo você <br/>
-                        poderá conhecer as <strong>ações <br/>
-                        e iniciativas específicas</strong> <br/>
-                        recomendadas pra cada <br/>
-                        ponto estratégico.
-                    </p>
-
-                    <input type="email" placeholder="Email" />
-                </div>
-
-                <div className="darkgray-bg radial-bg">
-                    <Link to="/quiz" className="begin-btn main-btn">Começar</Link>
+                    <p>Qual o grau de <span>prioridade</span> que você considera sua empresa em relação aos itens acima?</p>
+                    <div class="buttons">
+                           <span class="fa fa-plus"></span>
+                            <div class="drag-line">
+                              <div class="line"></div>
+                              <div class="draggable-button"></div>
+                            </div>
+                            <div class="draggable-buton"></div>
+                           <span class="fa fa-minus"></span>
+                        </div>
                 </div>
             </div>
         );

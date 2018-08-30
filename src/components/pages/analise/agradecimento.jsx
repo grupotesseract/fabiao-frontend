@@ -9,17 +9,29 @@ class AnaliseAgradecimentoPage extends Component {
 
 
         return (
-            <div className="content-wrapper detalhes-page">
+            <div className="content-wrapper agradecimento-page">
                 <Header />
 
                 <div className="green-bg radial-bg">
-                    
+                    <h3>Parabéns</h3>
+                    <p>
+                        Você terminou a análise do posicionamento da sua empresa.
+                    </p>
                 </div>
 
-                <div className="btn-wrapper">
-                    <Link to="/" className="main-btn yellow">
-                        Continuar
-                    </Link>
+                <div className="radial-bg lighgray-bg">
+                    <p className="download-text">Faça o download do arquivo com as especificações das suas próximas ações.</p>
+
+                <div className="download-btn-container">
+                    <a href="" className="download-btn">
+                        <img src="https://res.cloudinary.com/hugo-cicarelli/image/upload/v1535416240/download-icon.png" alt="download icon"/>
+                        Fazer o download
+                    </a>
+                    <a href="" className="download-btn">
+                        <img src="https://res.cloudinary.com/hugo-cicarelli/image/upload/v1535416240/email-icon.png" alt="send to email icon"/>
+                        Mandar por e-mail
+                    </a>
+                </div>
                 </div>
             </div>
         );

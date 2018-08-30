@@ -26,9 +26,9 @@ class ContatoPage extends Component {
                     <img className="logo" src={Logo3DFinancial} alt="3d financial logo" />
                     <p className="contato-email">contato@3dfinancialacademy.com.br</p>
                     <div className="socail-medias">
-                        <a href="_blank" className="social-media wpp"><img src="https://res.cloudinary.com/hugo-cicarelli/image/upload/v1535334928/messenger.svg" alt=""/></a>
-                        <a href="_blank" className="social-media messenger"><img src="https://res.cloudinary.com/hugo-cicarelli/image/upload/v1535334928/messenger.svg" alt=""/></a>
-                        <a target="_blank" href="" className="social-media phone"><img src="https://res.cloudinary.com/hugo-cicarelli/image/upload/v1535334928/messenger.svg" alt=""/></a>
+                        <a target="_blank" href="" className="social-media wpp"><img src="https://res.cloudinary.com/hugo-cicarelli/image/upload/v1535345608/wpp.png" alt="whatsapp icon"/></a>
+                        <a target="_blank" href="" className="social-media messenger"><img src="https://res.cloudinary.com/hugo-cicarelli/image/upload/v1535345608/messenger.png" alt="facebook messenger icon"/></a>
+                        <a target="_blank" href="" className="social-media phone"><img src="https://res.cloudinary.com/hugo-cicarelli/image/upload/v1535345608/phone.png" alt="phone icon"/></a>
                     </div>
                 </div>
             </div>

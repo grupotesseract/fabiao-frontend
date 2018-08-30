@@ -15,13 +15,9 @@ class IndexPage extends Component {
 
                 <div className="green-bg radial-bg">
                     <p>
-                        <strong>Descubra</strong> <br/>
-                        através de uma rápida <br/>
-                        análise, qual o <br/>
+                        <strong>Descubra</strong> através de uma rápida análise, qual o
                         <img src={NomeAppImg} alt="posicionamento estratégico"/>
-                        da sua Empresa e o <br/>
-                        momento que ela <br/>
-                        se encontra.
+                        da sua Empresa e o momento que ela se encontra.
                     </p>
                 </div>
 
