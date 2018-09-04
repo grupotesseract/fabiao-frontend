@@ -14,7 +14,9 @@ class AnalisePage extends Component {
                 <Header></Header>
 
                 <div className="green-bg radial-bg">
-                    <div className="next main-btn"></div>
+                    <Link to="analise/agradecimento">
+                        <div className="next main-btn"></div>
+                    </Link>
                     <div className="content-header">
                         <h3><span className="prioridade primeira"></span>Gerenciar Custo e Fluxo de Caixa</h3>
                     </div>

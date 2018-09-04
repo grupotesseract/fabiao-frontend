@@ -6,9 +6,16 @@ import ProgressBar from '../../progressbar';
 import {Link} from 'react-router-dom';
 
 class QuizPage extends Component {
+    constructor() {
+        super();
+
+        this.state = {
+            number: 3,
+            completedNumber: 1
+        };
+    }
 
     render() {
-
 
         return (
             <div className="content-wrapper quiz-page">
@@ -88,21 +95,25 @@ class QuizPage extends Component {
 
                         <div className="question-box-container">
                             <div className="question-box">
-                                <div className="red-bg question-header">
-                                    <h3>Forte</h3>
-                                </div>
-                                <div className="info-box">
-                                    <p className="red-text">Capital de giro é financiado exclusivamente com capital próprio e gerado pela operação principal do negócio e o fluxo de caixa é positivo honrando seus compromissos em dia através da geração de Lucro e Valor.</p>
-                                </div>
+                                <Link to="/quiz/resultado">
+                                    <div className="red-bg question-header">
+                                        <h3>Forte</h3>
+                                    </div>
+                                    <div className="info-box">
+                                        <p className="red-text">Capital de giro é financiado exclusivamente com capital próprio e gerado pela operação principal do negócio e o fluxo de caixa é positivo honrando seus compromissos em dia através da geração de Lucro e Valor.</p>
+                                    </div>
+                                </Link>
                             </div>
 
                             <div className="question-box">
-                                <div className="blue-bg question-header">
-                                    <h3>Fraca</h3>
-                                </div>
-                                <div className="info-box">
-                                    <p className="blue-text">Sua empresa depende de financiamentos periódicos tanto de terceiros como bancos ou fornecedores ou dos recursos dos sócios vindos de outras fontes.</p>
-                                </div>
+                                <Link to="/quiz/resultado">
+                                    <div className="blue-bg question-header">
+                                        <h3>Fraca</h3>
+                                    </div>
+                                    <div className="info-box">
+                                        <p className="blue-text">Sua empresa depende de financiamentos periódicos tanto de terceiros como bancos ou fornecedores ou dos recursos dos sócios vindos de outras fontes.</p>
+                                    </div>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -111,7 +122,7 @@ class QuizPage extends Component {
                 <div className="lighgray-bg radial-bg">
                     <CuboTesseract />
 
-                    <ProgressBar />
+                    <ProgressBar number={this.state.number} completed={this.state.completed} />
                 </div>
             </div>
         );

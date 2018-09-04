@@ -23,14 +23,14 @@ class AnaliseAgradecimentoPage extends Component {
                     <p className="download-text">Faça o download do arquivo com as especificações das suas próximas ações.</p>
 
                 <div className="download-btn-container">
-                    <a href="" className="download-btn">
+                    <Link to="/contato" className="download-btn">
                         <img src="https://res.cloudinary.com/hugo-cicarelli/image/upload/v1535416240/download-icon.png" alt="download icon"/>
                         Fazer o download
-                    </a>
-                    <a href="" className="download-btn">
+                    </Link>
+                    <Link to="/contato" className="download-btn">
                         <img src="https://res.cloudinary.com/hugo-cicarelli/image/upload/v1535416240/email-icon.png" alt="send to email icon"/>
                         Mandar por e-mail
-                    </a>
+                    </Link>
                 </div>
                 </div>
             </div>

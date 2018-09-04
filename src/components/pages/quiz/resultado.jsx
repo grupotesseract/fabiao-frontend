@@ -22,11 +22,11 @@ class QuizResultado extends Component {
                             <p>Reabastecer o tanque</p>
                         </div>
                     </div>
-
-                    <Link to="/" className="main-btn yellow">
-                        Veja as melhores ações para sua empresa
-                    </Link>
                 </div>
+                
+                <Link to="/quiz/detalhes" className="main-btn yellow">
+                    Veja as melhores ações para sua empresa
+                </Link>
             </div>
         );
     }

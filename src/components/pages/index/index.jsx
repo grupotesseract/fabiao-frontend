@@ -3,12 +3,18 @@ import {connect} from 'react-redux';
 import NomeAppImg from '../../../assets/img/nome_app.png';
 import Header from '../header';
 import {Link} from 'react-router-dom';
+import Input from '@material-ui/core/Input';
 
 class IndexPage extends Component {
+    state = {
+        email: ''
+    }
+
+    handleChange = event => {
+       this.setState({ [event.target.name]: event.target.value });
+    };
 
     render() {
-
-
         return (
             <div className="content-wrapper begin-page">
                 <Header></Header>
@@ -30,12 +36,10 @@ class IndexPage extends Component {
                         ponto estratégico.
                     </p>
 
-                    <input type="email" placeholder="Email" />
+                    <Input value={this.state.email} name="email" placeholder="E-mail" type="email" onChange={this.handleChange} />
                 </div>
 
-                <div className="darkgray-bg radial-bg">
-                    <Link to="/quiz" className="begin-btn main-btn">Começar</Link>
-                </div>
+                <Link to="/quiz" className="begin-btn main-btn">Começar</Link>
             </div>
         );
     }
