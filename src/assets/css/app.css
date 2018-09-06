@@ -1,4 +1,4 @@
-body .content-wrapper .main-btn:after, body .content-wrapper .back-btn:before, body .content-wrapper .main-header:before, body .content-wrapper .radial-bg:before {
+body .content-wrapper .main-btn:after, body .content-wrapper.cadastro-page .back-btn:before, body .content-wrapper .main-header:before, body .content-wrapper .radial-bg:before {
   content: "";
   position: absolute;
   display: block; }
@@ -51,44 +51,26 @@ body {
       body .content-wrapper .prioridade.segunda {
         background-color: #00B1EB; }
     body .content-wrapper .main-btn {
-      position: absolute;
-      bottom: 0;
-      left: 0;
+      display: flex;
+      padding: 3.4vh 12vw 3.4vh 6vw;
+      position: relative;
       background-color: #f7e83a;
       color: #494644;
-      width: calc(100vw - 95px);
-      padding: 20px 70px 20px 35px;
+      width: 82vw;
       text-transform: uppercase;
       font-size: 18px;
       text-decoration: none;
-      box-shadow: inset -4px 4px 10px 0 rgba(0, 0, 0, 0.4); }
+      box-shadow: inset -4px 4px 10px 0 rgba(0, 0, 0, 0.4);
+      height: 4vh;
+      top: -3.5vh; }
       body .content-wrapper .main-btn:after {
         background-image: url("https://res.cloudinary.com/hugo-cicarelli/image/upload/v1535311969/errow.png");
         background-position: center;
         background-repeat: no-repeat;
         background-size: contain;
         top: 20px;
-        right: 35px;
+        right: 6vw;
         height: calc(100% - 40px);
-        width: 20px; }
-    body .content-wrapper .back-btn {
-      position: absolute;
-      bottom: 0;
-      background-color: #dbdbdb;
-      width: 100%;
-      padding: 20px 0;
-      text-align: center;
-      text-decoration: none;
-      color: #494644; }
-      body .content-wrapper .back-btn:before {
-        background-image: url("https://res.cloudinary.com/hugo-cicarelli/image/upload/v1535311969/errow.png");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain;
-        transform: rotate(180deg);
-        top: 20px;
-        left: 35px;
-        height: calc(100% - 38px);
         width: 20px; }
     body .content-wrapper .progress-bar {
       position: relative;
@@ -104,13 +86,13 @@ body {
         body .content-wrapper .progress-bar .item.completed {
           background-color: #f7e83a; }
     body .content-wrapper.begin-page .radial-bg.green-bg {
-      height: 45vh; }
+      height: 40vh; }
       body .content-wrapper.begin-page .radial-bg.green-bg p {
         padding-right: 80px; }
         body .content-wrapper.begin-page .radial-bg.green-bg p img {
           margin-top: 10px; }
     body .content-wrapper.begin-page .radial-bg.lighgray-bg {
-      height: 26.5vh; }
+      height: 31.3vh; }
       body .content-wrapper.begin-page .radial-bg.lighgray-bg:before {
         transform: none; }
     body .content-wrapper.quiz-page .radial-bg.lighgray-bg {
@@ -161,7 +143,7 @@ body {
             margin: 0;
             font-size: 9px; }
     body .content-wrapper.cadastro-page .radial-bg.lighgray-bg {
-      padding-top: 2vh;
+      padding-top: 4vh;
       padding-bottom: 2vh;
       z-index: 3;
       height: 24vh; }
@@ -170,7 +152,8 @@ body {
         font-size: 14px;
         line-height: 20px;
         font-weight: 900;
-        margin-bottom: 0; }
+        margin-bottom: 0;
+        margin-top: 0; }
         body .content-wrapper.cadastro-page .radial-bg.lighgray-bg .blue-text span {
           display: block;
           font-size: 24px; }
@@ -179,42 +162,63 @@ body {
         padding-right: 90px;
         margin-bottom: 0; }
     body .content-wrapper.cadastro-page .radial-bg.green-bg {
-      height: 46vh;
+      height: 43.4vh;
       padding-top: 25px;
-      top: -35px;
+      top: -5.5vh;
       z-index: 2; }
       body .content-wrapper.cadastro-page .radial-bg.green-bg:before {
         transform: none;
         box-shadow: none; }
       body .content-wrapper.cadastro-page .radial-bg.green-bg p {
         font-size: 13px;
-        margin-bottom: 5px; }
+        margin-bottom: 15px; }
       body .content-wrapper.cadastro-page .radial-bg.green-bg .formulario-cadastro {
         overflow: hidden; }
         body .content-wrapper.cadastro-page .radial-bg.green-bg .formulario-cadastro .cadastro-fields {
           font-size: 13px;
-          width: 36vw;
+          width: 34.9vw;
           margin-bottom: 5px;
           background-color: rgba(255, 255, 255, 0.4);
-          padding: 0 3vw; }
+          padding: 0 4vw; }
           body .content-wrapper.cadastro-page .radial-bg.green-bg .formulario-cadastro .cadastro-fields:nth-child(even) {
             margin-left: 2vw; }
           body .content-wrapper.cadastro-page .radial-bg.green-bg .formulario-cadastro .cadastro-fields:nth-child(1), body .content-wrapper.cadastro-page .radial-bg.green-bg .formulario-cadastro .cadastro-fields:nth-child(2) {
             width: 100%;
             margin-left: 0; }
     body .content-wrapper.cadastro-page .main-btn {
-      bottom: 9vh;
-      padding-top: 20px;
-      padding-bottom: 20px;
-      z-index: 0;
-      height: 3.5vh; }
+      top: -5.5vh;
+      box-shadow: 0 2px 15px 0px rgba(0, 0, 0, 0.4);
+      z-index: 2; }
     body .content-wrapper.cadastro-page .back-btn {
-      bottom: 0vh;
-      padding: 20px 0;
-      height: 3vh; }
+      background-color: #dbdbdb;
+      width: 82vw;
+      padding: 3.5vh 12vw 3.5vh 6vw;
+      text-align: center;
+      text-decoration: none;
+      color: #494644;
+      display: flex;
+      position: relative;
+      height: 3vh;
+      top: -6.5vh;
+      justify-content: center;
+      text-transform: uppercase;
+      font-size: 14px;
+      align-items: center; }
+      body .content-wrapper.cadastro-page .back-btn:before {
+        background-image: url("https://res.cloudinary.com/hugo-cicarelli/image/upload/v1535311969/errow.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        transform: rotate(180deg);
+        top: 3.5vh;
+        left: 35px;
+        height: 3vh;
+        width: 20px; }
     body .content-wrapper.resultado-page .radial-bg.lighgray-bg {
-      height: calc(100vh - 70px);
+      height: 68vh;
       z-index: 0; }
+      body .content-wrapper.resultado-page .radial-bg.lighgray-bg:before {
+        transform: skewY(0deg); }
       body .content-wrapper.resultado-page .radial-bg.lighgray-bg > * {
         z-index: 1; }
       body .content-wrapper.resultado-page .radial-bg.lighgray-bg h3 {
@@ -250,9 +254,11 @@ body {
             text-transform: uppercase;
             text-align: center;
             padding: 0 50px; }
+    body .content-wrapper.resultado-page .main-btn {
+      height: 7.5vh; }
     body .content-wrapper.detalhes-page .radial-bg.green-bg {
-      height: 80vh;
-      padding-top: 25px;
+      height: 77.5vh;
+      padding-top: 4vh;
       z-index: 1; }
       body .content-wrapper.detalhes-page .radial-bg.green-bg:before {
         height: 101%; }
@@ -289,15 +295,10 @@ body {
         height: 30px;
         background-color: rgba(255, 255, 255, 0.4);
         font-size: 11px; }
-    body .content-wrapper.detalhes-page .btn-wrapper {
-      height: calc(20vh - 42px);
-      position: relative;
-      top: -10px;
-      z-index: 1; }
-      body .content-wrapper.detalhes-page .btn-wrapper .main-btn {
-        bottom: 15px;
-        padding-top: 35px;
-        padding-bottom: 35px; }
+    body .content-wrapper.detalhes-page .main-btn {
+      height: 5.5vh;
+      z-index: 2;
+      padding-top: 5vh; }
     body .content-wrapper.analise-page .radial-bg.green-bg {
       background: radial-gradient(#a0c966, #55af38);
       box-shadow: 0px -6px 28px 8px rgba(0, 0, 0, 0.7);
@@ -378,7 +379,8 @@ body {
           box-shadow: -3px 3px 15px 0 rgba(0, 0, 0, 0.4); }
           body .content-wrapper.agradecimento-page .radial-bg.lighgray-bg .download-btn-container .download-btn img {
             height: 40px;
-            margin-bottom: 10px; }
+            display: block;
+            margin: 0 auto 10px; }
     body .content-wrapper.contato-page .lighgray-bg {
       height: 100vh; }
       body .content-wrapper.contato-page .lighgray-bg > * {
@@ -410,7 +412,7 @@ body {
       padding: 15px 15px 0; }
       @media (min-width: 319px) and (max-width: 767px) {
         body .content-wrapper .main-header {
-          height: 5vh;
+          height: 5.5vh;
           top: -10px;
           padding: 15px 10px 5px; } }
       body .content-wrapper .main-header:before {
@@ -441,7 +443,7 @@ body {
       @media (min-width: 319px) and (max-width: 767px) {
         body .content-wrapper .radial-bg {
           top: -11px;
-          padding: 0 25px 0; } }
+          padding: 0 6vw 0; } }
       body .content-wrapper .radial-bg:before {
         z-index: 0;
         width: 100%;

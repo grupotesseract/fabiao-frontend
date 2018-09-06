@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import LogoBranco from '../../../assets/img/logo_fundo_preto.png';
+import {Link} from 'react-router-dom';
 
 class Header extends Component {
 
@@ -9,7 +10,9 @@ class Header extends Component {
 
         return (
             <header className="main-header">
-                <img src={LogoBranco} alt=""/>
+                <Link to="/">
+                    <img src={LogoBranco} alt=""/>
+                </Link>
             </header>
         );
     }

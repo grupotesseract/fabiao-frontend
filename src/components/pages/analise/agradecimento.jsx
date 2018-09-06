@@ -20,7 +20,7 @@ class AnaliseAgradecimentoPage extends Component {
                 </div>
 
                 <div className="radial-bg lighgray-bg">
-                    <p className="download-text">Faça o download do arquivo com as especificações das suas próximas ações.</p>
+                    <p className="download-text">Receba o arquivo com as especificações das suas próximas ações.</p>
 
                 <div className="download-btn-container">
                     <Link to="/contato" className="download-btn">
@@ -29,7 +29,7 @@ class AnaliseAgradecimentoPage extends Component {
                     </Link>
                     <Link to="/contato" className="download-btn">
                         <img src="https://res.cloudinary.com/hugo-cicarelli/image/upload/v1535416240/email-icon.png" alt="send to email icon"/>
-                        Mandar por e-mail
+                        Enviar por e-mail
                     </Link>
                 </div>
                 </div>
