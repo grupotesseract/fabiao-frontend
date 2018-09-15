@@ -3,8 +3,19 @@ import {connect} from 'react-redux';
 import NomeAppImg from '../../../assets/img/nome_app.png';
 import Header from '../header';
 import {Link} from 'react-router-dom';
+import InputRange from 'react-input-range';
+import ProgressBar from '../../progressbar';
+import 'react-input-range/lib/css/index.css';
 
 class AnalisePage extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            value: 10,
+            completed: 0
+        };
+    }
 
     render() {
 
@@ -37,16 +48,17 @@ class AnalisePage extends Component {
 
                 <div className="lighgray-bg radial-bg">
                     <p>Qual o grau de <span>prioridade</span> que você considera sua empresa em relação aos itens acima?</p>
-                    <div class="buttons">
-                           <span class="fa fa-plus"></span>
-                            <div class="drag-line">
-                              <div class="line"></div>
-                              <div class="draggable-button"></div>
-                            </div>
-                            <div class="draggable-buton"></div>
-                           <span class="fa fa-minus"></span>
-                        </div>
+
+                        <InputRange
+                            className="range-slider"
+                            maxValue={100}
+                            minValue={0}
+                            value={this.state.value}
+                            onChange={value => this.setState({ value })}
+                        />
                 </div>
+
+                <ProgressBar number="5" completed={this.state.completed} />
             </div>
         );
     }

@@ -11,7 +11,7 @@ class QuizPage extends Component {
 
         this.state = {
             number: 3,
-            completedNumber: 1
+            completed: 0
         };
     }
 
