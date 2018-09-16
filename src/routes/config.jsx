@@ -10,49 +10,49 @@ import PageNotFound from '../components/errors/404';
 
 export default [
     {
-        path: '/',
+        path: '/posicionamento-estrategico/',
         exact: true,
         component: Index,
         key: 'index.index'
     },
     {
-        path: '/quiz',
+        path: '/posicionamento-estrategico/quiz',
         exact: true,
         component: QuizPage,
         key: 'quiz.index'
     },
     {
-        path: '/quiz/resultado',
+        path: '/posicionamento-estrategico/quiz/resultado',
         exact: true,
         component: QuizResultado,
         key: 'quiz.resultado'
     },
     {
-        path: '/cadastro',
+        path: '/posicionamento-estrategico/cadastro',
         exact: true,
         component: CadastroPage,
         key: 'cadastro.index'
     },
     {
-        path: '/quiz/detalhes',
+        path: '/posicionamento-estrategico/quiz/detalhes',
         exact: true,
         component: QuizResultadoDetalhes,
         key: 'quiz.detalhes'
     },
     {
-        path: '/analise',
+        path: '/posicionamento-estrategico/analise',
         exact: true,
         component: AnalisePage,
         key: 'analise.index'
     },
     {
-        path: '/analise/agradecimento',
+        path: '/posicionamento-estrategico/analise/agradecimento',
         exact: true,
         component: AnaliseAgradecimento,
         key: 'analise.agradecimento'
     },
     {
-        path: '/contato',
+        path: '/posicionamento-estrategico/contato',
         exact: true,
         component: ContatoPage,
         key: 'contato.index'
