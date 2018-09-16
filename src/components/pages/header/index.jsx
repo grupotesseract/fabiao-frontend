@@ -10,7 +10,7 @@ class Header extends Component {
 
         return (
             <header className="main-header">
-                <Link to="/">
+                <Link to="/posicionamento-estrategico/">
                     <img src={LogoBranco} alt=""/>
                 </Link>
             </header>
