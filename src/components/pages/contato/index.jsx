@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import Logo3DFinancial from '../../../assets/img/3d-financial.png';
 import Header from '../header';
-import {Link} from 'react-router-dom';
 
 class ContatoPage extends Component {
 

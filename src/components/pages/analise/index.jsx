@@ -25,7 +25,7 @@ class AnalisePage extends Component {
                 <Header></Header>
 
                 <div className="green-bg radial-bg">
-                    <Link to="analise/agradecimento">
+                    <Link to="/posicionamento-estrategico/analise/agradecimento">
                         <div className="next main-btn"></div>
                     </Link>
                     <div className="content-header">

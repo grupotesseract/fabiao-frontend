@@ -46,9 +46,9 @@ class IndexPage extends Component {
                     </div>
                 </div>
 
-                <Link to="/analise" className="begin-btn main-btn">Começar</Link>
+                <Link to="/posicionamento-estrategico/analise" className="begin-btn main-btn">Começar</Link>
 
-                <Link to="/" className="begin-btn back-btn">Voltar para o início</Link>
+                <Link to="/posicionamento-estrategico/" className="begin-btn back-btn">Voltar para o início</Link>
             </div>
         );
     }

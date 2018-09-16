@@ -43,7 +43,7 @@ class QuizResultadoDetalhes extends Component {
                     </div>
                 </div>
 
-                <Link to="/cadastro" className="main-btn yellow">
+                <Link to="/posicionamento-estrategico/cadastro" className="main-btn yellow">
                     Continuar
                 </Link>
             </div>

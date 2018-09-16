@@ -23,8 +23,8 @@ class QuizResultado extends Component {
                         </div>
                     </div>
                 </div>
-                
-                <Link to="/quiz/detalhes" className="main-btn yellow">
+
+                <Link to="/posicionamento-estrategico/quiz/detalhes" className="main-btn yellow">
                     Veja as melhores ações para sua empresa
                 </Link>
             </div>

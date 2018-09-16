@@ -95,7 +95,7 @@ class QuizPage extends Component {
 
                         <div className="question-box-container">
                             <div className="question-box">
-                                <Link to="/quiz/resultado">
+                                <Link to="/posicionamento-estrategico/quiz/resultado">
                                     <div className="red-bg question-header">
                                         <h3>Forte</h3>
                                     </div>
@@ -106,7 +106,7 @@ class QuizPage extends Component {
                             </div>
 
                             <div className="question-box">
-                                <Link to="/quiz/resultado">
+                                <Link to="/posicionamento-estrategico/quiz/resultado">
                                     <div className="blue-bg question-header">
                                         <h3>Fraca</h3>
                                     </div>

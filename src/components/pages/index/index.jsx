@@ -39,7 +39,7 @@ class IndexPage extends Component {
                     <Input value={this.state.email} name="email" placeholder="E-mail" type="email" onChange={this.handleChange} />
                 </div>
 
-                <Link to="/quiz" className="begin-btn main-btn">Começar</Link>
+                <Link to="/posicionamento-estrategico/quiz" className="begin-btn main-btn">Começar</Link>
             </div>
         );
     }
