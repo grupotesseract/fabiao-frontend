@@ -566,16 +566,17 @@ body {
           top: 17%;
           left: 40%; }
         body .content-wrapper .cubo-wrapper .cube.first-role.bottom.left {
-          top: 51%; }
+          top: 48.5%;
+          left: 28.4%; }
         body .content-wrapper .cubo-wrapper .cube.first-role.bottom.right {
-          top: 63%;
-          left: 40%; }
+          top: 61%;
+          left: 40.5%; }
         body .content-wrapper .cubo-wrapper .cube.back-role.top.left {
-          left: 40.4%;
-          top: -12%; }
+          left: 40.5%;
+          top: -10%; }
         body .content-wrapper .cubo-wrapper .cube.back-role.top.right {
-          top: 4%;
-          left: 53.4%; }
+          top: 2.5%;
+          left: 52.5%; }
         body .content-wrapper .cubo-wrapper .cube.back-role.bottom.left {
           top: 47%;
           left: 40%; }

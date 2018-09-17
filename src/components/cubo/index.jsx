@@ -12,7 +12,7 @@ class CuboTesseract extends Component {
 
 
         		<div className="container">
-                    <figure className="cube back-role bottom right red">
+                    <figure className="cube back-role bottom right">
                         <div className="side front"></div>
                         <div className="side left"></div>
                         <div className="side right"></div>
@@ -20,7 +20,7 @@ class CuboTesseract extends Component {
                         <div className="side bottom"></div>
                         <div className="side back"></div>
                     </figure>
-                    <figure className="cube back-role bottom left red">
+                    <figure className="cube back-role bottom left">
                         <div className="side front"></div>
                         <div className="side left"></div>
                         <div className="side right"></div>
@@ -36,7 +36,7 @@ class CuboTesseract extends Component {
                         <div className="side bottom"></div>
                         <div className="side back"></div>
                     </figure>
-                    <figure className="cube back-role top right red">
+                    <figure className="cube back-role top right">
                         <div className="side front"></div>
                         <div className="side left"></div>
                         <div className="side right"></div>
@@ -52,7 +52,7 @@ class CuboTesseract extends Component {
                         <div className="side bottom"></div>
                         <div className="side back"></div>
                     </figure>
-                    <figure className="cube first-role bottom right blue">
+                    <figure className="cube first-role bottom right">
                         <div className="side front"></div>
                         <div className="side left"></div>
                         <div className="side right"></div>
@@ -68,7 +68,7 @@ class CuboTesseract extends Component {
         				<div className="side bottom"></div>
         				<div className="side back"></div>
         			</figure>
-                    <figure className="cube first-role top right blue">
+                    <figure className="cube first-role top right">
         				<div className="side front"></div>
         				<div className="side left"></div>
         				<div className="side right"></div>
