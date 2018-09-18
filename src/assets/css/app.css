@@ -186,7 +186,8 @@ body {
               font-size: 16px; }
         body .content-wrapper.quiz-page .question-box-container .question-box .info-box {
           background-color: #fff;
-          padding: 10px 5px; }
+          padding: 10px 5px;
+          min-height: 55px; }
           body .content-wrapper.quiz-page .question-box-container .question-box .info-box p {
             margin: 0;
             font-size: 9px; }
