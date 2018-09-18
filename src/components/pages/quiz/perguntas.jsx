@@ -1,55 +1,62 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import Header from '../header';
-import CuboTesseract from '../../cubo';
-import ProgressBar from '../../progressbar';
 import {Link} from 'react-router-dom';
 
-class QuizPage extends Component {
-    constructor() {
-        super();
+class PerguntasItem extends Component {
+    constructor(props) {
+        super(props);
+    }
 
-        this.state = {
-            number: 3,
-            completedNumber: 1
-        };
+    renderPerguntas = () => {
+        // console.log(this);
+        return this.props.items.map((item, key) => {
+            return <div id={`question-${key}`} key={`pergunta-${key}`}>
+                        <p>
+                            {item.texto_pergunta}
+                        </p>
+                    </div>
+        })
+    }
+
+    renderRespostas = () => {
+        return this.props.items.map((item, key) => {
+            return <div id={`answer-${key}`} className="question-box-container" key={`resposta-${key}`}>
+                        <div className="question-box">
+                            <Link to="/posicionamento-estrategico/quiz/resultado">
+                                <div className="red-bg question-header">
+                                    <h3>{item.texto_resposta_1} <span>exposição</span></h3>
+                                </div>
+                                <div className="info-box">
+                                    <p className="red-text">{item.descritivo_resposta_1}</p>
+                                </div>
+                            </Link>
+                        </div>
+
+                        <div className="question-box">
+                            <Link to="/posicionamento-estrategico/quiz/resultado">
+                                <div className="blue-bg question-header">
+                                    <h3>{item.texto_resposta_2} <span>exposição</span></h3>
+                                </div>
+                                <div className="info-box">
+                                    <p className="blue-text">{item.descritivo_resposta_2}</p>
+                                </div>
+                            </Link>
+                        </div>
+                    </div>
+        })
     }
 
     render() {
-
         return (
-                <div id="question-1" className="question-wrapper hidden">
-                    <p>
-                        Considerando uma <br/>
-                        possível <strong className="red-text">crise econômica,</strong> <br/>
-                        como que o setor da sua <br/>
-                        empresa é <strong>afetado</strong>
-                    </p>
+            <div className="question-wrapper">
+                { this.renderPerguntas() }
 
-                    <p align="center">selecione:</p>
+                <p align="center">selecione:</p>
 
-                    <div className="question-box-container">
-                        <div className="question-box">
-                            <div className="red-bg question-header">
-                                <h3>Maior <span>exposição</span></h3>
-                            </div>
-                            <div className="info-box">
-                                <p className="red-text">Empresas de turismo ou veículos novos que podem ser afetados significativamente pela crise</p>
-                            </div>
-                        </div>
-
-                        <div className="question-box">
-                            <div className="blue-bg question-header">
-                                <h3>Menor <span>exposição</span></h3>
-                            </div>
-                            <div className="info-box">
-                                <p className="blue-text">Empresas de setor de alimentação básica, assim como de medicamentos são menos afetadas pela crise</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                { this.renderRespostas() }
+            </div>
         );
     }
 }
 
-export default (QuizPage);
+export default (PerguntasItem);

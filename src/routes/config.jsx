@@ -4,6 +4,7 @@ import QuizResultado from '../components/pages/quiz/resultado';
 import QuizResultadoDetalhes from '../components/pages/quiz/detalhes';
 import CadastroPage from '../components/pages/cadastro';
 import AnalisePage from '../components/pages/analise';
+import AnaliseResultado from '../components/pages/analise/resultado';
 import AnaliseAgradecimento from '../components/pages/analise/agradecimento';
 import ContatoPage from '../components/pages/contato';
 import PageNotFound from '../components/errors/404';
@@ -44,6 +45,12 @@ export default [
         exact: true,
         component: AnalisePage,
         key: 'analise.index'
+    },
+    {
+        path: '/posicionamento-estrategico/analise/resultado',
+        exact: true,
+        component: AnaliseResultado,
+        key: 'analise.resultado'
     },
     {
         path: '/posicionamento-estrategico/analise/agradecimento',

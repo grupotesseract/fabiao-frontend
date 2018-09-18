@@ -12,9 +12,40 @@ class AnalisePage extends Component {
         super(props);
 
         this.state = {
+            items: [
+                {
+                    'nome': 'Gerenciar Custo e Fluxo de Caixa',
+                    'subitems': [
+                        'nome': 'Planejamento de Caixa Futuro',
+                        'nome': 'Análise do Ponto de Equilíbrio',
+                        'nome': 'Aporte de Capital',
+                        'nome': 'Empréstimos e Financiamentos',
+                        'nome': 'Vendas à Vista / Prazos Reduzidos',
+                        'nome': 'Juros Recebidos de Cliente',
+                        'nome': 'Rendimento de Aplicações',
+                        'nome': 'Processos de Cobrança Otimizado',
+                        'nome': 'Estoques Mínimos',
+                        'nome': 'Prazos de Pagamentos Renegociados',
+                    ],
+                    'nota': 0
+                },
+                {
+                    'nome': 'Promover melhoria de desempenho',
+                    'subitems': [
+                        'nome': 'Planejamento de Caixa Futuro',
+                    ],
+                    'nota': 0
+                },
+            ],
             value: 10,
             completed: 0
         };
+    }
+
+    renderItems = () => {
+        return this.state.items.map((item, key) => {
+
+        })
     }
 
     render() {
@@ -25,7 +56,12 @@ class AnalisePage extends Component {
                 <Header></Header>
 
                 <div className="green-bg radial-bg">
-                    <Link to="/posicionamento-estrategico/analise/agradecimento">
+                    <Link to={{
+                            pathname: "/posicionamento-estrategico/analise/resultado",
+                            state: {
+                                value: this.state.value
+                            }
+                        }}>
                         <div className="next main-btn"></div>
                     </Link>
                     <div className="content-header">
@@ -33,14 +69,6 @@ class AnalisePage extends Component {
                     </div>
 
                     <div className="content-body">
-                        <div className="item">Planejamento de Caixa Futuro</div>
-                        <div className="item">Análise do Ponto de Equilíbrio</div>
-                        <div className="item">Aporte de Capital</div>
-                        <div className="item">Empréstimos e Financiamentos</div>
-                        <div className="item">Vendas à Vista / Prazos Reduzidos</div>
-                        <div className="item">Juros Recebidos de Cliente</div>
-                        <div className="item">Rendimento de Aplicações</div>
-                        <div className="item">Processos de Cobrança Otimizado</div>
                         <div className="item">Estoques Mínimos</div>
                         <div className="item">Prazos de Pagamentos Renegociados</div>
                     </div>

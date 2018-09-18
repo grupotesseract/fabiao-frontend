@@ -6,8 +6,17 @@ import {Link} from 'react-router-dom';
 import Input from '@material-ui/core/Input';
 
 class IndexPage extends Component {
-    state = {
-        email: ''
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            email: ''
+        }
+        console.log(this);
+    }
+
+    componentWillMount() {
+        // this.props.requestHome();
     }
 
     handleChange = event => {
@@ -15,6 +24,7 @@ class IndexPage extends Component {
     };
 
     render() {
+
         return (
             <div className="content-wrapper begin-page">
                 <Header></Header>
@@ -39,7 +49,7 @@ class IndexPage extends Component {
                     <Input value={this.state.email} name="email" placeholder="E-mail" type="email" onChange={this.handleChange} />
                 </div>
 
-                <Link to="/posicionamento-estrategico/quiz" className="begin-btn main-btn">Começar</Link>
+                <Link to="/posicionamento-estrategico/quiz" className={`begin-btn main-btn  ${this.state.email == '' ? 'disabled' : ''}`}>Começar</Link>
             </div>
         );
     }

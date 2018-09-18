@@ -72,6 +72,10 @@ body {
         right: 6vw;
         height: calc(100% - 40px);
         width: 20px; }
+      body .content-wrapper .main-btn.disabled {
+        background-color: rgba(73, 70, 68, 0.7);
+        box-shadow: none;
+        pointer-events: none; }
     body .content-wrapper .input-range {
       height: 30px; }
       body .content-wrapper .input-range .input-range__track--background {
@@ -113,10 +117,12 @@ body {
       body .content-wrapper .input-range .input-range__label-container {
         display: none; }
     body .content-wrapper .progress-bar {
-      position: relative;
+      position: absolute;
+      width: 88vw;
+      bottom: 2.5vh;
+      left: 6vw;
       display: flex;
-      justify-content: center;
-      padding-top: 45px; }
+      justify-content: center; }
       body .content-wrapper .progress-bar .item {
         background-color: #333;
         height: 15px;
@@ -137,8 +143,9 @@ body {
       body .content-wrapper.begin-page .radial-bg.lighgray-bg:before {
         transform: none; }
     body .content-wrapper.quiz-page .radial-bg.lighgray-bg {
-      height: 65vh;
-      padding-top: 145px; }
+      height: 47.5vh; }
+      body .content-wrapper.quiz-page .radial-bg.lighgray-bg:before {
+        transform: skewY(0); }
     body .content-wrapper.quiz-page .green-bg {
       height: 35vh; }
       body .content-wrapper.quiz-page .green-bg p {
@@ -213,19 +220,16 @@ body {
       body .content-wrapper.cadastro-page .radial-bg.green-bg p {
         font-size: 13px;
         margin-bottom: 15px; }
-      body .content-wrapper.cadastro-page .radial-bg.green-bg .formulario-cadastro {
-        overflow: hidden; }
-        body .content-wrapper.cadastro-page .radial-bg.green-bg .formulario-cadastro .cadastro-fields {
-          font-size: 13px;
-          width: 34.9vw;
-          margin-bottom: 5px;
-          background-color: rgba(255, 255, 255, 0.4);
-          padding: 0 4vw; }
-          body .content-wrapper.cadastro-page .radial-bg.green-bg .formulario-cadastro .cadastro-fields:nth-child(even) {
-            margin-left: 2vw; }
-          body .content-wrapper.cadastro-page .radial-bg.green-bg .formulario-cadastro .cadastro-fields:nth-child(1), body .content-wrapper.cadastro-page .radial-bg.green-bg .formulario-cadastro .cadastro-fields:nth-child(2) {
-            width: 100%;
-            margin-left: 0; }
+      body .content-wrapper.cadastro-page .radial-bg.green-bg .formulario-cadastro .cadastro-fields {
+        font-size: 13px;
+        width: 34.9vw;
+        margin-bottom: 5px;
+        background-color: rgba(255, 255, 255, 0.4);
+        padding: 0 4vw; }
+        body .content-wrapper.cadastro-page .radial-bg.green-bg .formulario-cadastro .cadastro-fields:nth-child(even) {
+          margin-left: 2vw; }
+        body .content-wrapper.cadastro-page .radial-bg.green-bg .formulario-cadastro .cadastro-fields input {
+          height: 20px; }
     body .content-wrapper.cadastro-page .main-btn {
       top: -5.5vh;
       box-shadow: 0 2px 15px 0px rgba(0, 0, 0, 0.4);
@@ -297,13 +301,13 @@ body {
             padding: 0 50px; }
     body .content-wrapper.resultado-page .main-btn {
       height: 7.5vh; }
-    body .content-wrapper.detalhes-page .radial-bg.green-bg {
+    body .content-wrapper.detalhes-page .radial-bg.green-bg, body .content-wrapper.detalhes-page .radial-bg.lighgray-bg, body .content-wrapper.analise-resultado .radial-bg.green-bg, body .content-wrapper.analise-resultado .radial-bg.lighgray-bg {
       height: 77.5vh;
       padding-top: 4vh;
       z-index: 1; }
-      body .content-wrapper.detalhes-page .radial-bg.green-bg:before {
+      body .content-wrapper.detalhes-page .radial-bg.green-bg:before, body .content-wrapper.detalhes-page .radial-bg.lighgray-bg:before, body .content-wrapper.analise-resultado .radial-bg.green-bg:before, body .content-wrapper.analise-resultado .radial-bg.lighgray-bg:before {
         height: 101%; }
-      body .content-wrapper.detalhes-page .radial-bg.green-bg .detalhe-header {
+      body .content-wrapper.detalhes-page .radial-bg.green-bg .detalhe-header, body .content-wrapper.detalhes-page .radial-bg.lighgray-bg .detalhe-header, body .content-wrapper.analise-resultado .radial-bg.green-bg .detalhe-header, body .content-wrapper.analise-resultado .radial-bg.lighgray-bg .detalhe-header {
         z-index: 3;
         background-color: #dbdbdb;
         font-size: 17px;
@@ -311,35 +315,62 @@ body {
         text-transform: uppercase;
         padding: 13px 0;
         text-align: center; }
-        body .content-wrapper.detalhes-page .radial-bg.green-bg .detalhe-header.blue {
+        body .content-wrapper.detalhes-page .radial-bg.green-bg .detalhe-header.blue, body .content-wrapper.detalhes-page .radial-bg.lighgray-bg .detalhe-header.blue, body .content-wrapper.analise-resultado .radial-bg.green-bg .detalhe-header.blue, body .content-wrapper.analise-resultado .radial-bg.lighgray-bg .detalhe-header.blue {
           background-color: #4c59a4; }
-        body .content-wrapper.detalhes-page .radial-bg.green-bg .detalhe-header.red {
+        body .content-wrapper.detalhes-page .radial-bg.green-bg .detalhe-header.red, body .content-wrapper.detalhes-page .radial-bg.lighgray-bg .detalhe-header.red, body .content-wrapper.analise-resultado .radial-bg.green-bg .detalhe-header.red, body .content-wrapper.analise-resultado .radial-bg.lighgray-bg .detalhe-header.red {
           background-color: #cb151a; }
-      body .content-wrapper.detalhes-page .radial-bg.green-bg .legenda {
+      body .content-wrapper.detalhes-page .radial-bg.green-bg .legenda, body .content-wrapper.detalhes-page .radial-bg.lighgray-bg .legenda, body .content-wrapper.analise-resultado .radial-bg.green-bg .legenda, body .content-wrapper.analise-resultado .radial-bg.lighgray-bg .legenda {
         display: flex;
         flex-direction: row;
         justify-content: center; }
-        body .content-wrapper.detalhes-page .radial-bg.green-bg .legenda p {
+        body .content-wrapper.detalhes-page .radial-bg.green-bg .legenda p, body .content-wrapper.detalhes-page .radial-bg.lighgray-bg .legenda p, body .content-wrapper.analise-resultado .radial-bg.green-bg .legenda p, body .content-wrapper.analise-resultado .radial-bg.lighgray-bg .legenda p {
           font-size: 12px;
           margin: 0 15px;
           height: 20px;
           font-weight: 100; }
-      body .content-wrapper.detalhes-page .radial-bg.green-bg .items-wrapper .item .item-header {
+      body .content-wrapper.detalhes-page .radial-bg.green-bg .items-wrapper .item .item-header, body .content-wrapper.detalhes-page .radial-bg.lighgray-bg .items-wrapper .item .item-header, body .content-wrapper.analise-resultado .radial-bg.green-bg .items-wrapper .item .item-header, body .content-wrapper.analise-resultado .radial-bg.lighgray-bg .items-wrapper .item .item-header {
         position: relative;
         z-index: 1;
         font-size: 17px;
         font-weight: 900; }
-        body .content-wrapper.detalhes-page .radial-bg.green-bg .items-wrapper .item .item-header h4 {
+        body .content-wrapper.detalhes-page .radial-bg.green-bg .items-wrapper .item .item-header h4, body .content-wrapper.detalhes-page .radial-bg.lighgray-bg .items-wrapper .item .item-header h4, body .content-wrapper.analise-resultado .radial-bg.green-bg .items-wrapper .item .item-header h4, body .content-wrapper.analise-resultado .radial-bg.lighgray-bg .items-wrapper .item .item-header h4 {
           margin-bottom: 0;
           padding-right: 40px; }
-      body .content-wrapper.detalhes-page .radial-bg.green-bg .items-wrapper .item .item-content p {
+      body .content-wrapper.detalhes-page .radial-bg.green-bg .items-wrapper .item .item-content p, body .content-wrapper.detalhes-page .radial-bg.lighgray-bg .items-wrapper .item .item-content p, body .content-wrapper.analise-resultado .radial-bg.green-bg .items-wrapper .item .item-content p, body .content-wrapper.analise-resultado .radial-bg.lighgray-bg .items-wrapper .item .item-content p {
         height: 30px;
         background-color: rgba(255, 255, 255, 0.4);
         font-size: 11px; }
-    body .content-wrapper.detalhes-page .main-btn {
+    body .content-wrapper.detalhes-page .main-btn, body .content-wrapper.analise-resultado .main-btn {
       height: 5.5vh;
       z-index: 2;
       padding-top: 5vh; }
+    body .content-wrapper.analise-resultado .radial-bg.lighgray-bg {
+      height: 68.5vh; }
+      body .content-wrapper.analise-resultado .radial-bg.lighgray-bg:before {
+        transform: skewY(0); }
+    body .content-wrapper.analise-resultado .items-wrapper .item .sub-item {
+      position: relative; }
+      body .content-wrapper.analise-resultado .items-wrapper .item .sub-item p {
+        margin-bottom: 0; }
+      body .content-wrapper.analise-resultado .items-wrapper .item .sub-item .nota-wrapper {
+        position: relative; }
+        body .content-wrapper.analise-resultado .items-wrapper .item .sub-item .nota-wrapper .input-range {
+          position: absolute;
+          width: 100%;
+          height: 5px;
+          bottom: -7px; }
+          body .content-wrapper.analise-resultado .items-wrapper .item .sub-item .nota-wrapper .input-range .input-range__slider-container {
+            display: none; }
+          body .content-wrapper.analise-resultado .items-wrapper .item .sub-item .nota-wrapper .input-range .input-range__track--background {
+            background: rgba(73, 70, 68, 0.4); }
+            body .content-wrapper.analise-resultado .items-wrapper .item .sub-item .nota-wrapper .input-range .input-range__track--background .input-range__track--active {
+              background: linear-gradient(to right, #cb151a, #f7e83a, #55af38); }
+        body .content-wrapper.analise-resultado .items-wrapper .item .sub-item .nota-wrapper .nota {
+          background-color: #494644;
+          height: 5px;
+          position: absolute;
+          top: 0;
+          right: 0; }
     body .content-wrapper.analise-page .radial-bg.green-bg {
       background: radial-gradient(#a0c966, #55af38);
       box-shadow: 0px -6px 28px 8px rgba(0, 0, 0, 0.7);
@@ -399,9 +430,6 @@ body {
         margin-top: 0;
         margin-bottom: 20px;
         font-size: 11px; }
-    body .content-wrapper.analise-page .progress-bar {
-      top: -1.8vh;
-      padding-top: 0; }
     body .content-wrapper.agradecimento-page .radial-bg.green-bg h3 {
       font-size: 25px;
       text-transform: uppercase;
@@ -545,8 +573,9 @@ body {
         position: relative;
         z-index: 3; }
     body .content-wrapper .cubo-wrapper {
-      position: relative;
-      z-index: 2; }
+      width: 333px;
+      position: absolute;
+      bottom: 20vh; }
       body .content-wrapper .cubo-wrapper .container {
         width: 100%;
         height: 110px;
@@ -556,33 +585,39 @@ body {
         transform-style: preserve-3d;
         transform: rotateY(45deg) rotateX(-13deg) rotateZ(-15deg);
         position: absolute;
-        top: 4%;
-        left: 28%;
+        top: 5%;
+        left: 29.2%;
         margin: 0;
         width: 100px;
         height: 100px;
         transition: 1s; }
         body .content-wrapper .cubo-wrapper .cube.first-role.top.right {
-          top: 17%;
+          top: 16%;
           left: 40%; }
         body .content-wrapper .cubo-wrapper .cube.first-role.bottom.left {
-          top: 48.5%;
-          left: 28.4%; }
+          top: 48%;
+          left: 29.5%; }
         body .content-wrapper .cubo-wrapper .cube.first-role.bottom.right {
-          top: 61%;
+          top: 58.6%;
           left: 40.5%; }
+        body .content-wrapper .cubo-wrapper .cube.first-role.bottom .top {
+          background-color: #D8D8D8; }
         body .content-wrapper .cubo-wrapper .cube.back-role.top.left {
-          left: 40.5%;
-          top: -10%; }
+          left: 40.4%;
+          top: -8%; }
         body .content-wrapper .cubo-wrapper .cube.back-role.top.right {
-          top: 2.5%;
-          left: 52.5%; }
+          top: 3.3%;
+          left: 51.3%; }
         body .content-wrapper .cubo-wrapper .cube.back-role.bottom.left {
           top: 47%;
           left: 40%; }
         body .content-wrapper .cubo-wrapper .cube.back-role.bottom.right {
-          top: 47%;
-          left: 53.2%; }
+          top: 46%;
+          left: 51.7%; }
+        body .content-wrapper .cubo-wrapper .cube.back-role.bottom .top {
+          background-color: #D8D8D8; }
+        body .content-wrapper .cubo-wrapper .cube.back-role .side.front {
+          background-color: #C1C1C0; }
         body .content-wrapper .cubo-wrapper .cube.blue .side.front {
           background-color: #4C59A4; }
         body .content-wrapper .cubo-wrapper .cube.blue .side.right {

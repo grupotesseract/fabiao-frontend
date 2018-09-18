@@ -1,6 +1,6 @@
 {
   "name": "fabiao-frontend",
-  "homepage": "./posicionamento-estrategico",
+  "homepage": "./",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -10,7 +10,8 @@
     "react-dom": "^16.5.1",
     "react-input-range": "^1.3.0",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "1.1.4"
+    "react-scripts": "1.1.4",
+    "react-slick": "^0.23.1"
   },
   "scripts": {
     "build-css": "node-sass-chokidar src/assets/sass/app.scss src/assets/css/app.css --output-style compressed",

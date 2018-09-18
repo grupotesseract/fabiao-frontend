@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import index from './index-page';
+import index from './home';
 
 export default combineReducers({
     index
