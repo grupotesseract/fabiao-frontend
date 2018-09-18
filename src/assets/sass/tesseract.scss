@@ -487,7 +487,7 @@ body {
             .radial-bg {
                 &.lighgray-bg {
                     height: 68.5vh;
-                    
+
                     &:before {
                         transform: skewY(0);
                     }
@@ -664,36 +664,86 @@ body {
             }
         }
         &.contato-page {
-            .lighgray-bg {
-                height: 100vh;
+            .radial-bg {
+                &.lighgray-bg {
+                    height: 100vh;
+                    padding-top: 8vh;
 
-                & > * {
-                    z-index: 1;
-                }
-                .logo {
-                    width: 145px;
-                    margin: 0 auto;
-                }
-                .contato-email {
-                    background-color: #fff;
-                    width: calc(100% - 60px);
-                    margin: 60px auto 25px;
-                    padding: 5px 15px;
-                    font-weight: 900;
-                    font-size: 12px;
-                    text-align: center;
-                }
-                .socail-medias {
-                    width: calc(100% - 35px);
-                    margin: 0 auto;
-                    display: flex;
+                    & > * {
+                        z-index: 1;
+                    }
+                    .card {
+                        background-color: white;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 10px;
 
-                    .social-media {
-                        width: (100% / 3);
+                        .logo-wrapper {
+                            .logo {
+                                width: 80px;
+                            }
+                            padding-right: 15px;
+                        }
+                        .card-info {
+                            text-align: center;
+
+                            p {
+                                margin: 0;
+                                font-size: 11px;
+
+                                &.nome {
+                                    font-size: 14px;
+                                    font-weight: 600;
+                                }
+                                &.cargo {
+                                    margin-bottom: 10px;
+                                }
+                            }
+                            .telefone {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                            }
+                            a {
+                                color: $pe-darkgray;
+                                font-size: 11px;
+                                text-decoration: none;
+                                text-align: center;
+                                margin: 0;
+                                display: block;
+
+                                &.website {
+                                    font-weight: 600;
+                                }
+                            }
+                        }
+                    }
+                    // .logo {
+                    //     width: 145px;
+                    //     margin: 0 auto;
+                    // }
+                    .contato-email {
+                        background-color: #fff;
+                        width: calc(100% - 60px);
+                        margin: 60px auto 25px;
+                        padding: 5px 15px;
+                        font-weight: 900;
+                        font-size: 12px;
                         text-align: center;
+                    }
+                    .socail-medias {
+                        width: calc(100% - 35px);
+                        margin: 0 auto;
+                        display: flex;
 
-                        img {
-                            width: 40px;
+                        .social-media {
+                            width: (100% / 3);
+                            text-align: center;
+
+                            img {
+                                width: 40px;
+                            }
                         }
                     }
                 }

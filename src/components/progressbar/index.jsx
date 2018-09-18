@@ -12,7 +12,7 @@ class ProgressBar extends Component {
                 classBars = 'item completed';
             }
 
-            bars.push( <div className={classBars}></div> );
+            bars.push( <div className={classBars} key={`key-${i}`}></div> );
         }
 
         return bars;

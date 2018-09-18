@@ -18,6 +18,9 @@ class AnaliseResultado extends Component {
         const rangeStyle = {
             width: (100 - this.props.location.state.value) + '%'
         };
+        const tempStyle = {
+            width: '100%'
+        }
 
         return (
             <div className="content-wrapper analise-resultado">
@@ -57,7 +60,7 @@ class AnaliseResultado extends Component {
                                                 minValue={0}
                                                 value={100}
                                                 />
-                                            <div className="nota" style={rangeStyle}></div>
+                                            <div className="nota" style={tempStyle}></div>
                                         </div>
                                 </div>
                             </div>
@@ -77,7 +80,7 @@ class AnaliseResultado extends Component {
                                                 minValue={0}
                                                 value={100}
                                                 />
-                                            <div className="nota" style={rangeStyle}></div>
+                                            <div className="nota" style={tempStyle}></div>
                                         </div>
                                 </div>
                                 <div className="sub-item">
@@ -89,7 +92,7 @@ class AnaliseResultado extends Component {
                                                 minValue={0}
                                                 value={100}
                                                 />
-                                            <div className="nota" style={rangeStyle}></div>
+                                            <div className="nota" style={tempStyle}></div>
                                         </div>
                                 </div>
                                 <div className="sub-item">
@@ -101,7 +104,7 @@ class AnaliseResultado extends Component {
                                                 minValue={0}
                                                 value={100}
                                                 />
-                                            <div className="nota" style={rangeStyle}></div>
+                                            <div className="nota" style={tempStyle}></div>
                                         </div>
                                 </div>
                             </div>

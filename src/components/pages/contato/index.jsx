@@ -22,12 +22,20 @@ class ContatoPage extends Component {
                 </div>
 
                 <div className="lighgray-bg radial-bg">
-                    <img className="logo" src={Logo3DFinancial} alt="3d financial logo" />
-                    <p className="contato-email">contato@3dfinancialacademy.com.br</p>
-                    <div className="socail-medias">
-                        <a target="_blank" href="" className="social-media wpp"><img src="https://res.cloudinary.com/hugo-cicarelli/image/upload/v1535345608/wpp.png" alt="whatsapp icon"/></a>
-                        <a target="_blank" href="" className="social-media messenger"><img src="https://res.cloudinary.com/hugo-cicarelli/image/upload/v1535345608/messenger.png" alt="facebook messenger icon"/></a>
-                        <a target="_blank" href="" className="social-media phone"><img src="https://res.cloudinary.com/hugo-cicarelli/image/upload/v1535345608/phone.png" alt="phone icon"/></a>
+                    <div className="card">
+                        <div className="logo-wrapper">
+                            <img className="logo" src={Logo3DFinancial} alt="3d financial logo" />
+                        </div>
+                        <div className="card-info">
+                            <p className="nome">Norberto C. Sgavioli</p>
+                            <p className="cargo">Sócio Diretor</p>
+                            <div className="telefone">
+                                <img src="" alt=""/>
+                                <a href="tel:14981264466">14 98126 4466</a>
+                            </div>
+                            <a href="mailto:norberto@3dfinancialacademy.com.br">norberto@3dfinancialacademy.com.br</a>
+                            <a target="_blank" href="http://www.3dfinancial.com.br" className="website">www.3dfinancial.com.br</a>
+                        </div>
                     </div>
                 </div>
             </div>

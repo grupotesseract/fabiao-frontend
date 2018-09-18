@@ -463,14 +463,45 @@ body {
             height: 40px;
             display: block;
             margin: 0 auto 10px; }
-    body .content-wrapper.contato-page .lighgray-bg {
-      height: 100vh; }
-      body .content-wrapper.contato-page .lighgray-bg > * {
+    body .content-wrapper.contato-page .radial-bg.lighgray-bg {
+      height: 100vh;
+      padding-top: 8vh; }
+      body .content-wrapper.contato-page .radial-bg.lighgray-bg > * {
         z-index: 1; }
-      body .content-wrapper.contato-page .lighgray-bg .logo {
-        width: 145px;
-        margin: 0 auto; }
-      body .content-wrapper.contato-page .lighgray-bg .contato-email {
+      body .content-wrapper.contato-page .radial-bg.lighgray-bg .card {
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px; }
+        body .content-wrapper.contato-page .radial-bg.lighgray-bg .card .logo-wrapper {
+          padding-right: 15px; }
+          body .content-wrapper.contato-page .radial-bg.lighgray-bg .card .logo-wrapper .logo {
+            width: 80px; }
+        body .content-wrapper.contato-page .radial-bg.lighgray-bg .card .card-info {
+          text-align: center; }
+          body .content-wrapper.contato-page .radial-bg.lighgray-bg .card .card-info p {
+            margin: 0;
+            font-size: 11px; }
+            body .content-wrapper.contato-page .radial-bg.lighgray-bg .card .card-info p.nome {
+              font-size: 14px;
+              font-weight: 600; }
+            body .content-wrapper.contato-page .radial-bg.lighgray-bg .card .card-info p.cargo {
+              margin-bottom: 10px; }
+          body .content-wrapper.contato-page .radial-bg.lighgray-bg .card .card-info .telefone {
+            display: flex;
+            align-items: center;
+            justify-content: center; }
+          body .content-wrapper.contato-page .radial-bg.lighgray-bg .card .card-info a {
+            color: #494644;
+            font-size: 11px;
+            text-decoration: none;
+            text-align: center;
+            margin: 0;
+            display: block; }
+            body .content-wrapper.contato-page .radial-bg.lighgray-bg .card .card-info a.website {
+              font-weight: 600; }
+      body .content-wrapper.contato-page .radial-bg.lighgray-bg .contato-email {
         background-color: #fff;
         width: calc(100% - 60px);
         margin: 60px auto 25px;
@@ -478,14 +509,14 @@ body {
         font-weight: 900;
         font-size: 12px;
         text-align: center; }
-      body .content-wrapper.contato-page .lighgray-bg .socail-medias {
+      body .content-wrapper.contato-page .radial-bg.lighgray-bg .socail-medias {
         width: calc(100% - 35px);
         margin: 0 auto;
         display: flex; }
-        body .content-wrapper.contato-page .lighgray-bg .socail-medias .social-media {
+        body .content-wrapper.contato-page .radial-bg.lighgray-bg .socail-medias .social-media {
           width: 33.33333%;
           text-align: center; }
-          body .content-wrapper.contato-page .lighgray-bg .socail-medias .social-media img {
+          body .content-wrapper.contato-page .radial-bg.lighgray-bg .socail-medias .social-media img {
             width: 40px; }
     body .content-wrapper .main-header {
       position: relative;

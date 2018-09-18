@@ -16,35 +16,44 @@ class AnalisePage extends Component {
                 {
                     'nome': 'Gerenciar Custo e Fluxo de Caixa',
                     'subitems': [
-                        'nome': 'Planejamento de Caixa Futuro',
-                        'nome': 'Análise do Ponto de Equilíbrio',
-                        'nome': 'Aporte de Capital',
-                        'nome': 'Empréstimos e Financiamentos',
-                        'nome': 'Vendas à Vista / Prazos Reduzidos',
-                        'nome': 'Juros Recebidos de Cliente',
-                        'nome': 'Rendimento de Aplicações',
-                        'nome': 'Processos de Cobrança Otimizado',
-                        'nome': 'Estoques Mínimos',
-                        'nome': 'Prazos de Pagamentos Renegociados',
+                        'Planejamento de Caixa Futuro',
+                        'Análise do Ponto de Equilíbrio',
+                        'Aporte de Capital',
+                        'Empréstimos e Financiamentos',
+                        'Vendas à Vista / Prazos Reduzidos',
+                        'Juros Recebidos de Cliente',
+                        'Rendimento de Aplicações',
+                        'Processos de Cobrança Otimizado',
+                        'Estoques Mínimos',
+                        'Prazos de Pagamentos Renegociados',
                     ],
                     'nota': 0
-                },
-                {
-                    'nome': 'Promover melhoria de desempenho',
-                    'subitems': [
-                        'nome': 'Planejamento de Caixa Futuro',
-                    ],
-                    'nota': 0
-                },
+                }
             ],
             value: 10,
             completed: 0
         };
     }
 
+    renderSubItems = (item) => {
+        return item.map((subitem, key) => {
+            return <div className="item" key={`item-${key}`}>
+                {subitem}
+            </div>
+        })
+    }
+
     renderItems = () => {
         return this.state.items.map((item, key) => {
+            return <div key={`key-${key}`}>
+                    <div className="content-header" >
+                        <h3><span className="prioridade primeira"></span>{item.nome}</h3>
+                    </div>
 
+                    <div className="content-body">
+                        { this.renderSubItems(item.subitems) }
+                    </div>
+                </div>
         })
     }
 
@@ -64,14 +73,8 @@ class AnalisePage extends Component {
                         }}>
                         <div className="next main-btn"></div>
                     </Link>
-                    <div className="content-header">
-                        <h3><span className="prioridade primeira"></span>Gerenciar Custo e Fluxo de Caixa</h3>
-                    </div>
 
-                    <div className="content-body">
-                        <div className="item">Estoques Mínimos</div>
-                        <div className="item">Prazos de Pagamentos Renegociados</div>
-                    </div>
+                    { this.renderItems() }
                 </div>
 
                 <div className="lighgray-bg radial-bg">

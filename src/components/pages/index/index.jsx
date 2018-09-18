@@ -49,7 +49,13 @@ class IndexPage extends Component {
                     <Input value={this.state.email} name="email" placeholder="E-mail" type="email" onChange={this.handleChange} />
                 </div>
 
-                <Link to="/posicionamento-estrategico/quiz" className={`begin-btn main-btn  ${this.state.email == '' ? 'disabled' : ''}`}>Começar</Link>
+                <Link to={{
+                        pathname: "/posicionamento-estrategico/quiz",
+                        state: {
+                            value: this.state.email
+                        }
+                    }}
+                    className={`begin-btn main-btn  ${this.state.email == '' ? 'disabled' : ''}`}>Começar</Link>
             </div>
         );
     }
