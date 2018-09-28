@@ -85,7 +85,7 @@ class AnalisePage extends Component {
                             maxValue={100}
                             minValue={0}
                             value={this.state.value}
-                            onChange={value => this.setState({ value })}
+                            onChange={value => this.setState({ value: value })}
                         />
                 </div>
 

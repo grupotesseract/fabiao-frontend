@@ -10,13 +10,24 @@ class IndexPage extends Component {
         super(props);
 
         this.state = {
-            email: ''
+            email: '',
+            perguntas: [],
+            showInstallMessage: false
         }
-        console.log(this);
     }
 
-    componentWillMount() {
-        // this.props.requestHome();
+    componentWillMount(){
+        // pega os dados da API referente às perguntas (proxima tela)
+        // TODO: fazer isso via redux
+        fetch('https://cors-anywhere.herokuapp.com/https://3d.grupotesseract.com.br/api/perguntas')
+        .then(results => {
+            return results.json();
+        }).then(data => {
+            let perguntasObj = data.map((pergunta) => {
+                return pergunta;
+            });
+            this.setState({perguntas: perguntasObj});
+        });
     }
 
     componentDidMount() {
@@ -38,7 +49,7 @@ class IndexPage extends Component {
     };
 
     render() {
-
+        console.log(this.state.perguntas)
         return (
             <div className="content-wrapper begin-page">
                 <Header></Header>
@@ -60,16 +71,17 @@ class IndexPage extends Component {
                         ponto estratégico.
                     </p>
 
-                    <Input value={this.state.email} name="email" placeholder="E-mail" type="email" onChange={this.handleChange} />
+                    <Input value={this.state.email} name="email" placeholder="E-mail" className="default-input" type="email" onChange={this.handleChange} />
                 </div>
 
                 <Link to={{
                         pathname: "/posicionamento-estrategico/quiz",
                         state: {
-                            value: this.state.email
+                            email: this.state.email,
+                            perguntas: this.state.perguntas
                         }
                     }}
-                    className={`begin-btn main-btn  ${this.state.email == '' ? 'disabled' : ''}`}>Começar</Link>
+                    className={`begin-btn main-btn  ${( this.state.email == '' && this.state.perguntas.length === 0 ) ? 'disabled' : ''}`}>Começar</Link>
             </div>
         );
     }

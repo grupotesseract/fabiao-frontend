@@ -1,6 +1,7 @@
 body {
     margin: 0;
     font-family: $main-font;
+    background-color: $pe-lightgray;
 
     .content-wrapper {
         width: 100vw;
@@ -124,7 +125,7 @@ body {
         .progress-bar {
             position: absolute;
             width: 88vw;
-            bottom: 2.5vh;
+            bottom: 1vh;
             left: 6vw;
             display: flex;
             justify-content: center;
@@ -143,10 +144,19 @@ body {
                 }
             }
         }
+        .default-input {
+            min-height: 32px;
+        }
+        .loading-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 40vh;
+        }
         &.begin-page {
             .radial-bg {
                 &.green-bg {
-                    height: 40vh;
+                    height: 44vh;
 
                     p {
                         padding-right: 80px;
@@ -157,7 +167,7 @@ body {
                     }
                 }
                 &.lighgray-bg {
-                    height: 31.3vh;
+                    height: 27vh;
 
                     &:before {
                         transform: none;
@@ -167,9 +177,11 @@ body {
         }
         // QUIZ
         &.quiz-page {
+            background-color: $pe-lightgray;
+
             .radial-bg {
                 &.lighgray-bg {
-                    height: 47.5vh;
+                    height: 46.3vh;
                     // padding-top: 145px;
 
                     &:before {
@@ -184,7 +196,7 @@ body {
                     width: 100%;
 
                     &:first-of-type {
-                        margin-bottom: 0;
+                        margin-bottom: 20px;
                         font-size: 17px;
                     }
                     &:nth-child(2) {
@@ -194,6 +206,12 @@ body {
                 }
             }
 
+            .question-wrapper {
+                .question-text {
+                    max-width: 245px;
+                    height: 95px;
+                }
+            }
             #question-3 {
                 .question-box-container {
                     .question-box {
@@ -242,11 +260,12 @@ body {
                     .info-box {
                         background-color: #fff;
                         padding: 10px 5px;
-                        min-height: 55px;
+                        height: 60px;
+                        overflow-y: auto;
 
                         p {
                             margin: 0;
-                            font-size: 9px;
+                            font-size: 11px;
                         }
                     }
                 }
@@ -418,8 +437,8 @@ body {
         &.detalhes-page, &.analise-resultado {
             .radial-bg {
                 &.green-bg, &.lighgray-bg {
-                    height: 77.5vh;
-                    padding-top: 4vh;
+                    height: 78.5vh;
+                    padding-top: 2vh;
                     z-index: 1;
 
                     &:before {
@@ -433,6 +452,7 @@ body {
                         text-transform: uppercase;
                         padding: 13px 0;
                         text-align: center;
+                        margin-top: 5px;
 
                         &.blue {
                             background-color: $pe-blue;
@@ -487,6 +507,7 @@ body {
             .radial-bg {
                 &.lighgray-bg {
                     height: 68.5vh;
+                    padding-top: 3vh;
 
                     &:before {
                         transform: skewY(0);
@@ -588,6 +609,9 @@ body {
                         }
                     }
                     .content-body {
+                        max-height: 52vh;
+                        overflow-y: auto;
+
                         .item {
                             background-color: rgba($pe-lightgray, .4);
                             color: $pe-darkgray;
@@ -777,6 +801,9 @@ body {
                     transform: skewY(-3deg);
                 }
             }
+            a {
+                display: inline-block;
+            }
             img {
                 position: relative;
                 z-index: 1;
@@ -865,7 +892,7 @@ body {
         .cubo-wrapper {
             width: 333px;
             position: absolute;
-            bottom: 20vh;
+            bottom: 10vh;
 
             .container {
         		width: 100%;
@@ -919,8 +946,8 @@ body {
                     &.top {
                         &.left {
                             // z-index: 1;
-                            left: 40.4%;
-                            top: -8%;
+                            left: 40%;
+                            top: -7.4%;
                         }
                         &.right {
                             top: 3.3%;

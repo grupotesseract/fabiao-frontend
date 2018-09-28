@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {connect} from 'react-redux';
 
 class ProgressBar extends Component {
     renderBars = () => {
@@ -8,7 +7,7 @@ class ProgressBar extends Component {
         for ( let i = 0; i < this.props.number; i++ ) {
             let classBars = 'item';
 
-            if ( i == this.props.completed ) {
+            if ( i === this.props.completed ) {
                 classBars = 'item completed';
             }
 
