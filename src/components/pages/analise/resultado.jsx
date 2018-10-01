@@ -10,13 +10,61 @@ class AnaliseResultado extends Component {
     constructor(props) {
         super(props);
 
-        console.log(this.props);
+        this.state = {
+            items: this.props.location.state.items,
+            secoes: [
+                {
+                    nome: 'Reduzir custos e investimentos'
+                },
+                {
+                    nome: 'Realocar recursos para as atividades core'
+                }
+            ]
+        }
+    }
+
+    renderItems = () => {
+        return this.state.items.map((item, key) => {
+            const rangeStyle = {
+                width: (100 - item.nota) + '%'
+            };
+            const tempStyle = {
+                width: '100%'
+            }
+
+            return <div className="sub-item" key={`key-${key}`}>
+                <p><span className={`prioridade ${item.prioridade == 1 ? `primeira` : `segunda`}`}></span> { item.nome }</p>
+                <div className="nota-wrapper">
+                    <InputRange
+                        className="range-slider"
+                        maxValue={100}
+                        minValue={0}
+                        value={ item.nota }
+                        onChange={ () => { return } }
+                        />
+                    <div className="nota" style={rangeStyle}></div>
+                </div>
+            </div>
+        })
+    }
+
+    renderSecoes = () => {
+        return this.state.secoes.map((secao, key) => {
+            return <div className="item" key={`key-${key}`}>
+                <div className="item-header">
+                    <h4>{ secao.nome }</h4>
+                </div>
+                <div className="item-content">
+                    { this.renderItems() }
+                </div>
+            </div>
+        })
     }
 
     render() {
 
         const rangeStyle = {
-            width: (100 - this.props.location.state.value) + '%'
+            width: (100 - this.state.items.length) + '%'
         };
         const tempStyle = {
             width: '100%'
@@ -34,81 +82,7 @@ class AnaliseResultado extends Component {
                     </div>
 
                     <div className="items-wrapper">
-                        <div className="item">
-                            <div className="item-header">
-                                <h4>Reduzir custos e investimentos</h4>
-                            </div>
-                            <div className="item-content">
-                                <div className="sub-item">
-                                    <p><span className="prioridade primeira"></span> Gerenciar custos e o fluxo de caixa</p>
-                                    <div className="nota-wrapper">
-                                        <InputRange
-                                            className="range-slider"
-                                            maxValue={100}
-                                            minValue={0}
-                                            value={100}
-                                            />
-                                        <div className="nota" style={rangeStyle}></div>
-                                    </div>
-                                </div>
-                                <div className="sub-item">
-                                    <p><span className="prioridade primeira"></span> Promover melhoria de desempenho</p>
-                                        <div className="nota-wrapper">
-                                            <InputRange
-                                                className="range-slider"
-                                                maxValue={100}
-                                                minValue={0}
-                                                value={100}
-                                                />
-                                            <div className="nota" style={tempStyle}></div>
-                                        </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="item">
-                            <div className="item-header">
-                                <h4>Realocar recusros para as atividades core</h4>
-                            </div>
-                            <div className="item-content">
-                                <div className="sub-item">
-                                    <p><span className="prioridade segunda"></span> Revisitar a estratégica: escolher onde e como vencer</p>
-                                        <div className="nota-wrapper">
-                                            <InputRange
-                                                className="range-slider"
-                                                maxValue={100}
-                                                minValue={0}
-                                                value={100}
-                                                />
-                                            <div className="nota" style={tempStyle}></div>
-                                        </div>
-                                </div>
-                                <div className="sub-item">
-                                    <p><span className="prioridade segunda"></span> Fidelizar os clientes chave</p>
-                                        <div className="nota-wrapper">
-                                            <InputRange
-                                                className="range-slider"
-                                                maxValue={100}
-                                                minValue={0}
-                                                value={100}
-                                                />
-                                            <div className="nota" style={tempStyle}></div>
-                                        </div>
-                                </div>
-                                <div className="sub-item">
-                                    <p><span className="prioridade primeira"></span> Desfazer-se de ativos não core</p>
-                                        <div className="nota-wrapper">
-                                            <InputRange
-                                                className="range-slider"
-                                                maxValue={100}
-                                                minValue={0}
-                                                value={100}
-                                                />
-                                            <div className="nota" style={tempStyle}></div>
-                                        </div>
-                                </div>
-                            </div>
-                        </div>
+                        { this.renderSecoes() }
                     </div>
                 </div>
 

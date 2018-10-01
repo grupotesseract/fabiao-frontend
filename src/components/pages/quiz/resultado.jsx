@@ -5,9 +5,15 @@ import {Link} from 'react-router-dom';
 
 class QuizResultado extends Component {
 
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            resultado: 'Reabastecer o tanque'
+        }
+    }
+
     render() {
-
-
         return (
             <div className="content-wrapper resultado-page">
                 <Header />
@@ -24,7 +30,12 @@ class QuizResultado extends Component {
                     </div>
                 </div>
 
-                <Link to="/posicionamento-estrategico/quiz/detalhes" className="main-btn yellow">
+                <Link to={{
+                        pathname: "/posicionamento-estrategico/quiz/detalhes",
+                        state: {
+                            resultado: this.state.resultado
+                        }
+                    }} className="main-btn yellow">
                     Veja as melhores ações para sua empresa
                 </Link>
             </div>

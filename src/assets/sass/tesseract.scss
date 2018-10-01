@@ -419,7 +419,7 @@ body {
                                 background-color: $pe-red;
                             }
                             p {
-                                color: white;
+                                // color: white;
                                 font-weight: 900;
                                 font-size: 26px;
                                 text-transform: uppercase;
@@ -506,8 +506,9 @@ body {
         &.analise-resultado {
             .radial-bg {
                 &.lighgray-bg {
-                    height: 68.5vh;
+                    height: 74.5vh;
                     padding-top: 3vh;
+                    padding-bottom: 3vh;
 
                     &:before {
                         transform: skewY(0);
@@ -515,7 +516,15 @@ body {
                 }
             }
             .items-wrapper {
+                height: 95%;
+                overflow-y: auto;
+
                 .item {
+                    .item-header {
+                        h4 {
+                            color: $pe-darkgray;
+                        }
+                    }
                     .sub-item {
                         position: relative;
 
@@ -691,7 +700,7 @@ body {
             .radial-bg {
                 &.lighgray-bg {
                     height: 100vh;
-                    padding-top: 8vh;
+                    padding-top: 4vh;
 
                     & > * {
                         z-index: 1;
@@ -702,6 +711,7 @@ body {
                         align-items: center;
                         justify-content: center;
                         padding: 10px;
+                        margin: 2px auto;
 
                         .logo-wrapper {
                             .logo {
@@ -711,6 +721,7 @@ body {
                         }
                         .card-info {
                             text-align: center;
+                            width: 205px;
 
                             p {
                                 margin: 0;
@@ -728,6 +739,12 @@ body {
                                 display: flex;
                                 align-items: center;
                                 justify-content: center;
+
+                                img {
+                                    width: 12px;
+                                    vertical-align: middle;
+                                    margin-right: 3px;
+                                }
                             }
                             a {
                                 color: $pe-darkgray;

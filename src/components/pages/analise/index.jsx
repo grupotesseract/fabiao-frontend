@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import NomeAppImg from '../../../assets/img/nome_app.png';
 import Header from '../header';
-import {Link} from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import InputRange from 'react-input-range';
 import ProgressBar from '../../progressbar';
 import 'react-input-range/lib/css/index.css';
@@ -27,11 +27,44 @@ class AnalisePage extends Component {
                         'Estoques Mínimos',
                         'Prazos de Pagamentos Renegociados',
                     ],
-                    'nota': 0
+                    'nota': 0,
+                    'prioridade': 1
+                },
+                {
+                    'nome': 'Promover melhoria de desempenho',
+                    'subitems': [
+
+                    ],
+                    'nota': 0,
+                    'prioridade': 1
+                },
+                {
+                    'nome': 'Revisitar a estretégia: escolher onde e como vencer',
+                    'subitems': [
+                        ,
+                    ],
+                    'nota': 0,
+                    'prioridade': 2
+                },
+                {
+                    'nome': 'Fidelizar os clientes chave',
+                    'subitems': [
+                        ,
+                    ],
+                    'nota': 0,
+                    'prioridade': 2
+                },
+                {
+                    'nome': 'Desfazer-se de ativos não core',
+                    'subitems': [
+                        ,
+                    ],
+                    'nota': 0,
+                    'prioridade': 1
                 }
             ],
-            value: 10,
-            completed: 0
+            completed: 0,
+            redirect: false
         };
     }
 
@@ -45,9 +78,9 @@ class AnalisePage extends Component {
 
     renderItems = () => {
         return this.state.items.map((item, key) => {
-            return <div key={`key-${key}`}>
+            return <div className={( key != this.state.completed ) ? `hidden` : ``} key={`key-${key}`}>
                     <div className="content-header" >
-                        <h3><span className="prioridade primeira"></span>{item.nome}</h3>
+                        <h3><span className={`prioridade ${item.prioridade == 1 ? `primeira` : `segunda`}`}></span>{item.nome}</h3>
                     </div>
 
                     <div className="content-body">
@@ -57,22 +90,52 @@ class AnalisePage extends Component {
         })
     }
 
-    render() {
+    renderSlider = () => {
+        let indexKey = this.state.completed,
+            itemUpdate = this.state.items;
 
+        return <InputRange
+            className="range-slider"
+            maxValue={100}
+            minValue={0}
+            value={itemUpdate[indexKey].nota}
+            onChange={value => {
+                itemUpdate[indexKey].nota = value
+                this.setState({ items: itemUpdate })
+            } }
+        />
+    }
+
+    changeIniciativa = () => {
+        let atualAtivo = this.state.completed + 1;
+
+        if ( atualAtivo === this.state.items.length ) {
+            this.setState({
+                redirect: true
+            })
+        } else {
+            this.setState({
+                completed: atualAtivo
+            });
+        }
+    }
+
+    render() {
+        if ( this.state.redirect ) {
+            return <Redirect push to={{
+                    pathname: "/posicionamento-estrategico/analise/resultado",
+                    state: {
+                        items: this.state.items
+                    }
+                }} />
+        }
 
         return (
             <div className="content-wrapper analise-page">
                 <Header></Header>
 
                 <div className="green-bg radial-bg">
-                    <Link to={{
-                            pathname: "/posicionamento-estrategico/analise/resultado",
-                            state: {
-                                value: this.state.value
-                            }
-                        }}>
-                        <div className="next main-btn"></div>
-                    </Link>
+                    <div className="next main-btn" onClick={ () => this.changeIniciativa() }></div>
 
                     { this.renderItems() }
                 </div>
@@ -80,13 +143,7 @@ class AnalisePage extends Component {
                 <div className="lighgray-bg radial-bg">
                     <p>Qual o grau de <span>prioridade</span> que você considera sua empresa em relação aos itens acima?</p>
 
-                        <InputRange
-                            className="range-slider"
-                            maxValue={100}
-                            minValue={0}
-                            value={this.state.value}
-                            onChange={value => this.setState({ value: value })}
-                        />
+                        { this.renderSlider() }
                 </div>
 
                 <ProgressBar number="5" completed={this.state.completed} />
