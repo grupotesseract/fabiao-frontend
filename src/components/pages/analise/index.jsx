@@ -33,7 +33,9 @@ class AnalisePage extends Component {
                 {
                     'nome': 'Promover melhoria de desempenho',
                     'subitems': [
-
+                        'Planejamento de Caixa Futuro',
+                        'Análise do Ponto de Equilíbrio',
+                        'Aporte de Capital',
                     ],
                     'nota': 0,
                     'prioridade': 1
@@ -41,7 +43,9 @@ class AnalisePage extends Component {
                 {
                     'nome': 'Revisitar a estretégia: escolher onde e como vencer',
                     'subitems': [
-                        ,
+                        'Planejamento de Caixa Futuro',
+                        'Análise do Ponto de Equilíbrio',
+                        'Aporte de Capital',
                     ],
                     'nota': 0,
                     'prioridade': 2
@@ -49,7 +53,9 @@ class AnalisePage extends Component {
                 {
                     'nome': 'Fidelizar os clientes chave',
                     'subitems': [
-                        ,
+                        'Planejamento de Caixa Futuro',
+                        'Análise do Ponto de Equilíbrio',
+                        'Aporte de Capital',
                     ],
                     'nota': 0,
                     'prioridade': 2
@@ -57,7 +63,9 @@ class AnalisePage extends Component {
                 {
                     'nome': 'Desfazer-se de ativos não core',
                     'subitems': [
-                        ,
+                        'Planejamento de Caixa Futuro',
+                        'Análise do Ponto de Equilíbrio',
+                        'Aporte de Capital',
                     ],
                     'nota': 0,
                     'prioridade': 1

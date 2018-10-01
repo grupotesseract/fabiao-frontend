@@ -3,7 +3,7 @@
   "short_name": " ",
   "description": "Projeto Posicionamento Estratégico desenvolvido em ReactJS",
   "scope": ".",
-  "start_url": "/",
+  "start_url": "/posicionamento-estrategico",
   "display": "standalone",
   "orientation": "portrait",
   "theme_color": "#ffffff",
