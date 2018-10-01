@@ -16,6 +16,7 @@ class QuizPage extends Component {
             completed: 0,
             perguntas: (typeof this.props.location.state !== 'undefined') ? this.props.location.state.perguntas : []
         };
+        console.log(this.state.completed)
     }
 
     render() {
@@ -24,7 +25,7 @@ class QuizPage extends Component {
                 <Header />
 
                 <div className="green-bg radial-bg">
-                    <PerguntasItem ativo={0} perguntas={this.state.perguntas} />
+                    <PerguntasItem ativo={this.state.completed} perguntas={this.state.perguntas} />
                 </div>
 
                 <div className="lighgray-bg radial-bg">

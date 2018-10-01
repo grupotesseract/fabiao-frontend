@@ -11,7 +11,41 @@ class IndexPage extends Component {
 
         this.state = {
             email: '',
-            perguntas: [],
+            perguntas: [
+                {
+                    "id": 1,
+                    "texto_pergunta": "Qual a situação financeira da sua Empresa?",
+                    "texto_resposta_1": "Forte",
+                    "texto_resposta_2": "Fraca",
+                    "descritivo_resposta_1": "Capital de giro é financiado exclusivamente com capital próprio e gerado pela operação principal do negócio e o fluxo de caixa é positivo honrando seus compromissos em dia através da geração de Lucro e Valor.",
+                    "descritivo_resposta_2": "Sua empresa depende de financiamentos periódicos tanto de terceiros como bancos ou fornecedores ou dos recursos dos sócios vindos de outras fontes.",
+                    "created_at": "2018-09-24 22:46:19",
+                    "updated_at": "2018-09-24 22:46:19",
+                    "deleted_at": null
+                },
+                {
+                    "id": 1,
+                    "texto_pergunta": "Como você considera o posicionamento estratégico da sua empresa no mercado ?",
+                    "texto_resposta_1": "Forte",
+                    "texto_resposta_2": "Fraco",
+                    "descritivo_resposta_1": "~Empresas de turismo ou veículos novos que podem ser afetados significativamente pela crise",
+                    "descritivo_resposta_2": "~Empresas do setor de alimentação básica, assim como de medicamentos são menos afetadas pela crise",
+                    "created_at": "2018-09-24 22:46:20",
+                    "updated_at": "2018-09-24 22:46:20",
+                    "deleted_at": null
+                },
+                {
+                    "id": 1,
+                    "texto_pergunta": "Considerando o Setor de atuação da sua empresa, qual o grau de exposição dela frente a crises?",
+                    "texto_resposta_1": "Maior",
+                    "texto_resposta_2": "Menor",
+                    "descritivo_resposta_1": "Empresas de turismo ou veículos novos que podem ser afetados significativamente pela crise",
+                    "descritivo_resposta_2": "Empresas do setor de alimentação básica, assim como de medicamentos são menos afetadas pela crise",
+                    "created_at": "2018-09-24 22:46:19",
+                    "updated_at": "2018-09-24 22:46:19",
+                    "deleted_at": null
+                }
+            ],
             showInstallMessage: false
         }
     }
@@ -19,15 +53,15 @@ class IndexPage extends Component {
     componentWillMount(){
         // pega os dados da API referente às perguntas (proxima tela)
         // TODO: fazer isso via redux
-        fetch('https://cors-anywhere.herokuapp.com/https://3d.grupotesseract.com.br/api/perguntas')
-        .then(results => {
-            return results.json();
-        }).then(data => {
-            let perguntasObj = data.map((pergunta) => {
-                return pergunta;
-            });
-            this.setState({perguntas: perguntasObj});
-        });
+        // fetch('https://cors-anywhere.herokuapp.com/https://3d.grupotesseract.com.br/api/perguntas')
+        // .then(results => {
+        //     return results.json();
+        // }).then(data => {
+        //     let perguntasObj = data.map((pergunta) => {
+        //         return pergunta;
+        //     });
+        //     this.setState({perguntas: perguntasObj});
+        // });
     }
 
     componentDidMount() {

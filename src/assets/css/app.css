@@ -389,7 +389,7 @@ body {
                 background: linear-gradient(to right, #cb151a, #f7e83a, #55af38); }
           body .content-wrapper.analise-resultado .items-wrapper .item .sub-item .nota-wrapper .nota {
             background-color: #494644;
-            height: 5px;
+            height: 4px;
             position: absolute;
             top: 0;
             right: 0; }
