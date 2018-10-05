@@ -419,7 +419,7 @@ body {
                                 background-color: $pe-red;
                             }
                             p {
-                                // color: white;
+                                color: white;
                                 font-weight: 900;
                                 font-size: 26px;
                                 text-transform: uppercase;
@@ -491,6 +491,7 @@ body {
                                     height: 30px;
                                     background-color: rgba(white, .4);
                                     font-size: 11px;
+                                    color: $pe-darkgray;
                                 }
                             }
                         }

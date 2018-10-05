@@ -12,53 +12,48 @@ class AnaliseResultado extends Component {
 
         this.state = {
             items: this.props.location.state.items,
-            secoes: [
-                {
-                    nome: 'Reduzir custos e investimentos'
-                },
-                {
-                    nome: 'Realocar recursos para as atividades core'
-                }
-            ]
+            secoes: this.props.location.state.secoes
         }
     }
 
-    renderItems = () => {
-        return this.state.items.map((item, key) => {
-            const rangeStyle = {
-                width: (100 - item.nota) + '%'
-            };
-            const tempStyle = {
-                width: '100%'
-            }
+    renderItems = (descritivo_pai) => {
+        return this.state.items.map((iniciativa, key) => {
+            if ( iniciativa.pai === descritivo_pai) {
+                const rangeStyle = {
+                    width: (100 - iniciativa.nota) + '%'
+                };
+                const tempStyle = {
+                    width: '100%'
+                }
 
-            return <div className="sub-item" key={`key-${key}`}>
-                <p><span className={`prioridade ${item.prioridade == 1 ? `primeira` : `segunda`}`}></span> { item.nome }</p>
-                <div className="nota-wrapper">
-                    <InputRange
-                        className="range-slider"
-                        maxValue={100}
-                        minValue={0}
-                        value={ item.nota }
-                        onChange={ () => { return } }
-                        />
-                    <div className="nota" style={rangeStyle}></div>
+                return <div className="sub-item" key={`iniciativa-${key}`}>
+                    <p><span className={`prioridade ${iniciativa.prioridade === 1 ? `primeira` : `segunda`}`}></span> { iniciativa.nome }</p>
+                    <div className="nota-wrapper">
+                        <InputRange
+                            className="range-slider"
+                            maxValue={100}
+                            minValue={0}
+                            value={ iniciativa.nota }
+                            onChange={ () => { return } }
+                            />
+                        <div className="nota" style={rangeStyle}></div>
+                    </div>
                 </div>
-            </div>
-        })
+            }
+        });
     }
 
     renderSecoes = () => {
         return this.state.secoes.map((secao, key) => {
-            return <div className="item" key={`key-${key}`}>
-                <div className="item-header">
-                    <h4>{ secao.nome }</h4>
-                </div>
-                <div className="item-content">
-                    { this.renderItems() }
-                </div>
-            </div>
-        })
+            return <div className="item" key={`secao-${key}`}>
+                   <div className="item-header">
+                       <h4>{ secao }</h4>
+                   </div>
+                   <div className="item-content">
+                       { this.renderItems(secao) }
+                   </div>
+               </div>
+        });
     }
 
     render() {

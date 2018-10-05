@@ -115,7 +115,7 @@ class IndexPage extends Component {
                             perguntas: this.state.perguntas
                         }
                     }}
-                    className={`begin-btn main-btn  ${( this.state.email == '' && this.state.perguntas.length === 0 ) ? 'disabled' : ''}`}>Começar</Link>
+                    className={`begin-btn main-btn  ${( this.state.email === '' || this.state.perguntas.length === 0 ) ? 'disabled' : ''}`}>Começar</Link>
             </div>
         );
     }

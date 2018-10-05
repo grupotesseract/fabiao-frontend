@@ -308,6 +308,7 @@ body {
           body .content-wrapper.resultado-page .radial-bg.lighgray-bg .perfil-resultado .perfil-cube.red {
             background-color: #cb151a; }
           body .content-wrapper.resultado-page .radial-bg.lighgray-bg .perfil-resultado .perfil-cube p {
+            color: white;
             font-weight: 900;
             font-size: 26px;
             text-transform: uppercase;
@@ -354,7 +355,8 @@ body {
       body .content-wrapper.detalhes-page .radial-bg.green-bg .items-wrapper .item .item-content p, body .content-wrapper.detalhes-page .radial-bg.lighgray-bg .items-wrapper .item .item-content p, body .content-wrapper.analise-resultado .radial-bg.green-bg .items-wrapper .item .item-content p, body .content-wrapper.analise-resultado .radial-bg.lighgray-bg .items-wrapper .item .item-content p {
         height: 30px;
         background-color: rgba(255, 255, 255, 0.4);
-        font-size: 11px; }
+        font-size: 11px;
+        color: #494644; }
     body .content-wrapper.detalhes-page .main-btn, body .content-wrapper.analise-resultado .main-btn {
       height: 5.5vh;
       z-index: 2;
