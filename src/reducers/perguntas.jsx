@@ -1,18 +1,11 @@
 import {
-    FETCH_HOME,
-    REQUEST_LOADING_HOME,
-    REQUEST_REJECTED_HOME
-} from '../actions/home/action';
+    FETCH_PERGUNTAS,
+    REQUEST_LOADING_PERGUNTAS,
+    REQUEST_REJECTED_PERGUNTAS
+} from '../actions/perguntas/action';
 
 const INITIAL_STATE = {
-    nome: '',
-    email: '',
-    endereco: '',
-    numero: '',
-    bairro: '',
-    cep: '',
-    dt_nascimento: '',
-    cpf: '',
+    perguntas: [],
     fetching: false,
     fetched: false,
     error: null,
@@ -20,30 +13,23 @@ const INITIAL_STATE = {
 
 export default function (state = INITIAL_STATE, action) {
     switch (action.type) {
-        case REQUEST_LOADING_HOME:
+        case REQUEST_LOADING_PERGUNTAS:
             return {
                 ...state,
                 fetching: true,
                 fetched: INITIAL_STATE.fetched
             };
-        case REQUEST_REJECTED_HOME:
+        case REQUEST_REJECTED_PERGUNTAS:
             return {
                 ...state,
                 fetching: INITIAL_STATE.fetching,
                 fetched: INITIAL_STATE.fetched,
                 error: action.payload
             };
-        case FETCH_HOME:
+        case FETCH_PERGUNTAS:
             return {
                 ...state,
-                nome: action.payload.nome,
-                email: action.payload.email,
-                endereco: action.payload.endereco,
-                numero: action.payload.numero,
-                bairro: action.payload.bairro,
-                cep: action.payload.cep,
-                dt_nascimento: action.payload.dt_nascimento,
-                cpf: action.payload.cpf,
+                perguntas: action.payload,
                 fetching: INITIAL_STATE.fetching,
                 fetched: true
             };

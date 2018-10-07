@@ -14,6 +14,9 @@ class QuizResultado extends Component {
     }
 
     render() {
+        const { cuboRetorno } = this.props;
+        console.log(cuboRetorno)
+
         return (
             <div className="content-wrapper resultado-page">
                 <Header />
@@ -25,7 +28,7 @@ class QuizResultado extends Component {
 
                     <div className="perfil-resultado">
                         <div className="perfil-cube blue">
-                            <p>Reabastecer o tanque</p>
+                            <p>{cuboRetorno.descritivo}</p>
                         </div>
                     </div>
                 </div>
@@ -43,4 +46,10 @@ class QuizResultado extends Component {
     }
 }
 
-export default (QuizResultado);
+function mapStateToProps(state) {
+    return {
+        cuboRetorno: state.cubo.cuboRetorno
+    }
+}
+
+export default connect(mapStateToProps)(QuizResultado);

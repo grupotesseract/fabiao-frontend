@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
+import { sendRespostasCubo } from '../../../actions/cubo';
 import {Link, Redirect} from 'react-router-dom';
 
 class PerguntasItem extends Component {
@@ -10,30 +11,35 @@ class PerguntasItem extends Component {
             perguntas: this.props.perguntas,
             respostas: {
                 'resposta_ec': '',
-                'resposta_pe': '' ,
+                'resposta_pe': '',
                 'resposta_pf': ''
             },
             itemAtivo: this.props.ativo,
-            redirect: false
+            requesting: false
         }
     }
 
     mudaPergunta = (numeroPergunta, valor) => {
         let atualAtivo = this.state.itemAtivo + 1,
             respostaKeys = Object.keys(this.state.respostas), // pega as chaves das respostas
-            respostaObj = this.state.respostas;
+            respostasObj = this.state.respostas;
 
-        respostaObj[respostaKeys[numeroPergunta]] = valor.toLowerCase(); // pega a chave de acordo com a pergunta e grava a resposta nela
+        respostasObj[respostaKeys[numeroPergunta]] = valor.toLowerCase(); // pega a chave de acordo com a pergunta e grava a resposta nela
 
         // atualiza o estado das respostas
         this.setState({
-            respostas: respostaObj
+            respostas: respostasObj
         });
 
         if ( atualAtivo === this.state.perguntas.length ) {
-            this.setState({
-                redirect: true
-            })
+            this.setState({ requesting: true });
+
+            respostasObj = {
+                'resposta_ec': 'menor',
+                'resposta_pe': 'forte',
+                'resposta_pf': 'fraca'
+            }
+            this.props.sendRespostasCubo( respostasObj );
         } else {
             this.setState({
                 itemAtivo: atualAtivo
@@ -86,18 +92,35 @@ class PerguntasItem extends Component {
     }
 
     render() {
-        if ( this.state.redirect ) {
+        const { error, success } = this.props;
+
+        if ( success === true ) {
             return <Redirect push to="/posicionamento-estrategico/quiz/resultado" />
         }
 
-        return (
-            <div className="question-wrapper">
-                { this.renderPerguntas(this.state.itemAtivo) }
-
-                { this.renderRespostas(this.state.itemAtivo) }
+        if ( this.state.requesting === true ) {
+            return <div className="loading-wrapper">
+                <svg width="135px"  height="135px"  xmlns="https://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" className="lds-double-ring"><circle cx="50" cy="50" fill="none" strokeLinecap="round" r="40" strokeWidth="4" stroke="#4c59a4" strokeDasharray="62.83185307179586 62.83185307179586" transform="rotate(335.943 50 50)"><animateTransform attributeName="transform" type="rotate" calcMode="linear" values="0 50 50;360 50 50" keyTimes="0;1" dur="1s" begin="0s" repeatCount="indefinite"></animateTransform></circle><circle cx="50" cy="50" fill="none" strokeLinecap="round" r="35" strokeWidth="4" stroke="#cb151a" strokeDasharray="54.97787143782138 54.97787143782138" strokeDashoffset="54.97787143782138" transform="rotate(-335.943 50 50)"><animateTransform attributeName="transform" type="rotate" calcMode="linear" values="0 50 50;-360 50 50" keyTimes="0;1" dur="1s" begin="0s" repeatCount="indefinite"></animateTransform></circle></svg>
             </div>
-        );
+        } else {
+            return (
+                <div className="question-wrapper">
+                    { this.renderPerguntas(this.state.itemAtivo) }
+
+                    { this.renderRespostas(this.state.itemAtivo) }
+                </div>
+            );
+        }
     }
 }
 
-export default (PerguntasItem);
+function mapStateToProps(state) {
+    return {
+        requesting: state.cubo.requesting,
+        error: state.cubo.error,
+        success: state.cubo.success,
+        cuboRetorno: state.cubo.cuboRetorno
+    }
+}
+
+export default connect(mapStateToProps, {sendRespostasCubo})(PerguntasItem);

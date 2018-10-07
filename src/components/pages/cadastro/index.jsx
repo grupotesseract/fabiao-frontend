@@ -21,6 +21,8 @@ class IndexPage extends Component {
     };
 
     render() {
+        const { dados } = this.props;
+
         return (
             <div className="content-wrapper cadastro-page">
                 <Header></Header>
@@ -36,7 +38,7 @@ class IndexPage extends Component {
 
                     <div className="formulario-cadastro">
                         <Input className="cadastro-fields col-md-12" name="nome" value={this.state.nome} placeholder="Nome" onChange={this.handleChange} />
-                        <Input className="cadastro-fields col-md-12" name="email" value={this.state.email} placeholder="E-mail" onChange={this.handleChange} />
+                        <Input className="cadastro-fields col-md-12" name="email" value={dados.email} placeholder="E-mail" onChange={this.handleChange} />
                         <Input className="cadastro-fields col-md-6" name="cep" value={this.state.cep} placeholder="CEP" onChange={this.handleChange} />
                         <Input className="cadastro-fields col-md-6" name="bairro" value={this.state.bairro} placeholder="Bairro" onChange={this.handleChange} />
                         <Input className="cadastro-fields col-md-8" name="endereco" value={this.state.endereco} placeholder="Endereco" onChange={this.handleChange} />
@@ -54,4 +56,10 @@ class IndexPage extends Component {
     }
 }
 
-export default (IndexPage);
+const mapStateProps = (state) => {
+    return {
+        dados: state.index
+    }
+}
+
+export default connect(mapStateProps)(IndexPage);
