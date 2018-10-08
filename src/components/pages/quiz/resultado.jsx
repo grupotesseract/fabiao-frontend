@@ -15,7 +15,6 @@ class QuizResultado extends Component {
 
     render() {
         const { cuboRetorno } = this.props;
-        console.log(cuboRetorno)
 
         return (
             <div className="content-wrapper resultado-page">
@@ -46,7 +45,7 @@ class QuizResultado extends Component {
     }
 }
 
-function mapStateToProps(state) {
+const mapStateToProps = (state) => {
     return {
         cuboRetorno: state.cubo.cuboRetorno
     }

@@ -504,6 +504,12 @@ body {
                 padding-top: 5vh;
             }
         }
+        &.detalhes-page {
+            .items-wrapper {
+                height: 58vh;
+                overflow-y: auto;
+            }
+        }
         &.analise-resultado {
             .radial-bg {
                 &.lighgray-bg {

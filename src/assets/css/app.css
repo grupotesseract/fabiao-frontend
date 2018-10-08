@@ -361,6 +361,9 @@ body {
       height: 5.5vh;
       z-index: 2;
       padding-top: 5vh; }
+    body .content-wrapper.detalhes-page .items-wrapper {
+      height: 58vh;
+      overflow-y: auto; }
     body .content-wrapper.analise-resultado .radial-bg.lighgray-bg {
       height: 74.5vh;
       padding-top: 3vh;

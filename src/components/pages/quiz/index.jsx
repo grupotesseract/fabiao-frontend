@@ -44,7 +44,6 @@ class QuizPage extends Component {
                 </div>
             )
         } else {
-            console.log(this.state.completed);
             return (
                 <div className="content-wrapper quiz-page">
                     <Header />

@@ -57,20 +57,14 @@ class AnaliseResultado extends Component {
     }
 
     render() {
-
-        const rangeStyle = {
-            width: (100 - this.state.items.length) + '%'
-        };
-        const tempStyle = {
-            width: '100%'
-        }
+        const { cuboRetorno } = this.props;
 
         return (
             <div className="content-wrapper analise-resultado">
                 <Header />
 
                 <div className="lighgray-bg radial-bg">
-                    <h1 className="detalhe-header blue">Reabastecer o tanque</h1>
+                    <h1 className="detalhe-header blue">{cuboRetorno.descritivo}</h1>
                     <div className="legenda">
                         <p><span className="prioridade primeira"></span>1ª prioridade</p>
                         <p><span className="prioridade segunda"></span>2ª prioridade</p>
@@ -89,4 +83,10 @@ class AnaliseResultado extends Component {
     }
 }
 
-export default (AnaliseResultado);
+const mapStateToProps = (state) => {
+    return {
+        cuboRetorno: this.props
+    }
+}
+
+export default connect(mapStateToProps)(AnaliseResultado);
