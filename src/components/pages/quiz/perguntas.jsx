@@ -10,9 +10,9 @@ class PerguntasItem extends Component {
         this.state = {
             perguntas: this.props.perguntas,
             respostas: {
+                'resposta_ec': '',
                 'resposta_pf': '',
-                'resposta_pe': '',
-                'resposta_ec': ''
+                'resposta_pe': ''
             },
             itemAtivo: this.props.ativo,
             requesting: false
