@@ -30,7 +30,7 @@ class AnaliseAgradecimentoPage extends Component {
                 'nascimento': dateCadastro,
                 'cpf': dados.cpf,
                 'itemId': cuboRetorno.id,
-                'preco': '9'
+                'preco': '9.90'
             };
 
         this.props.sendDadosCadastro( cadastro );
@@ -52,23 +52,25 @@ class AnaliseAgradecimentoPage extends Component {
                 <div className="radial-bg lighgray-bg">
                     <p className="download-text">Receba o arquivo com as especificações das suas próximas ações.</p>
 
-                <div className="download-btn-container">
-                    { /*
-                    <Link to="/posicionamento-estrategico/contato" className="download-btn">
-                        <img src="https://res.cloudinary.com/hugo-cicarelli/image/upload/v1535416240/download-icon.png" alt="download icon"/>
-                        Fazer o download
-                    </Link>
-                    <Link to="/posicionamento-estrategico/contato" className="download-btn">
-                        <img src="https://res.cloudinary.com/hugo-cicarelli/image/upload/v1535416240/email-icon.png" alt="send to email icon"/>
-                        Enviar por e-mail
-                    </Link>
-                    <Link to="/posicionamento-estrategico/contato" className="download-btn center">
-                    </Link>
-                    */ }
-                    <div id="goto" className="download-btn" onClick={ () => { this.dadosToPagSeguro(); } }>
-                        <img src="https://res.cloudinary.com/hugo-cicarelli/image/upload/v1535416240/email-icon.png" alt="send to email icon"/> Finalizar  Pagamento
+                    <p>Por apenas R$9,90 você terá acesso às melhores ações para sua empresa.</p>
+
+                    <div className="download-btn-container">
+                        { /*
+                        <Link to="/posicionamento-estrategico/contato" className="download-btn">
+                            <img src="https://res.cloudinary.com/hugo-cicarelli/image/upload/v1535416240/download-icon.png" alt="download icon"/>
+                            Fazer o download
+                        </Link>
+                        <Link to="/posicionamento-estrategico/contato" className="download-btn">
+                            <img src="https://res.cloudinary.com/hugo-cicarelli/image/upload/v1535416240/email-icon.png" alt="send to email icon"/>
+                            Enviar por e-mail
+                        </Link>
+                        <Link to="/posicionamento-estrategico/contato" className="download-btn center">
+                        </Link>
+                        */ }
+                        <div id="goto" className="download-btn" onClick={ () => { this.dadosToPagSeguro(); } }>
+                            <img src="https://res.cloudinary.com/hugo-cicarelli/image/upload/v1535416240/email-icon.png" alt="send to email icon"/> Finalizar  Pagamento
+                        </div>
                     </div>
-                </div>
                 </div>
             </div>
         );
@@ -76,9 +78,11 @@ class AnaliseAgradecimentoPage extends Component {
 }
 
 const mapStateToProps = (state) => {
+    console.log(state);
     return {
         dados: state.index,
-        cuboRetorno: state.cubo.cuboRetorno
+        cuboRetorno: state.cubo.cuboRetorno,
+        // pagSeguro: state.cadastro.retornoPagSeguro
     }
 }
 

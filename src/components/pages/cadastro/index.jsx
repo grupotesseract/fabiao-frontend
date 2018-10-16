@@ -49,7 +49,7 @@ class IndexPage extends Component {
                     <p>Preencha os campos abaixo</p>
 
                     <div className="formulario-cadastro">
-                        <Input className="cadastro-fields col-md-12" name="nome" value={dados.nome} placeholder="Nome" onChange={this.handleChange} />
+                        <Input className="cadastro-fields col-md-12" name="nome" value={dados.nome} placeholder="Nome Completo" onChange={this.handleChange} />
                         <Input className="cadastro-fields col-md-12" name="email" value={dados.email} placeholder="E-mail" onChange={this.handleChange} />
                         <Input className="cadastro-fields col-md-8" name="endereco" value={dados.endereco} placeholder="Endereco" onChange={this.handleChange} />
                         <Input className="cadastro-fields col-md-4" name="numero" value={dados.numero} placeholder="Número" onChange={this.handleChange} />
