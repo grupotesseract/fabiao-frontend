@@ -30,13 +30,33 @@ class AnaliseAgradecimentoPage extends Component {
                 'nascimento': dateCadastro,
                 'cpf': dados.cpf,
                 'itemId': cuboRetorno.id,
-                'preco': '9.90'
+                'preco': '9'
             };
+
+        cadastro = {
+            'nome': 'Hugo Cicarelli',
+            'email': 'teste@tesseract.com',
+            'endereco': 'Rua',
+            'numero': '2',
+            'bairro': 'Vila',
+            'cidade': 'Bauru',
+            'estado': 'SP',
+            'cep': '17012140',
+            'nascimento': '27/04/2005',
+            'cpf': '414.614.490-65',
+            'itemId': 9,
+            'preco': '9'
+        };
 
         this.props.sendDadosCadastro( cadastro );
     }
 
     render() {
+        const { pagSeguro } = this.props;
+
+        if ( pagSeguro !== '' ) {
+            window.location.href = pagSeguro
+        }
 
         return (
             <div className="content-wrapper agradecimento-page">
@@ -68,7 +88,7 @@ class AnaliseAgradecimentoPage extends Component {
                         </Link>
                         */ }
                         <div id="goto" className="download-btn" onClick={ () => { this.dadosToPagSeguro(); } }>
-                            <img src="https://res.cloudinary.com/hugo-cicarelli/image/upload/v1535416240/email-icon.png" alt="send to email icon"/> Finalizar  Pagamento
+                            <img src="https://res.cloudinary.com/hugo-cicarelli/image/upload/v1539659827/credit-cards.png" alt="send to email icon"/> Finalizar  Pagamento
                         </div>
                     </div>
                 </div>
@@ -78,11 +98,10 @@ class AnaliseAgradecimentoPage extends Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state);
     return {
         dados: state.index,
         cuboRetorno: state.cubo.cuboRetorno,
-        // pagSeguro: state.cadastro.retornoPagSeguro
+        pagSeguro: state.cadastro.retornoPagSeguro
     }
 }
 

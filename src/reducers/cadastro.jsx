@@ -2,13 +2,13 @@ import {
     REQUEST_LOADING_CADASTRO,
     REQUEST_REJECTED_CADASTRO,
     REQUEST_FULFILLED_CADASTRO
-} from '../actions/cubo/action';
+} from '../actions/cadastro/action';
 
 const INITIAL_STATE = {
     requesting: false,
     error: false,
     success: false,
-    retornoPagSeguro: []
+    retornoPagSeguro: ''
 };
 
 export default function (state = INITIAL_STATE, action) {

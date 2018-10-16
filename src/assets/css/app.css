@@ -475,24 +475,28 @@ body {
       body .content-wrapper.agradecimento-page .radial-bg.lighgray-bg .download-text {
         font-size: 18px;
         padding-right: 95px;
-        margin-bottom: 40px; }
+        margin-bottom: 0; }
       body .content-wrapper.agradecimento-page .radial-bg.lighgray-bg .download-btn-container {
-        display: flex; }
+        display: flex;
+        justify-content: center;
+        margin-top: 10px; }
         body .content-wrapper.agradecimento-page .radial-bg.lighgray-bg .download-btn-container .download-btn {
           background-color: #9B9998;
           margin: 0 5px;
           color: #fff;
           text-decoration: none;
-          padding: 25px 30px 15px;
+          padding: 15px 20px;
           text-align: center;
           font-weight: 700;
           font-size: 17px;
           line-height: 17px;
-          box-shadow: -3px 3px 15px 0 rgba(0, 0, 0, 0.4); }
+          box-shadow: -3px 3px 15px 0 rgba(0, 0, 0, 0.4);
+          display: flex;
+          align-items: center; }
           body .content-wrapper.agradecimento-page .radial-bg.lighgray-bg .download-btn-container .download-btn img {
             height: 40px;
             display: block;
-            margin: 0 auto 10px; }
+            margin: 0 10px 0 0; }
     body .content-wrapper.contato-page .radial-bg.lighgray-bg {
       height: 100vh;
       padding-top: 4vh; }

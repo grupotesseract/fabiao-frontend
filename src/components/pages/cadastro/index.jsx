@@ -28,8 +28,6 @@ class IndexPage extends Component {
         this.setState({ [event.target.name]: event.target.value });
 
         dados[event.target.name] = event.target.value;
-
-        console.log(dados);
     };
 
     render() {
