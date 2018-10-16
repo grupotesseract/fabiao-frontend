@@ -13,6 +13,8 @@ const INITIAL_STATE = {
     cep: '',
     dt_nascimento: '',
     cpf: '',
+    cidade: '',
+    estado: '',
     fetching: false,
     fetched: false,
     error: null,

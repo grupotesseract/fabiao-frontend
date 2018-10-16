@@ -6,24 +6,33 @@ import { sendDadosCadastro } from '../../../actions/cadastro';
 
 class AnaliseAgradecimentoPage extends Component {
 
+    convertDate = (inputFormat) => {
+        let pad = (s) => {
+            return (s < 10) ? '0' + s : s;
+        }
+        var d = new Date(inputFormat);
+        return [pad(d.getDate()), pad(d.getMonth()+1), d.getFullYear()].join('/');
+    }
+
     dadosToPagSeguro = () => {
         const { dados, cuboRetorno } = this.props;
 
-        let cadastro = {
-            'nome': dados.nome,
-            'email': dados.email,
-            'endereco': dados.endereco,
-            'numero': dados.numero,
-            'bairro': dados.bairro,
-            'cidade': dados.cidade,
-            'estado': dados.estado,
-            'cep': dados.cep,
-            'nascimento': dados.dtnascimento,
-            'cpf': dados.cpf,
-            'itemId': cuboRetorno.id,
-            'preco': '9'
-        };
-        
+        let dateCadastro = this.convertDate(dados.dt_nascimento),
+            cadastro = {
+                'nome': dados.nome,
+                'email': dados.email,
+                'endereco': dados.endereco,
+                'numero': dados.numero,
+                'bairro': dados.bairro,
+                'cidade': dados.cidade,
+                'estado': dados.estado,
+                'cep': dados.cep,
+                'nascimento': dateCadastro,
+                'cpf': dados.cpf,
+                'itemId': cuboRetorno.id,
+                'preco': '9'
+            };
+
         this.props.sendDadosCadastro( cadastro );
     }
 

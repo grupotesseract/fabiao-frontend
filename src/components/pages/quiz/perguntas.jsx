@@ -59,7 +59,7 @@ class PerguntasItem extends Component {
                             <div className="question-box">
                                 <div className="quiz-answer-btn" onClick={ () => this.mudaPergunta(this, key, item.texto_resposta_1) }>
                                     <div className="red-bg question-header">
-                                        <h3>{item.texto_resposta_1} <span>exposição</span></h3>
+                                        <h3>{item.texto_resposta_1} <span></span></h3>
                                     </div>
                                     <div className="info-box">
                                         <p className="red-text">{item.descritivo_resposta_1}</p>
@@ -70,7 +70,7 @@ class PerguntasItem extends Component {
                             <div className="question-box">
                                 <div className="quiz-answer-btn" onClick={ () => this.mudaPergunta(this, key, item.texto_resposta_2) }>
                                     <div className="blue-bg question-header">
-                                        <h3>{item.texto_resposta_2} <span>exposição</span></h3>
+                                        <h3>{item.texto_resposta_2} <span></span></h3>
                                     </div>
                                     <div className="info-box">
                                         <p className="blue-text">{item.descritivo_resposta_2}</p>
