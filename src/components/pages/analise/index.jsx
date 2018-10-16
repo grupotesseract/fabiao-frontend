@@ -21,6 +21,8 @@ class AnalisePage extends Component {
         let notasArr = this.state.iniciativaNotas,
             secoesArr = this.state.iniciativasPai;
 
+        console.log(props);
+
         if ( props.cuboRetorno.length !== 0 ) {
             props.cuboRetorno.textos_iniciativa.map((item, key) => {
                 notasArr.push({
@@ -134,7 +136,7 @@ class AnalisePage extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        cuboRetorno: this.props
+        cuboRetorno: state.cubo.cuboRetorno
     }
 }
 

@@ -58,6 +58,7 @@ class AnaliseResultado extends Component {
 
     render() {
         const { cuboRetorno } = this.props;
+        console.log(cuboRetorno)
 
         return (
             <div className="content-wrapper analise-resultado">
@@ -85,7 +86,7 @@ class AnaliseResultado extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        cuboRetorno: this.props
+        cuboRetorno: state.cubo.cuboRetorno
     }
 }
 

@@ -2,11 +2,32 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import Header from '../header';
 import {Link} from 'react-router-dom';
+import { sendDadosCadastro } from '../../../actions/cadastro';
 
 class AnaliseAgradecimentoPage extends Component {
 
-    render() {
+    dadosToPagSeguro = () => {
+        const { dados, cuboRetorno } = this.props;
 
+        let cadastro = {
+            'nome': dados.nome,
+            'email': dados.email,
+            'endereco': dados.endereco,
+            'numero': dados.numero,
+            'bairro': dados.bairro,
+            'cidade': dados.cidade,
+            'estado': dados.estado,
+            'cep': dados.cep,
+            'nascimento': dados.dtnascimento,
+            'cpf': dados.cpf,
+            'itemId': cuboRetorno.id,
+            'preco': '9'
+        };
+        
+        this.props.sendDadosCadastro( cadastro );
+    }
+
+    render() {
 
         return (
             <div className="content-wrapper agradecimento-page">
@@ -32,10 +53,12 @@ class AnaliseAgradecimentoPage extends Component {
                         <img src="https://res.cloudinary.com/hugo-cicarelli/image/upload/v1535416240/email-icon.png" alt="send to email icon"/>
                         Enviar por e-mail
                     </Link>
-                    */ }
                     <Link to="/posicionamento-estrategico/contato" className="download-btn center">
-                        <img src="https://res.cloudinary.com/hugo-cicarelli/image/upload/v1535416240/email-icon.png" alt="send to email icon"/> Finalizar  Pagamento
                     </Link>
+                    */ }
+                    <div id="goto" className="download-btn" onClick={ () => { this.dadosToPagSeguro(); } }>
+                        <img src="https://res.cloudinary.com/hugo-cicarelli/image/upload/v1535416240/email-icon.png" alt="send to email icon"/> Finalizar  Pagamento
+                    </div>
                 </div>
                 </div>
             </div>
@@ -43,4 +66,11 @@ class AnaliseAgradecimentoPage extends Component {
     }
 }
 
-export default (AnaliseAgradecimentoPage);
+const mapStateToProps = (state) => {
+    return {
+        dados: state.index,
+        cuboRetorno: state.cubo.cuboRetorno
+    }
+}
+
+export default connect(mapStateToProps, {sendDadosCadastro})(AnaliseAgradecimentoPage);

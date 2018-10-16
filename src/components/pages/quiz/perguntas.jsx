@@ -10,16 +10,16 @@ class PerguntasItem extends Component {
         this.state = {
             perguntas: this.props.perguntas,
             respostas: {
-                'resposta_ec': '',
+                'resposta_pf': '',
                 'resposta_pe': '',
-                'resposta_pf': ''
+                'resposta_ec': ''
             },
             itemAtivo: this.props.ativo,
             requesting: false
         }
     }
 
-    mudaPergunta = (numeroPergunta, valor) => {
+    mudaPergunta = (elemento, numeroPergunta, valor) => {
         let atualAtivo = this.state.itemAtivo + 1,
             respostaKeys = Object.keys(this.state.respostas), // pega as chaves das respostas
             respostasObj = this.state.respostas;
@@ -34,11 +34,6 @@ class PerguntasItem extends Component {
         if ( atualAtivo === this.state.perguntas.length ) {
             this.setState({ requesting: true });
 
-            respostasObj = {
-                'resposta_ec': 'menor',
-                'resposta_pe': 'forte',
-                'resposta_pf': 'fraca'
-            }
             this.props.sendRespostasCubo( respostasObj );
         } else {
             this.setState({
@@ -62,7 +57,7 @@ class PerguntasItem extends Component {
             return this.state.perguntas.map((item, key) => {
                 return <div id={`answer-${key}`} className={( key !== itemAtivo ) ? `question-box-container hidden` : `question-box-container`} key={`resposta-${key}`}>
                             <div className="question-box">
-                                <div className="quiz-answer-btn" onClick={ () => this.mudaPergunta(key, item.texto_resposta_1) }>
+                                <div className="quiz-answer-btn" onClick={ () => this.mudaPergunta(this, key, item.texto_resposta_1) }>
                                     <div className="red-bg question-header">
                                         <h3>{item.texto_resposta_1} <span>exposição</span></h3>
                                     </div>
@@ -73,7 +68,7 @@ class PerguntasItem extends Component {
                             </div>
 
                             <div className="question-box">
-                                <div className="quiz-answer-btn" onClick={ () => this.mudaPergunta(key, item.texto_resposta_2) }>
+                                <div className="quiz-answer-btn" onClick={ () => this.mudaPergunta(this, key, item.texto_resposta_2) }>
                                     <div className="blue-bg question-header">
                                         <h3>{item.texto_resposta_2} <span>exposição</span></h3>
                                     </div>

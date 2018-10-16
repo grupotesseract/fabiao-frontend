@@ -37,7 +37,6 @@ class ContatoPage extends Component {
                                 <img src={ phoneIcon } alt=""/>
                                 <a href="tel:14981264466">14 98126 4466</a>
                             </div>
-                            <a href="mailto:norberto@3dfinancialacademy.com.br">norberto@3dfinancialacademy.com.br</a>
                             <a target="_blank" href="http://www.3dfinancialacademy.com.br" className="website">www.3dfinancialacademy.com.br</a>
                         </div>
                     </div>
@@ -54,7 +53,6 @@ class ContatoPage extends Component {
                                 <img src={ phoneIcon } alt=""/>
                                 <a href="tel:14981448114">14 98144 8114</a>
                             </div>
-                            <a href="mailto:ricardo@planegi.com.br">ricardo@planegi.com.br</a>
                             <a target="_blank" href="http://www.planegi.com.br" className="website">www.planegi.com.br</a>
                         </div>
                     </div>
@@ -71,7 +69,6 @@ class ContatoPage extends Component {
                                 <img src={ phoneIcon } alt=""/>
                                 <a href="tel:11999192655">11 99919 2655</a>
                             </div>
-                            <a href="mailto:helcio@hondaconsulting.com.br">helcio@hondaconsulting.com.br</a>
                             <a target="_blank" href="http://www.hondaconsulting.com.br" className="website">www.hondaconsulting.com.br</a>
                         </div>
                     </div>
