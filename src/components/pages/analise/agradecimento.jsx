@@ -33,21 +33,6 @@ class AnaliseAgradecimentoPage extends Component {
                 'preco': '9'
             };
 
-        cadastro = {
-            'nome': 'Hugo Cicarelli',
-            'email': 'teste@tesseract.com',
-            'endereco': 'Rua',
-            'numero': '2',
-            'bairro': 'Vila',
-            'cidade': 'Bauru',
-            'estado': 'SP',
-            'cep': '17012140',
-            'nascimento': '27/04/2005',
-            'cpf': '414.614.490-65',
-            'itemId': 9,
-            'preco': '9'
-        };
-
         this.props.sendDadosCadastro( cadastro );
     }
 
