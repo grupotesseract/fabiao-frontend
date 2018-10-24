@@ -228,20 +228,20 @@ body {
                 flex-direction: row;
 
                 .question-box {
-                    width: calc(50% - 3px);
+                    width: calc(50% - 10px);
 
                     &:first-of-type {
-                        margin-right: 3px;
+                        margin-right: 10px;
                     }
                     &:last-of-type {
-                        margin-left: 3px;
+                        margin-left: 10px;
                     }
                     a {
                         text-decoration: none;
                         color: inherit;
                     }
                     .question-header {
-                        height: 100px;
+                        height: 80px;
                         display: flex;
                         align-items: center;
                         justify-content: center;
@@ -277,7 +277,7 @@ body {
                     padding-top: 4vh;
                     padding-bottom: 2vh;
                     z-index: 3;
-                    height: 24vh;
+                    height: 18vh;
 
                     .blue-text {
                         text-transform: uppercase;
@@ -299,7 +299,7 @@ body {
                     }
                 }
                 &.green-bg {
-                    height: 43.4vh;
+                    height: 49.4vh;
                     padding-top: 25px;
                     top: -5.5vh;
                     z-index: 2;
@@ -436,16 +436,24 @@ body {
         }
         &.detalhes-page, &.analise-resultado {
             .radial-bg {
+                > * {
+                    z-index: 0;
+                }
+                &.green-bg {
+                    &:before {
+                        z-index: 0;
+                    }
+                }
                 &.green-bg, &.lighgray-bg {
                     height: 78.5vh;
                     padding-top: 2vh;
-                    z-index: 1;
+                    z-index: 0;
 
                     &:before {
                         height: 101%;
                     }
                     .detalhe-header {
-                        z-index: 3;
+                        z-index: 0;
                         background-color: $pe-lightgray;
                         font-size: 17px;
                         font-weight: 900;
@@ -477,7 +485,7 @@ body {
                         .item {
                             .item-header {
                                 position: relative;
-                                z-index: 1;
+                                z-index: 0;
                                 font-size: 17px;
                                 font-weight: 900;
 
@@ -1005,6 +1013,36 @@ body {
                     }
                 }
                 &.blue {
+                    &.low-opacity {
+                        &.back-role {
+                            .side {
+                                &.front {
+                                    background-color: #5D76C6;
+                                }
+                                &.right {
+                                    background-color: #8497D3;
+                                }
+                                &.top {
+                                    background-color: #A0B2E0;
+                                }
+                            }
+                        }
+                    }
+                    &.not-this {
+                        &.first-role {
+                            .side {
+                                &.front {
+                                    background-color: #5D76C6;
+                                }
+                                &.right {
+                                    background-color: #8497D3;
+                                }
+                                &.top {
+                                    background-color: #A0B2E0;
+                                }
+                            }
+                        }
+                    }
                     .side {
                         &.front {
                             background-color: #4C59A4;
@@ -1018,6 +1056,36 @@ body {
                     }
                 }
                 &.red {
+                    &.low-opacity {
+                        &.back-role {
+                            .side {
+                                &.front {
+                                    background-color: #C43F55;
+                                }
+                                &.right {
+                                    background-color: #EA7A82;
+                                }
+                                &.top {
+                                    background-color: #F4A6B4;
+                                }
+                            }
+                        }
+                    }
+                    &.not-this {
+                        &.first-role {
+                            .side {
+                                &.front {
+                                    background-color: #C43F55;
+                                }
+                                &.right {
+                                    background-color: #EA7A82;
+                                }
+                                &.top {
+                                    background-color: #F4A6B4;
+                                }
+                            }
+                        }
+                    }
                     .side {
                         &.front {
                             background-color: #CB151A;

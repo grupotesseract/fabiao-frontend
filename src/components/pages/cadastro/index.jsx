@@ -40,7 +40,9 @@ class IndexPage extends Component {
                 <div className="lighgray-bg radial-bg">
                     <h3 className="blue-text">Agora você pode <span>aprofundar</span> ainda mais nas suas <span>iniciativas</span></h3>
 
-                    <p>Por apenas R$9,90 você terá acesso às melhores ações para sua empresa.</p>
+                    {/*
+                        <p>Por apenas R$9,90 você terá acesso às melhores ações para sua empresa.</p>
+                    */}
                 </div>
 
                 <div className="green-bg radial-bg">

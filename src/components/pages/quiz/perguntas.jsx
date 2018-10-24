@@ -15,15 +15,68 @@ class PerguntasItem extends Component {
                 'resposta_pe': ''
             },
             itemAtivo: this.props.ativo,
-            requesting: false
+            requesting: false,
+            cubeColor: ''
         }
     }
 
     mudaPergunta = (elemento, numeroPergunta, valor) => {
         let atualAtivo = this.state.itemAtivo + 1,
             respostaKeys = Object.keys(this.state.respostas), // pega as chaves das respostas
-            respostasObj = this.state.respostas;
+            respostasObj = this.state.respostas,
+            littleCubos = document.getElementsByClassName('cube');
 
+        // if ( this.state.cubeColor === '' ) {
+        if ( elemento.target.parentNode.classList.contains('red-bg') ) {
+            if ( numeroPergunta === 0 ) {
+                this.setState({ cubeColor: 'red' });
+
+                for ( let cubo in littleCubos ) {
+                    if ( typeof littleCubos[cubo].classList !== 'undefined' ) {
+                        littleCubos[cubo].classList.toggle('red');
+                        littleCubos[cubo].classList.toggle('blue');
+                        littleCubos[cubo].classList.add('low-opacity');
+                    }
+                }
+            } else if ( numeroPergunta === 1 ) {
+                for ( let cubo in littleCubos ) {
+                    if ( typeof littleCubos[cubo].classList !== 'undefined' && littleCubos[cubo].classList.contains('first-role') && littleCubos[cubo].classList.contains('right') ) {
+                        littleCubos[cubo].classList.add('not-this');
+                    }
+                }
+            } else if ( numeroPergunta == 2 ) {
+                for ( let cubo in littleCubos ) {
+                    if ( typeof littleCubos[cubo].classList !== 'undefined' && littleCubos[cubo].classList.contains('first-role') && littleCubos[cubo].classList.contains('top') ) {
+                        littleCubos[cubo].classList.add('not-this');
+                    }
+                }
+            }
+        } else {
+            if ( numeroPergunta === 0 ) {
+                this.setState({ cubeColor: 'blue' });
+
+                for ( let cubo in littleCubos ) {
+                    if ( typeof littleCubos[cubo].classList !== 'undefined' ) {
+                        littleCubos[cubo].classList.add('low-opacity');
+                    }
+                }
+            } else if ( numeroPergunta === 1 ) {
+                for ( let cubo in littleCubos ) {
+                    if ( typeof littleCubos[cubo].classList !== 'undefined' && littleCubos[cubo].classList.contains('first-role') && littleCubos[cubo].classList.contains('left') ) {
+                        littleCubos[cubo].classList.add('not-this');
+                    }
+                }
+            } else if ( numeroPergunta == 2 ) {
+                for ( let cubo in littleCubos ) {
+                    if ( typeof littleCubos[cubo].classList !== 'undefined' && littleCubos[cubo].classList.contains('first-role') && littleCubos[cubo].classList.contains('bottom') ) {
+                        littleCubos[cubo].classList.add('not-this');
+                    }
+                }
+            }
+        }
+        // }
+
+        // elemento.classList.toggle("blue");
         respostasObj[respostaKeys[numeroPergunta]] = valor.toLowerCase(); // pega a chave de acordo com a pergunta e grava a resposta nela
 
         // atualiza o estado das respostas
@@ -57,7 +110,7 @@ class PerguntasItem extends Component {
             return this.state.perguntas.map((item, key) => {
                 return <div id={`answer-${key}`} className={( key !== itemAtivo ) ? `question-box-container hidden` : `question-box-container`} key={`resposta-${key}`}>
                             <div className="question-box">
-                                <div className="quiz-answer-btn" onClick={ () => this.mudaPergunta(this, key, item.texto_resposta_1) }>
+                                <div className="quiz-answer-btn" onClick={ ( (event) => this.mudaPergunta(event, key, item.texto_resposta_1) ) }>
                                     <div className="red-bg question-header">
                                         <h3>{item.texto_resposta_1} <span></span></h3>
                                     </div>
@@ -68,7 +121,7 @@ class PerguntasItem extends Component {
                             </div>
 
                             <div className="question-box">
-                                <div className="quiz-answer-btn" onClick={ () => this.mudaPergunta(this, key, item.texto_resposta_2) }>
+                                <div className="quiz-answer-btn" onClick={ (e) => this.mudaPergunta(e, key, item.texto_resposta_2) }>
                                     <div className="blue-bg question-header">
                                         <h3>{item.texto_resposta_2} <span></span></h3>
                                     </div>
@@ -90,7 +143,12 @@ class PerguntasItem extends Component {
         const { error, success } = this.props;
 
         if ( success === true ) {
-            return <Redirect push to="/posicionamento-estrategico/quiz/resultado" />
+            return <Redirect push to={{
+                    pathname: '/posicionamento-estrategico/quiz/resultado',
+                    state: {
+                        cubeColor: this.state.cubeColor
+                    }
+                }} />
         }
 
         if ( this.state.requesting === true ) {

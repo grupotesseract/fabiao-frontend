@@ -9,7 +9,8 @@ class QuizResultado extends Component {
         super(props);
 
         this.state = {
-            resultado: 'Reabastecer o tanque'
+            resultado: 'Reabastecer o tanque',
+            cubeColor: ( props.location.state.cubeColor !== '' ) ? props.location.state.cubeColor : 'blue'
         }
     }
 
@@ -26,7 +27,7 @@ class QuizResultado extends Component {
                     </h3>
 
                     <div className="perfil-resultado">
-                        <div className="perfil-cube blue">
+                        <div className={`${this.state.cubeColor} perfil-cube`}>
                             <p>{cuboRetorno.descritivo}</p>
                         </div>
                     </div>

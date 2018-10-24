@@ -30,7 +30,7 @@ class AnaliseAgradecimentoPage extends Component {
                 'nascimento': dateCadastro,
                 'cpf': dados.cpf,
                 'itemId': cuboRetorno.id,
-                'preco': '9'
+                'preco': '9.90'
             };
 
         this.props.sendDadosCadastro( cadastro );

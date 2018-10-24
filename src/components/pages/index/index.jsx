@@ -12,7 +12,7 @@ class IndexPage extends Component {
 
         this.state = {
             email: '',
-            showInstallMessage: false
+            // showInstallMessage: false
         }
     }
 

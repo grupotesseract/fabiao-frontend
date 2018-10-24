@@ -177,16 +177,16 @@ body {
         display: flex;
         flex-direction: row; }
         body .content-wrapper.quiz-page .question-box-container .question-box {
-          width: calc(50% - 3px); }
+          width: calc(50% - 10px); }
           body .content-wrapper.quiz-page .question-box-container .question-box:first-of-type {
-            margin-right: 3px; }
+            margin-right: 10px; }
           body .content-wrapper.quiz-page .question-box-container .question-box:last-of-type {
-            margin-left: 3px; }
+            margin-left: 10px; }
           body .content-wrapper.quiz-page .question-box-container .question-box a {
             text-decoration: none;
             color: inherit; }
           body .content-wrapper.quiz-page .question-box-container .question-box .question-header {
-            height: 100px;
+            height: 80px;
             display: flex;
             align-items: center;
             justify-content: center; }
@@ -209,7 +209,7 @@ body {
       padding-top: 4vh;
       padding-bottom: 2vh;
       z-index: 3;
-      height: 24vh; }
+      height: 18vh; }
       body .content-wrapper.cadastro-page .radial-bg.lighgray-bg .blue-text {
         text-transform: uppercase;
         font-size: 14px;
@@ -225,7 +225,7 @@ body {
         padding-right: 90px;
         margin-bottom: 0; }
     body .content-wrapper.cadastro-page .radial-bg.green-bg {
-      height: 43.4vh;
+      height: 49.4vh;
       padding-top: 25px;
       top: -5.5vh;
       z-index: 2; }
@@ -316,14 +316,18 @@ body {
             padding: 0 50px; }
     body .content-wrapper.resultado-page .main-btn {
       height: 7.5vh; }
+    body .content-wrapper.detalhes-page .radial-bg > *, body .content-wrapper.analise-resultado .radial-bg > * {
+      z-index: 0; }
+    body .content-wrapper.detalhes-page .radial-bg.green-bg:before, body .content-wrapper.analise-resultado .radial-bg.green-bg:before {
+      z-index: 0; }
     body .content-wrapper.detalhes-page .radial-bg.green-bg, body .content-wrapper.detalhes-page .radial-bg.lighgray-bg, body .content-wrapper.analise-resultado .radial-bg.green-bg, body .content-wrapper.analise-resultado .radial-bg.lighgray-bg {
       height: 78.5vh;
       padding-top: 2vh;
-      z-index: 1; }
+      z-index: 0; }
       body .content-wrapper.detalhes-page .radial-bg.green-bg:before, body .content-wrapper.detalhes-page .radial-bg.lighgray-bg:before, body .content-wrapper.analise-resultado .radial-bg.green-bg:before, body .content-wrapper.analise-resultado .radial-bg.lighgray-bg:before {
         height: 101%; }
       body .content-wrapper.detalhes-page .radial-bg.green-bg .detalhe-header, body .content-wrapper.detalhes-page .radial-bg.lighgray-bg .detalhe-header, body .content-wrapper.analise-resultado .radial-bg.green-bg .detalhe-header, body .content-wrapper.analise-resultado .radial-bg.lighgray-bg .detalhe-header {
-        z-index: 3;
+        z-index: 0;
         background-color: #dbdbdb;
         font-size: 17px;
         font-weight: 900;
@@ -346,7 +350,7 @@ body {
           font-weight: 100; }
       body .content-wrapper.detalhes-page .radial-bg.green-bg .items-wrapper .item .item-header, body .content-wrapper.detalhes-page .radial-bg.lighgray-bg .items-wrapper .item .item-header, body .content-wrapper.analise-resultado .radial-bg.green-bg .items-wrapper .item .item-header, body .content-wrapper.analise-resultado .radial-bg.lighgray-bg .items-wrapper .item .item-header {
         position: relative;
-        z-index: 1;
+        z-index: 0;
         font-size: 17px;
         font-weight: 900; }
         body .content-wrapper.detalhes-page .radial-bg.green-bg .items-wrapper .item .item-header h4, body .content-wrapper.detalhes-page .radial-bg.lighgray-bg .items-wrapper .item .item-header h4, body .content-wrapper.analise-resultado .radial-bg.green-bg .items-wrapper .item .item-header h4, body .content-wrapper.analise-resultado .radial-bg.lighgray-bg .items-wrapper .item .item-header h4 {
@@ -691,12 +695,36 @@ body {
           background-color: #D8D8D8; }
         body .content-wrapper .cubo-wrapper .cube.back-role .side.front {
           background-color: #C1C1C0; }
+        body .content-wrapper .cubo-wrapper .cube.blue.low-opacity.back-role .side.front {
+          background-color: #5D76C6; }
+        body .content-wrapper .cubo-wrapper .cube.blue.low-opacity.back-role .side.right {
+          background-color: #8497D3; }
+        body .content-wrapper .cubo-wrapper .cube.blue.low-opacity.back-role .side.top {
+          background-color: #A0B2E0; }
+        body .content-wrapper .cubo-wrapper .cube.blue.not-this.first-role .side.front {
+          background-color: #5D76C6; }
+        body .content-wrapper .cubo-wrapper .cube.blue.not-this.first-role .side.right {
+          background-color: #8497D3; }
+        body .content-wrapper .cubo-wrapper .cube.blue.not-this.first-role .side.top {
+          background-color: #A0B2E0; }
         body .content-wrapper .cubo-wrapper .cube.blue .side.front {
           background-color: #4C59A4; }
         body .content-wrapper .cubo-wrapper .cube.blue .side.right {
           background-color: #42519F; }
         body .content-wrapper .cubo-wrapper .cube.blue .side.top {
           background-color: #536AB1; }
+        body .content-wrapper .cubo-wrapper .cube.red.low-opacity.back-role .side.front {
+          background-color: #C43F55; }
+        body .content-wrapper .cubo-wrapper .cube.red.low-opacity.back-role .side.right {
+          background-color: #EA7A82; }
+        body .content-wrapper .cubo-wrapper .cube.red.low-opacity.back-role .side.top {
+          background-color: #F4A6B4; }
+        body .content-wrapper .cubo-wrapper .cube.red.not-this.first-role .side.front {
+          background-color: #C43F55; }
+        body .content-wrapper .cubo-wrapper .cube.red.not-this.first-role .side.right {
+          background-color: #EA7A82; }
+        body .content-wrapper .cubo-wrapper .cube.red.not-this.first-role .side.top {
+          background-color: #F4A6B4; }
         body .content-wrapper .cubo-wrapper .cube.red .side.front {
           background-color: #CB151A; }
         body .content-wrapper .cubo-wrapper .cube.red .side.right {
