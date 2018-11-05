@@ -255,6 +255,12 @@ body {
         padding: 0 4vw; }
         body .content-wrapper.cadastro-page .radial-bg.green-bg .formulario-cadastro .cadastro-fields:nth-child(even) {
           margin-left: 2vw; }
+        body .content-wrapper.cadastro-page .radial-bg.green-bg .formulario-cadastro .cadastro-fields.error {
+          background-color: rgba(203, 21, 26, 0.2); }
+          body .content-wrapper.cadastro-page .radial-bg.green-bg .formulario-cadastro .cadastro-fields.error:before, body .content-wrapper.cadastro-page .radial-bg.green-bg .formulario-cadastro .cadastro-fields.error:after {
+            border-color: #cb151a; }
+          body .content-wrapper.cadastro-page .radial-bg.green-bg .formulario-cadastro .cadastro-fields.error:focus:before, body .content-wrapper.cadastro-page .radial-bg.green-bg .formulario-cadastro .cadastro-fields.error:focus:after, body .content-wrapper.cadastro-page .radial-bg.green-bg .formulario-cadastro .cadastro-fields.error:hover:before, body .content-wrapper.cadastro-page .radial-bg.green-bg .formulario-cadastro .cadastro-fields.error:hover:after {
+            border-color: #cb151a; }
         body .content-wrapper.cadastro-page .radial-bg.green-bg .formulario-cadastro .cadastro-fields input {
           height: 20px; }
     body .content-wrapper.cadastro-page .main-btn {

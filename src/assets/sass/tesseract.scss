@@ -344,6 +344,18 @@ body {
                                 // width: 100%;
                                 // margin-left: 0;
                             }
+                            &.error {
+                                background-color: rgba($pe-red, .2);
+
+                                &:before, &:after {
+                                    border-color: $pe-red;
+                                }
+                                &:focus, &:hover {
+                                    &:before, &:after {
+                                        border-color: $pe-red;
+                                    }
+                                }
+                            }
                             input {
                                 height: 20px;
                             }

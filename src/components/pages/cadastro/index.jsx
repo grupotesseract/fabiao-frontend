@@ -24,12 +24,78 @@ class IndexPage extends Component {
             bairro: '',
             cidade: '',
             cpf: '',
-            formValid: false
+            isCPFValid: false,
+            isEmailValid: false,
+            isNomeCompleto: false,
+            isEnderecoCompleto: false
         }
+    }
+
+    validaCPF = (strCPF) => {
+        let Soma = 0;
+        let Resto;
+
+        if ( strCPF == "00000000000" )
+            return false;
+
+        for ( let i = 1; i <= 9; i++ ) {
+            Soma = Soma + parseInt(strCPF.substring(i-1, i)) * (11 - i);
+        }
+        Resto = (Soma * 10) % 11;
+
+        if ( (Resto == 10) || (Resto == 11) )  {
+            Resto = 0;
+        }
+        if ( Resto != parseInt(strCPF.substring(9, 10)) )  {
+            return false;
+        }
+
+        Soma = 0;
+        for ( let i = 1; i <= 10; i++ ) {
+            Soma = Soma + parseInt(strCPF.substring(i-1, i)) * (12 - i);
+        }
+        Resto = (Soma * 10) % 11;
+
+        if ( (Resto == 10) || (Resto == 11) ) {
+            Resto = 0;
+        }
+        if ( Resto != parseInt(strCPF.substring(10, 11)) ) {
+            return false;
+        }
+        return true;
     }
 
     handleChange = event => {
         const { dados } = this.props;
+
+        if ( event.target.name === 'nome' ) {
+
+            if ( event.target.value.indexOf(' ') > -1 ) {
+                this.setState({ isNomeCompleto: true })
+            }
+
+        } else if ( event.target.name === 'endereco' ) {
+
+            if ( event.target.value.indexOf(' ') > -1 ) {
+                this.setState({ isEnderecoCompleto: true })
+            }
+
+        } else if ( event.target.name === 'email' ) {
+
+            if ( event.target.value && /[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}/igm.test(event.target.value) ) {
+                this.setState({ isEmailValid: true })
+            }
+
+        } else if ( event.target.name === 'cpf' ) {
+
+            let cpfInput = event.target.value.split('.').join('');
+            cpfInput = cpfInput.split('-').join('');
+
+            if ( cpfInput.length === 11 ) {
+                this.setState({ isCPFValid: this.validaCPF(cpfInput) });
+            }
+
+        }
 
         this.setState({ [event.target.name]: event.target.value });
 
@@ -38,6 +104,7 @@ class IndexPage extends Component {
 
     render() {
         const { dados } = this.props;
+        console.log(this.state);
 
         return (
             <div className="content-wrapper cadastro-page">
@@ -55,9 +122,9 @@ class IndexPage extends Component {
                     <p>Preencha os campos abaixo</p>
 
                     <div className="formulario-cadastro">
-                        <Input className="cadastro-fields col-md-12" name="nome" value={dados.nome} placeholder="Nome Completo*" onChange={this.handleChange} />
-                        <Input className="cadastro-fields col-md-12" name="email" value={dados.email} placeholder="E-mail*" onChange={this.handleChange} />
-                        <Input className="cadastro-fields col-md-8" name="endereco" value={dados.endereco} placeholder="Endereco*" onChange={this.handleChange} />
+                        <Input className={`cadastro-fields col-md-12 ${(this.state.nome.length > 0 && !this.state.isNomeCompleto) ? 'error' : ''}`} name="nome" value={dados.nome} placeholder="Nome Completo*" onChange={this.handleChange} />
+                        <Input className={`cadastro-fields col-md-12 ${(this.state.email.length > 0 && !this.state.isEmailValid) ? 'error' : ''}`} name="email" value={dados.email} placeholder="E-mail*" onChange={this.handleChange} />
+                        <Input className={`cadastro-fields col-md-12 ${(this.state.endereco.length > 0 && !this.state.isEnderecoCompleto) ? 'error' : ''}`} name="endereco" value={dados.endereco} placeholder="Endereco*" onChange={this.handleChange} />
                         <Input className="cadastro-fields col-md-4" name="numero" value={dados.numero} placeholder="Número*" onChange={this.handleChange} />
                         <Input className="cadastro-fields col-md-6" name="cep" value={dados.cep} placeholder="CEP*" onChange={this.handleChange} />
                         <Input className="cadastro-fields col-md-6" name="bairro" value={dados.bairro} placeholder="Bairro*" onChange={this.handleChange} />
@@ -92,7 +159,7 @@ class IndexPage extends Component {
                             <MenuItem value="Tocantins">Tocantins</MenuItem>
                         </Select>
                         <Input className="cadastro-fields col-md-12" name="dt_nascimento" value={dados.dt_nascimento} placeholder="Data de Nascimento*" type="date" onChange={this.handleChange} />
-                        <Input className="cadastro-fields col-md-12" name="cpf" value={dados.cpf} placeholder="CPF*" onChange={this.handleChange} />
+                        <Input className={`cadastro-fields col-md-12 ${((this.state.cpf.length === 11 || this.state.cpf.length === 14) && !this.state.isCPFValid) ? 'error' : ''}`} name="cpf" value={dados.cpf} placeholder="CPF*" onChange={this.handleChange} />
                     </div>
                     <span className="warning-message">* Campos obrigatórios</span>
                 </div>
