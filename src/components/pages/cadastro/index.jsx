@@ -164,7 +164,9 @@ class IndexPage extends Component {
                     <span className="warning-message">* Campos obrigatórios</span>
                 </div>
 
-                <Link to="/posicionamento-estrategico/analise" className={`begin-btn main-btn ${( this.state.isCPFValid && this.state.isNomeCompleto && this.state.isEnderecoCompleto && this.state.isEmailValid ) ? '' : 'disabled'}`}>Começar</Link>
+                {/* <Link to="/posicionamento-estrategico/analise" className={`begin-btn main-btn ${( this.state.isCPFValid && this.state.isNomeCompleto && this.state.isEnderecoCompleto && this.state.isEmailValid ) ? '' : 'disabled'}`}>Começar</Link>
+                */ }
+                <Link to="/posicionamento-estrategico/analise" className={`begin-btn main-btn`}>Começar</Link>
 
                 <Link to="/posicionamento-estrategico/" className="begin-btn back-btn">Voltar para o início</Link>
             </div>
