@@ -22,6 +22,20 @@ body {
         .blue-text {
             color: $pe-blue;
         }
+        .error-message {
+            color: $pe-red;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 13px;
+            margin-top: 5px;
+        }
+        .warning-message {
+            color: black;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 12px;
+            margin-top: 5px;
+        }
         .prioridade {
             height: 100%;
             width: 15px;
@@ -719,7 +733,7 @@ body {
             .radial-bg {
                 &.lighgray-bg {
                     height: 100vh;
-                    padding-top: 4vh;
+                    padding-top: 6vh;
 
                     & > * {
                         z-index: 1;
@@ -804,6 +818,42 @@ body {
                             img {
                                 width: 40px;
                             }
+                        }
+                    }
+                }
+                &.green-bg {
+                    display: flex;
+                    flex-direction: column;
+                    // align-items: center;
+                    justify-content: left;
+                    padding-bottom: 15px;
+
+                    .col-md-12 {
+                        // width: 50%;
+
+                        p {
+                            font-size: 16px;
+                            padding-left: 5px;
+                        }
+                    }
+                    .download-btn {
+                        background-color: #9B9998;
+                        margin: 0 auto;
+                        color: #fff;
+                        text-decoration: none;
+                        padding: 15px 20px;
+                        text-align: center;
+                        font-weight: 700;
+                        font-size: 17px;
+                        line-height: 17px;
+                        box-shadow: -3px 3px 15px 0 rgba(black, .4);
+                        display: inline-flex;
+                        align-items: center;
+
+                        img {
+                            height: 20px;
+                            display: block;
+                            margin: 0 10px 0 0;
                         }
                     }
                 }

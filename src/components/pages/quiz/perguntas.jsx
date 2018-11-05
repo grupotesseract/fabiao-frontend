@@ -14,20 +14,20 @@ class PerguntasItem extends Component {
                 'resposta_pf': '',
                 'resposta_pe': ''
             },
-            itemAtivo: this.props.ativo,
+            ativo: this.props.ativo,
             requesting: false,
             cubeColor: ''
         }
     }
 
     mudaPergunta = (elemento, numeroPergunta, valor) => {
-        let atualAtivo = this.state.itemAtivo + 1,
+        let atualAtivo = this.state.ativo + 1,
             respostaKeys = Object.keys(this.state.respostas), // pega as chaves das respostas
             respostasObj = this.state.respostas,
             littleCubos = document.getElementsByClassName('cube');
 
         // if ( this.state.cubeColor === '' ) {
-        if ( elemento.target.parentNode.classList.contains('red-bg') ) {
+        if ( elemento.target.parentNode.classList.contains('red-bg') || elemento.target.classList.contains('red-bg') ) {
             if ( numeroPergunta === 0 ) {
                 this.setState({ cubeColor: 'red' });
 
@@ -90,14 +90,14 @@ class PerguntasItem extends Component {
             this.props.sendRespostasCubo( respostasObj );
         } else {
             this.setState({
-                itemAtivo: atualAtivo
+                ativo: atualAtivo
             });
         }
     }
 
-    renderPerguntas = (itemAtivo) => {
+    renderPerguntas = (ativo) => {
         return this.state.perguntas.map((item, key) => {
-            return <div id={`question-${key}`} className={( key !== itemAtivo ) ? `hidden` : ``} key={`pergunta-${key}`}>
+            return <div id={`question-${key}`} className={( key !== ativo ) ? `hidden` : ``} key={`pergunta-${key}`}>
                         <p className="question-text">
                             {item.texto_pergunta}
                         </p>
@@ -105,10 +105,10 @@ class PerguntasItem extends Component {
         })
     }
 
-    renderRespostas = (itemAtivo) => {
+    renderRespostas = (ativo) => {
         if ( this.state.perguntas.length > 0 ) {
             return this.state.perguntas.map((item, key) => {
-                return <div id={`answer-${key}`} className={( key !== itemAtivo ) ? `question-box-container hidden` : `question-box-container`} key={`resposta-${key}`}>
+                return <div id={`answer-${key}`} className={( key !== ativo ) ? `question-box-container hidden` : `question-box-container`} key={`resposta-${key}`}>
                             <div className="question-box">
                                 <div className="quiz-answer-btn" onClick={ ( (event) => this.mudaPergunta(event, key, item.texto_resposta_1) ) }>
                                     <div className="red-bg question-header">
@@ -158,9 +158,9 @@ class PerguntasItem extends Component {
         } else {
             return (
                 <div className="question-wrapper">
-                    { this.renderPerguntas(this.state.itemAtivo) }
+                    { this.renderPerguntas(this.state.ativo) }
 
-                    { this.renderRespostas(this.state.itemAtivo) }
+                    { this.renderRespostas(this.state.ativo) }
                 </div>
             );
         }

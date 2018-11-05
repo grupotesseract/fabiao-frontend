@@ -41,6 +41,18 @@ body {
       color: #cb151a; }
     body .content-wrapper .blue-text {
       color: #4c59a4; }
+    body .content-wrapper .error-message {
+      color: #cb151a;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 13px;
+      margin-top: 5px; }
+    body .content-wrapper .warning-message {
+      color: black;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 12px;
+      margin-top: 5px; }
     body .content-wrapper .prioridade {
       height: 100%;
       width: 15px;
@@ -503,7 +515,7 @@ body {
             margin: 0 10px 0 0; }
     body .content-wrapper.contato-page .radial-bg.lighgray-bg {
       height: 100vh;
-      padding-top: 4vh; }
+      padding-top: 6vh; }
       body .content-wrapper.contato-page .radial-bg.lighgray-bg > * {
         z-index: 1; }
       body .content-wrapper.contato-page .radial-bg.lighgray-bg .card {
@@ -562,6 +574,31 @@ body {
           text-align: center; }
           body .content-wrapper.contato-page .radial-bg.lighgray-bg .socail-medias .social-media img {
             width: 40px; }
+    body .content-wrapper.contato-page .radial-bg.green-bg {
+      display: flex;
+      flex-direction: column;
+      justify-content: left;
+      padding-bottom: 15px; }
+      body .content-wrapper.contato-page .radial-bg.green-bg .col-md-12 p {
+        font-size: 16px;
+        padding-left: 5px; }
+      body .content-wrapper.contato-page .radial-bg.green-bg .download-btn {
+        background-color: #9B9998;
+        margin: 0 auto;
+        color: #fff;
+        text-decoration: none;
+        padding: 15px 20px;
+        text-align: center;
+        font-weight: 700;
+        font-size: 17px;
+        line-height: 17px;
+        box-shadow: -3px 3px 15px 0 rgba(0, 0, 0, 0.4);
+        display: inline-flex;
+        align-items: center; }
+        body .content-wrapper.contato-page .radial-bg.green-bg .download-btn img {
+          height: 20px;
+          display: block;
+          margin: 0 10px 0 0; }
     body .content-wrapper .main-header {
       position: relative;
       z-index: 5;

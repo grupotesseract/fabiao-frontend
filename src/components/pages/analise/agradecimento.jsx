@@ -30,14 +30,14 @@ class AnaliseAgradecimentoPage extends Component {
                 'nascimento': dateCadastro,
                 'cpf': dados.cpf,
                 'itemId': cuboRetorno.id,
-                'preco': '9.90'
+                'preco': cuboRetorno.valor_compra
             };
 
         this.props.sendDadosCadastro( cadastro );
     }
 
     render() {
-        const { pagSeguro } = this.props;
+        const { pagSeguro, cuboRetorno } = this.props;
 
         if ( pagSeguro !== '' ) {
             window.location.href = pagSeguro
@@ -57,7 +57,7 @@ class AnaliseAgradecimentoPage extends Component {
                 <div className="radial-bg lighgray-bg">
                     <p className="download-text">Receba o arquivo com as especificações das suas próximas ações.</p>
 
-                    <p>Por apenas R$9,90 você terá acesso às melhores ações para sua empresa.</p>
+                    <p>Por apenas R${cuboRetorno.valor_compra} você terá acesso às melhores ações para sua empresa.</p>
 
                     <div className="download-btn-container">
                         { /*
@@ -70,10 +70,11 @@ class AnaliseAgradecimentoPage extends Component {
                             Enviar por e-mail
                         </Link>
                         <Link to="/posicionamento-estrategico/contato" className="download-btn center">
+                        <img src="https://res.cloudinary.com/hugo-cicarelli/image/upload/v1539659827/credit-cards.png" alt="send to email icon"/> Finalizar  Pagamento
                         </Link>
                         */ }
                         <div id="goto" className="download-btn" onClick={ () => { this.dadosToPagSeguro(); } }>
-                            <img src="https://res.cloudinary.com/hugo-cicarelli/image/upload/v1539659827/credit-cards.png" alt="send to email icon"/> Finalizar  Pagamento
+                            <img src="https://res.cloudinary.com/hugo-cicarelli/image/upload/v1539659827/credit-cards.png" alt="send to email icon"/> Finalizar  Compra
                         </div>
                     </div>
                 </div>

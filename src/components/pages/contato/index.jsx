@@ -5,23 +5,33 @@ import Logo3DFinancial from '../../../assets/img/3d-financial.png';
 import LogoPlanegi from '../../../assets/img/planegi.png';
 import LogoHonda from '../../../assets/img/honda.png';
 import Header from '../header';
+import {Link} from 'react-router-dom';
+import axios from 'axios';
 
 class ContatoPage extends Component {
 
     render() {
 
+        const { cuboRetorno } = this.props;
+        console.log(cuboRetorno);
 
         return (
             <div className="content-wrapper contato-page">
                 <Header></Header>
 
                 <div className="green-bg radial-bg">
-                    <p>
-                        Para saber mais sobre <br/>
-                        como aprimorar sua <br/>
-                        empresa, entre em <br/>
-                        contato:
-                    </p>
+                    <div className="col-md-12">
+                        <p>
+                            Para saber mais sobre como aprimorar <br />sua empresa, entre em contato:
+                        </p>
+                    </div>
+
+                    <div className={`col-md-12 download-btn-container ${( cuboRetorno.length === 0 ) ? 'hidden' : ''}`}>
+                        <a href={axios.defaults.baseURL + `/anexos/` + cuboRetorno.id} className="download-btn center">
+                            <img src="https://res.cloudinary.com/hugo-cicarelli/image/upload/v1535416240/download-icon.png" alt="download icon"/>
+                            Fazer o download
+                        </a>
+                    </div>
                 </div>
 
                 <div className="lighgray-bg radial-bg">
@@ -78,4 +88,10 @@ class ContatoPage extends Component {
     }
 }
 
-export default (ContatoPage);
+const mapStateToProps = (state) => {
+    return {
+        cuboRetorno: state.cubo.cuboRetorno
+    }
+}
+
+export default connect(mapStateToProps)(ContatoPage);

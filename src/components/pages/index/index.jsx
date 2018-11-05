@@ -12,6 +12,7 @@ class IndexPage extends Component {
 
         this.state = {
             email: '',
+            emailValid: false
             // showInstallMessage: false
         }
     }
@@ -35,13 +36,19 @@ class IndexPage extends Component {
     }
 
     handleChange = event => {
-       this.setState({ [event.target.name]: event.target.value });
+        if ( event.target.name === 'email' ) {
+            if ( event.target.value && /[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}/igm.test(event.target.value) ) {
+                this.setState({ emailValid: true })
+            }
+        }
+
+        this.setState({ [event.target.name]: event.target.value });
     };
 
     render() {
         const { dados, perguntasList, fetching, error } = this.props;
 
-        dados.email = this.state.email
+        dados.email = this.state.email;
 
         return (
             <div className="content-wrapper begin-page">
@@ -65,12 +72,15 @@ class IndexPage extends Component {
                     </p>
 
                     <Input value={dados.email} name="email" placeholder="E-mail" className="default-input" type="email" onChange={this.handleChange} />
+                    <div className={`error-message ${( this.state.emailValid || this.state.email === '' ) ? 'hidden' : ''}`}>
+                        E-mail inválido
+                    </div>
                 </div>
 
                 <Link to={{
                         pathname: "/posicionamento-estrategico/quiz",
                     }}
-                    className={`begin-btn main-btn  ${( dados.email === '' || perguntasList.perguntas.length === 0 ) ? 'disabled' : ''}`}>Começar</Link>
+                    className={`begin-btn main-btn  ${( !this.state.emailValid || perguntasList.perguntas.length === 0 ) ? 'disabled' : ''}`}>Começar</Link>
             </div>
         );
     }
