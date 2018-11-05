@@ -1,7 +1,8 @@
 import {
     REQUEST_LOADING_RESPOSTAS,
     REQUEST_REJECTED_RESPOSTAS,
-    REQUEST_FULFILLED_RESPOSTAS
+    REQUEST_FULFILLED_RESPOSTAS,
+    CLEAR_DATA_RESPOSTAS
 } from '../actions/cubo/action';
 
 const INITIAL_STATE = {
@@ -33,6 +34,14 @@ export default function (state = INITIAL_STATE, action) {
                 error: INITIAL_STATE.error,
                 cuboRetorno: action.payload
             };
+        case CLEAR_DATA_RESPOSTAS:
+            return {
+                ...state,
+                success: false,
+                requesting: INITIAL_STATE.requesting,
+                error: INITIAL_STATE.error,
+                cuboRetorno: []
+            }
         default:
             return state;
     }

@@ -1,7 +1,8 @@
 import {
     REQUEST_LOADING_RESPOSTAS,
     REQUEST_REJECTED_RESPOSTAS,
-    REQUEST_FULFILLED_RESPOSTAS
+    REQUEST_FULFILLED_RESPOSTAS,
+    CLEAR_DATA_RESPOSTAS
 } from './action';
 import axios from '../../utils/axios';
 
@@ -30,6 +31,13 @@ function requestRejected() {
     return {
         type: REQUEST_REJECTED_RESPOSTAS
     };
+}
+
+export function initialLoading(data) {
+    return {
+        type: CLEAR_DATA_RESPOSTAS,
+        payload: data
+    }
 }
 
 function requestFulfilled(data) {

@@ -5,6 +5,7 @@ import NomeAppImg from '../../../assets/img/nome_app.png';
 import Header from '../header';
 import {Link} from 'react-router-dom';
 import Input from '@material-ui/core/Input';
+import { initialLoading } from '../../../actions/cubo';
 
 class IndexPage extends Component {
     constructor(props) {
@@ -19,6 +20,7 @@ class IndexPage extends Component {
 
     componentWillMount(){
         this.props.requestPerguntas();
+        this.props.initialLoading();
     }
 
     componentDidMount() {
@@ -46,9 +48,11 @@ class IndexPage extends Component {
     };
 
     render() {
-        const { dados, perguntasList, fetching, error } = this.props;
+        const { cuboRetorno, dados, perguntasList, fetching, error } = this.props;
 
         dados.email = this.state.email;
+
+        console.log(cuboRetorno);
 
         return (
             <div className="content-wrapper begin-page">
@@ -92,7 +96,8 @@ const mapStateProps = (state) => {
         perguntasList: state.perguntas,
         fetching: state.index.fetching,
         error: state.index.error,
+        cuboRetorno: state.cubo.cuboRetorno
     }
 }
 
-export default connect(mapStateProps, {requestPerguntas})(IndexPage);
+export default connect(mapStateProps, {requestPerguntas, initialLoading})(IndexPage);
