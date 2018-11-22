@@ -39,8 +39,10 @@ class IndexPage extends Component {
 
     handleChange = event => {
         if ( event.target.name === 'email' ) {
-            if ( event.target.value && /[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}/igm.test(event.target.value) ) {
-                this.setState({ emailValid: true })
+            if ( event.target.value && /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/igm.test(event.target.value) ) {
+                this.setState({ emailValid: true });
+            } else if ( this.state.emailValid === true ) {
+                this.setState({ emailValid: false });
             }
         }
 

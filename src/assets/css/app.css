@@ -89,6 +89,9 @@ body {
         background-color: rgba(73, 70, 68, 0.7);
         box-shadow: none;
         pointer-events: none; }
+      body .content-wrapper .main-btn.goto-pagSeguro {
+        height: 7vh;
+        top: 0; }
     body .content-wrapper .input-range {
       height: 30px; }
       body .content-wrapper .input-range .input-range__track--background {
@@ -237,7 +240,7 @@ body {
         padding-right: 90px;
         margin-bottom: 0; }
     body .content-wrapper.cadastro-page .radial-bg.green-bg {
-      height: 49.4vh;
+      height: 55.4vh;
       padding-top: 25px;
       top: -5.5vh;
       z-index: 2; }

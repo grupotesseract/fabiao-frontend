@@ -7,6 +7,7 @@ import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
+import { sendDadosCadastro } from '../../../actions/cadastro';
 // import {email, required} from '../../utils/validations';
 
 class IndexPage extends Component {
@@ -102,9 +103,42 @@ class IndexPage extends Component {
         dados[event.target.name] = event.target.value;
     };
 
+    convertDate = (inputFormat) => {
+        let pad = (s) => {
+            return (s < 10) ? '0' + s : s;
+        }
+        var d = new Date(inputFormat);
+        return [pad(d.getDate()), pad(d.getMonth()+1), d.getFullYear()].join('/');
+    }
+
+    dadosToPagSeguro = () => {
+        const { dados, cuboRetorno } = this.props;
+
+        let dateCadastro = this.convertDate(dados.dt_nascimento),
+            cadastro = {
+                'nome': dados.nome,
+                'email': dados.email,
+                'endereco': dados.endereco,
+                'numero': dados.numero,
+                'bairro': dados.bairro,
+                'cidade': dados.cidade,
+                'estado': dados.estado,
+                'cep': dados.cep,
+                'nascimento': dateCadastro,
+                'cpf': dados.cpf,
+                'itemId': cuboRetorno.id,
+                'preco': cuboRetorno.valor_compra
+            };
+
+        this.props.sendDadosCadastro( cadastro );
+    }
+
     render() {
-        const { dados } = this.props;
-        console.log(this.state);
+        const { pagSeguro, dados } = this.props;
+
+        if ( pagSeguro !== '' ) {
+            window.location.href = pagSeguro
+        }
 
         return (
             <div className="content-wrapper cadastro-page">
@@ -166,18 +200,20 @@ class IndexPage extends Component {
 
                 {/* <Link to="/posicionamento-estrategico/analise" className={`begin-btn main-btn ${( this.state.isCPFValid && this.state.isNomeCompleto && this.state.isEnderecoCompleto && this.state.isEmailValid ) ? '' : 'disabled'}`}>Começar</Link>
                 */ }
-                <Link to="/posicionamento-estrategico/analise" className={`begin-btn main-btn`}>Começar</Link>
-
-                <Link to="/posicionamento-estrategico/" className="begin-btn back-btn">Voltar para o início</Link>
+                <div id="goto" className={`begin-btn main-btn goto-pagSeguro`} onClick={ () => { this.dadosToPagSeguro(); } }>
+                    Finalizar compra no PagSeguro
+                </div>
             </div>
         );
     }
 }
 
-const mapStateProps = (state) => {
+const mapStateToProps = (state) => {
     return {
-        dados: state.index
+        dados: state.index,
+        cuboRetorno: state.cubo.cuboRetorno,
+        pagSeguro: state.cadastro.retornoPagSeguro
     }
 }
 
-export default connect(mapStateProps)(IndexPage);
+export default connect(mapStateToProps, {sendDadosCadastro})(IndexPage);

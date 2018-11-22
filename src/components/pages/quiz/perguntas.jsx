@@ -110,8 +110,8 @@ class PerguntasItem extends Component {
             return this.state.perguntas.map((item, key) => {
                 return <div id={`answer-${key}`} className={( key !== ativo ) ? `question-box-container hidden` : `question-box-container`} key={`resposta-${key}`}>
                             <div className="question-box">
-                                <div className="quiz-answer-btn" onClick={ ( (event) => this.mudaPergunta(event, key, item.texto_resposta_1) ) }>
-                                    <div className="red-bg question-header">
+                                <div className="quiz-answer-btn">
+                                    <div className="red-bg question-header" onClick={ ( (event) => this.mudaPergunta(event, key, item.texto_resposta_1) ) }>
                                         <h3>{item.texto_resposta_1} <span></span></h3>
                                     </div>
                                     <div className="info-box">
@@ -121,8 +121,8 @@ class PerguntasItem extends Component {
                             </div>
 
                             <div className="question-box">
-                                <div className="quiz-answer-btn" onClick={ (e) => this.mudaPergunta(e, key, item.texto_resposta_2) }>
-                                    <div className="blue-bg question-header">
+                                <div className="quiz-answer-btn">
+                                    <div className="blue-bg question-header" onClick={ (e) => this.mudaPergunta(e, key, item.texto_resposta_2) }>
                                         <h3>{item.texto_resposta_2} <span></span></h3>
                                     </div>
                                     <div className="info-box">

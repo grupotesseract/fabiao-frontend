@@ -73,8 +73,10 @@ class AnaliseAgradecimentoPage extends Component {
                         <img src="https://res.cloudinary.com/hugo-cicarelli/image/upload/v1539659827/credit-cards.png" alt="send to email icon"/> Finalizar  Pagamento
                         </Link>
                         */ }
-                        <div id="goto" className="download-btn" onClick={ () => { this.dadosToPagSeguro(); } }>
-                            <img src="https://res.cloudinary.com/hugo-cicarelli/image/upload/v1539659827/credit-cards.png" alt="send to email icon"/> Finalizar  Compra
+                        <div id="goto" className="download-btn">
+                            <Link to="/posicionamento-estrategico/cadastro">
+                                <img src="https://res.cloudinary.com/hugo-cicarelli/image/upload/v1539659827/credit-cards.png" alt="send to email icon"/> Finalizar  Compra
+                            </Link>
                         </div>
                     </div>
                 </div>
