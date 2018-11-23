@@ -178,13 +178,11 @@ class IndexPage extends Component {
     }
 
     render() {
-        const { pagSeguro, dados, requestLoading } = this.props;
+        const { pagSeguro, dados } = this.props;
 
         if ( pagSeguro !== '' ) {
             window.location.href = pagSeguro
         }
-
-        console.log(requestLoading);
 
         return (
             <div className="content-wrapper cadastro-page">
@@ -265,7 +263,7 @@ const mapStateToProps = (state) => {
         dados: state.index,
         cuboRetorno: state.cubo.cuboRetorno,
         pagSeguro: state.cadastro.retornoPagSeguro,
-        requestLoading: state.cadastro.requestLoading
+        // requestLoading: state.cadastro.requestLoading
     }
 }
 
