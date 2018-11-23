@@ -75,7 +75,7 @@ class AnaliseAgradecimentoPage extends Component {
                         */ }
                         <div id="goto" className="download-btn">
                             <Link to="/posicionamento-estrategico/cadastro">
-                                <img src="https://res.cloudinary.com/hugo-cicarelli/image/upload/v1539659827/credit-cards.png" alt="send to email icon"/> Finalizar  Compra
+                                <img src="https://res.cloudinary.com/hugo-cicarelli/image/upload/v1539659827/credit-cards.png" alt="send to email icon"/> Finalizar  Compra no PagSeguro
                             </Link>
                         </div>
                     </div>

@@ -2,9 +2,11 @@ body {
     margin: 0;
     font-family: $main-font;
     background-color: $pe-lightgray;
+    max-width: 768px;
 
     .content-wrapper {
         width: 100vw;
+        max-width: 768px;
         height: 100vh;
         overflow: hidden;
         position: relative;
@@ -53,6 +55,7 @@ body {
         #iphone-banner {
             height: 100px;
             width: 100vw;
+            max-width: 768px;
             background-color: white;
             border: 2px solid $pe-darkgray;
             position: fixed;
@@ -786,6 +789,12 @@ body {
                                 height: 40px;
                                 display: block;
                                 margin: 0 10px 0 0;
+                            }
+                            a {
+                                display: flex;
+                                color: inherit;
+                                text-decoration: none;
+                                width: 200px;
                             }
                         }
                     }
