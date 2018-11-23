@@ -13,8 +13,9 @@ class IndexPage extends Component {
 
         this.state = {
             email: '',
-            emailValid: false
-            // showInstallMessage: false
+            emailValid: false,
+            showInstallMessage: false,
+            isIosDevice: false
         }
     }
 
@@ -35,6 +36,8 @@ class IndexPage extends Component {
         if (isIos() && !isInStandaloneMode()) {
             this.setState({ showInstallMessage: true });
         }
+
+        this.setState({ isIosDevice: isIos() })
     }
 
     handleChange = event => {
@@ -49,6 +52,13 @@ class IndexPage extends Component {
         this.setState({ [event.target.name]: event.target.value });
     };
 
+    closeBanner = () => {
+        const bannerEl = document.getElementById('iphone-banner');
+
+        // console.log(bannerEl);
+        bannerEl.classList.add('closed');
+    }
+
     render() {
         const { cuboRetorno, dados, perguntasList, fetching, error } = this.props;
 
@@ -57,7 +67,7 @@ class IndexPage extends Component {
         console.log(cuboRetorno);
 
         return (
-            <div className="content-wrapper begin-page">
+            <div className={`content-wrapper begin-page ${ ( this.state.isIosDevice ) ? 'ios-device' : '' }`}>
                 <Header></Header>
 
                 <div className="green-bg radial-bg">
@@ -87,6 +97,11 @@ class IndexPage extends Component {
                         pathname: "/posicionamento-estrategico/quiz",
                     }}
                     className={`begin-btn main-btn  ${( !this.state.emailValid || perguntasList.perguntas.length === 0 ) ? 'disabled' : ''}`}>Começar</Link>
+
+                <div id="iphone-banner" className={`${( !this.state.showInstallMessage ) ? 'hidden' : ''}`}>
+                    <img src="https://res.cloudinary.com/hugo-cicarelli/image/upload/v1542937466/cross-mark-on-a-black-circle-background.png" className="close-btn" onClick={ this.closeBanner } alt=""/>
+                    <p><strong>Instale o aplicativo em seu iPhone:</strong> <br />toque em <img src="https://res.cloudinary.com/hugo-cicarelli/image/upload/v1542936659/apple-share-icon.png" alt=""/> e clique na opção "Tela de Início"</p>
+                </div>
             </div>
         );
     }

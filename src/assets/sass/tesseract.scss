@@ -50,6 +50,43 @@ body {
                 background-color: #00B1EB;
             }
         }
+        #iphone-banner {
+            height: 100px;
+            width: 100vw;
+            background-color: white;
+            border: 2px solid $pe-darkgray;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+            text-align: center;
+            line-height: 32px;
+            transition-property: all;
+        	transition-duration: .5s;
+        	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+            overflow: hidden;
+
+            &.closed {
+                height: 0;
+                opacity: 0;
+                visibility: hidden;
+            }
+            img {
+                width: 15px;
+                margin: 0 2px;
+
+                &.close-btn {
+                    position: fixed;
+                    bottom: 75px;
+                    right: 10px;
+                    width: 18px;
+                    // z-index: 100;
+                }
+            }
+        }
         .main-btn {
             display: flex;
             padding: 3.4vh 12vw 3.4vh 6vw;
@@ -81,8 +118,8 @@ body {
                 pointer-events: none;
             }
             &.goto-pagSeguro {
-                height: 7vh;
-                top: 0;
+                height: 3vh;
+                top: -6vh;
             }
         }
         .input-range {
@@ -317,7 +354,7 @@ body {
                     }
                 }
                 &.green-bg {
-                    height: 55.4vh;
+                    height: 61.4vh;
                     padding-top: 25px;
                     top: -5.5vh;
                     z-index: 2;
@@ -336,6 +373,7 @@ body {
                         .cadastro-fields {
                             font-size: 13px;
                             width: 34.9vw;
+                            float: left;
                             // height: 40px;
                             margin-bottom: 5px;
                             background-color: rgba(white, .4);
@@ -360,18 +398,26 @@ body {
                                     }
                                 }
                             }
-                            input {
+                            &.dropdown {
+                                height: 33px;
+                            }
+                            &.disabled {
+                                color: rgba($pe-darkgray, 0.5);
+                                padding-top: 3px;
+                                height: 30px;
+                            }
+                            input, select {
                                 height: 20px;
                             }
                         }
                     }
                 }
             }
-            .main-btn {
-                top: -5.5vh;
-                box-shadow: 0 2px 15px 0px rgba(black, .4);
-                z-index: 2;
-            }
+            // .main-btn {
+            //     top: -5.5vh;
+            //     box-shadow: 0 2px 15px 0px rgba(black, .4);
+            //     z-index: 2;
+            // }
             .back-btn {
                 background-color: $pe-lightgray;
                 width: 82vw;
@@ -512,6 +558,7 @@ body {
                         }
                     }
                     .items-wrapper {
+                        position: relative;
                         .item {
                             .item-header {
                                 position: relative;

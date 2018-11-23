@@ -63,6 +63,36 @@ body {
         background-color: #4c59a4; }
       body .content-wrapper .prioridade.segunda {
         background-color: #00B1EB; }
+    body .content-wrapper #iphone-banner {
+      height: 100px;
+      width: 100vw;
+      background-color: white;
+      border: 2px solid #494644;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      text-align: center;
+      line-height: 32px;
+      transition-property: all;
+      transition-duration: .5s;
+      transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+      overflow: hidden; }
+      body .content-wrapper #iphone-banner.closed {
+        height: 0;
+        opacity: 0;
+        visibility: hidden; }
+      body .content-wrapper #iphone-banner img {
+        width: 15px;
+        margin: 0 2px; }
+        body .content-wrapper #iphone-banner img.close-btn {
+          position: fixed;
+          bottom: 75px;
+          right: 10px;
+          width: 18px; }
     body .content-wrapper .main-btn {
       display: flex;
       padding: 3.4vh 12vw 3.4vh 6vw;
@@ -90,8 +120,8 @@ body {
         box-shadow: none;
         pointer-events: none; }
       body .content-wrapper .main-btn.goto-pagSeguro {
-        height: 7vh;
-        top: 0; }
+        height: 3vh;
+        top: -6vh; }
     body .content-wrapper .input-range {
       height: 30px; }
       body .content-wrapper .input-range .input-range__track--background {
@@ -240,7 +270,7 @@ body {
         padding-right: 90px;
         margin-bottom: 0; }
     body .content-wrapper.cadastro-page .radial-bg.green-bg {
-      height: 55.4vh;
+      height: 61.4vh;
       padding-top: 25px;
       top: -5.5vh;
       z-index: 2; }
@@ -253,6 +283,7 @@ body {
       body .content-wrapper.cadastro-page .radial-bg.green-bg .formulario-cadastro .cadastro-fields {
         font-size: 13px;
         width: 34.9vw;
+        float: left;
         margin-bottom: 5px;
         background-color: rgba(255, 255, 255, 0.4);
         padding: 0 4vw; }
@@ -264,12 +295,14 @@ body {
             border-color: #cb151a; }
           body .content-wrapper.cadastro-page .radial-bg.green-bg .formulario-cadastro .cadastro-fields.error:focus:before, body .content-wrapper.cadastro-page .radial-bg.green-bg .formulario-cadastro .cadastro-fields.error:focus:after, body .content-wrapper.cadastro-page .radial-bg.green-bg .formulario-cadastro .cadastro-fields.error:hover:before, body .content-wrapper.cadastro-page .radial-bg.green-bg .formulario-cadastro .cadastro-fields.error:hover:after {
             border-color: #cb151a; }
-        body .content-wrapper.cadastro-page .radial-bg.green-bg .formulario-cadastro .cadastro-fields input {
+        body .content-wrapper.cadastro-page .radial-bg.green-bg .formulario-cadastro .cadastro-fields.dropdown {
+          height: 33px; }
+        body .content-wrapper.cadastro-page .radial-bg.green-bg .formulario-cadastro .cadastro-fields.disabled {
+          color: rgba(73, 70, 68, 0.5);
+          padding-top: 3px;
+          height: 30px; }
+        body .content-wrapper.cadastro-page .radial-bg.green-bg .formulario-cadastro .cadastro-fields input, body .content-wrapper.cadastro-page .radial-bg.green-bg .formulario-cadastro .cadastro-fields select {
           height: 20px; }
-    body .content-wrapper.cadastro-page .main-btn {
-      top: -5.5vh;
-      box-shadow: 0 2px 15px 0px rgba(0, 0, 0, 0.4);
-      z-index: 2; }
     body .content-wrapper.cadastro-page .back-btn {
       background-color: #dbdbdb;
       width: 82vw;
@@ -369,19 +402,21 @@ body {
           margin: 0 15px;
           height: 20px;
           font-weight: 100; }
-      body .content-wrapper.detalhes-page .radial-bg.green-bg .items-wrapper .item .item-header, body .content-wrapper.detalhes-page .radial-bg.lighgray-bg .items-wrapper .item .item-header, body .content-wrapper.analise-resultado .radial-bg.green-bg .items-wrapper .item .item-header, body .content-wrapper.analise-resultado .radial-bg.lighgray-bg .items-wrapper .item .item-header {
-        position: relative;
-        z-index: 0;
-        font-size: 17px;
-        font-weight: 900; }
-        body .content-wrapper.detalhes-page .radial-bg.green-bg .items-wrapper .item .item-header h4, body .content-wrapper.detalhes-page .radial-bg.lighgray-bg .items-wrapper .item .item-header h4, body .content-wrapper.analise-resultado .radial-bg.green-bg .items-wrapper .item .item-header h4, body .content-wrapper.analise-resultado .radial-bg.lighgray-bg .items-wrapper .item .item-header h4 {
-          margin-bottom: 0;
-          padding-right: 40px; }
-      body .content-wrapper.detalhes-page .radial-bg.green-bg .items-wrapper .item .item-content p, body .content-wrapper.detalhes-page .radial-bg.lighgray-bg .items-wrapper .item .item-content p, body .content-wrapper.analise-resultado .radial-bg.green-bg .items-wrapper .item .item-content p, body .content-wrapper.analise-resultado .radial-bg.lighgray-bg .items-wrapper .item .item-content p {
-        height: 30px;
-        background-color: rgba(255, 255, 255, 0.4);
-        font-size: 11px;
-        color: #494644; }
+      body .content-wrapper.detalhes-page .radial-bg.green-bg .items-wrapper, body .content-wrapper.detalhes-page .radial-bg.lighgray-bg .items-wrapper, body .content-wrapper.analise-resultado .radial-bg.green-bg .items-wrapper, body .content-wrapper.analise-resultado .radial-bg.lighgray-bg .items-wrapper {
+        position: relative; }
+        body .content-wrapper.detalhes-page .radial-bg.green-bg .items-wrapper .item .item-header, body .content-wrapper.detalhes-page .radial-bg.lighgray-bg .items-wrapper .item .item-header, body .content-wrapper.analise-resultado .radial-bg.green-bg .items-wrapper .item .item-header, body .content-wrapper.analise-resultado .radial-bg.lighgray-bg .items-wrapper .item .item-header {
+          position: relative;
+          z-index: 0;
+          font-size: 17px;
+          font-weight: 900; }
+          body .content-wrapper.detalhes-page .radial-bg.green-bg .items-wrapper .item .item-header h4, body .content-wrapper.detalhes-page .radial-bg.lighgray-bg .items-wrapper .item .item-header h4, body .content-wrapper.analise-resultado .radial-bg.green-bg .items-wrapper .item .item-header h4, body .content-wrapper.analise-resultado .radial-bg.lighgray-bg .items-wrapper .item .item-header h4 {
+            margin-bottom: 0;
+            padding-right: 40px; }
+        body .content-wrapper.detalhes-page .radial-bg.green-bg .items-wrapper .item .item-content p, body .content-wrapper.detalhes-page .radial-bg.lighgray-bg .items-wrapper .item .item-content p, body .content-wrapper.analise-resultado .radial-bg.green-bg .items-wrapper .item .item-content p, body .content-wrapper.analise-resultado .radial-bg.lighgray-bg .items-wrapper .item .item-content p {
+          height: 30px;
+          background-color: rgba(255, 255, 255, 0.4);
+          font-size: 11px;
+          color: #494644; }
     body .content-wrapper.detalhes-page .main-btn, body .content-wrapper.analise-resultado .main-btn {
       height: 5.5vh;
       z-index: 2;

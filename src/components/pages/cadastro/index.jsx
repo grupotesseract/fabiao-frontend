@@ -28,7 +28,13 @@ class IndexPage extends Component {
             isCPFValid: false,
             isEmailValid: false,
             isNomeCompleto: false,
-            isEnderecoCompleto: false
+            isEnderecoCompleto: false,
+            isNumero: false,
+            isCidade: false,
+            isEstado: false,
+            isCEP: false,
+            isDate: false,
+            isBairro: false
         }
     }
 
@@ -83,8 +89,10 @@ class IndexPage extends Component {
 
         } else if ( event.target.name === 'email' ) {
 
-            if ( event.target.value && /[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}/igm.test(event.target.value) ) {
-                this.setState({ isEmailValid: true })
+            if ( event.target.value && /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/igm.test(event.target.value) ) {
+                this.setState({ isEmailValid: true });
+            } else if ( this.state.isEmailValid === true ) {
+                this.setState({ isEmailValid: false });
             }
 
         } else if ( event.target.name === 'cpf' ) {
@@ -94,6 +102,42 @@ class IndexPage extends Component {
 
             if ( cpfInput.length === 11 ) {
                 this.setState({ isCPFValid: this.validaCPF(cpfInput) });
+            }
+
+        } else if ( event.target.name === 'numero' ) {
+
+            if ( event.target.value !== '' ) {
+                this.setState({ isNumero: true });
+            }
+
+        } else if ( event.target.name === 'cep' ) {
+
+            if ( event.target.value !== '' ) {
+                this.setState({ isCEP: true });
+            }
+
+        } else if ( event.target.name === 'bairro' ) {
+
+            if ( event.target.value !== '' ) {
+                this.setState({ isBairro: true });
+            }
+
+        } else if ( event.target.name === 'cidade' ) {
+
+            if ( event.target.value !== '' ) {
+                this.setState({ isCidade: true });
+            }
+
+        } else if ( event.target.name === 'estado' ) {
+
+            if ( event.target.value !== '' ) {
+                this.setState({ isEstado: true });
+            }
+
+        } else if ( event.target.name === 'dt_nascimento' ) {
+
+            if ( event.target.value !== '' ) {
+                this.setState({ isDate: true });
             }
 
         }
@@ -134,11 +178,13 @@ class IndexPage extends Component {
     }
 
     render() {
-        const { pagSeguro, dados } = this.props;
+        const { pagSeguro, dados, requestLoading } = this.props;
 
         if ( pagSeguro !== '' ) {
             window.location.href = pagSeguro
         }
+
+        console.log(requestLoading);
 
         return (
             <div className="content-wrapper cadastro-page">
@@ -163,7 +209,8 @@ class IndexPage extends Component {
                         <Input className="cadastro-fields col-md-6" name="cep" value={dados.cep} placeholder="CEP*" onChange={this.handleChange} />
                         <Input className="cadastro-fields col-md-6" name="bairro" value={dados.bairro} placeholder="Bairro*" onChange={this.handleChange} />
                         <Input className="cadastro-fields col-md-12" name="cidade" value={dados.cidade} placeholder="Cidade*" onChange={this.handleChange} />
-                        <Select className="cadastro-fields col-md-12" id="estado" name="estado" placeholder="Estado" value={dados.estado} onChange={this.handleChange}>
+                        <Select className={`cadastro-fields dropdown col-md-12 ${(dados.estado === "") ? 'disabled' : ""}`} id="estado" name="estado" placeholder="none" value={(dados.estado !== "") ? dados.estado : "none"} onChange={this.handleChange}>
+                            <MenuItem value="none" disabled className="disabled">Estado*</MenuItem>
                             <MenuItem value="AC">Acre</MenuItem>
                             <MenuItem value="AL">Alagoas</MenuItem>
                             <MenuItem value="AP">Amapá</MenuItem>
@@ -192,15 +239,15 @@ class IndexPage extends Component {
                             <MenuItem value="SE">Sergipe</MenuItem>
                             <MenuItem value="TO">Tocantins</MenuItem>
                         </Select>
-                        <Input className="cadastro-fields col-md-12" name="dt_nascimento" value={dados.dt_nascimento} placeholder="Data de Nascimento*" type="date" onChange={this.handleChange} />
-                        <Input className={`cadastro-fields col-md-12 ${((this.state.cpf.length === 11 || this.state.cpf.length === 14) && !this.state.isCPFValid) ? 'error' : ''}`} name="cpf" value={dados.cpf} placeholder="CPF*" onChange={this.handleChange} />
+                        <Input className="cadastro-fields date col-md-12" name="dt_nascimento" value={dados.dt_nascimento} placeholder="Data de Nascimento*" type="date" onChange={this.handleChange} />
+                        <Input className={`cadastro-fields cpf-wrapper col-md-12 ${((this.state.cpf.length === 11 || this.state.cpf.length === 14) && !this.state.isCPFValid) ? 'error' : ''}`} name="cpf" value={dados.cpf} placeholder="CPF*" onChange={this.handleChange} />
                     </div>
-                    <span className="warning-message">* Campos obrigatórios</span>
+                    <span className="warning-message">* Todos os Campos são obrigatórios</span>
                 </div>
 
                 {/* <Link to="/posicionamento-estrategico/analise" className={`begin-btn main-btn ${( this.state.isCPFValid && this.state.isNomeCompleto && this.state.isEnderecoCompleto && this.state.isEmailValid ) ? '' : 'disabled'}`}>Começar</Link>
                 */ }
-                <div id="goto" className={`begin-btn main-btn goto-pagSeguro`} onClick={ () => { this.dadosToPagSeguro(); } }>
+                <div id="goto" className={`begin-btn main-btn goto-pagSeguro ${( this.state.isCPFValid && this.state.isEmailValid && this.state.isNomeCompleto && this.state.isEnderecoCompleto && this.state.isNumero && this.state.isCidade && this.state.isEstado && this.state.isCEP && this.state.isDate && this.state.isBairro ) ? '' : 'disabled'}`} onClick={ () => { this.dadosToPagSeguro(); } }>
                     Finalizar compra no PagSeguro
                 </div>
             </div>
@@ -208,11 +255,17 @@ class IndexPage extends Component {
     }
 }
 
+
+
+
+
+
 const mapStateToProps = (state) => {
     return {
         dados: state.index,
         cuboRetorno: state.cubo.cuboRetorno,
-        pagSeguro: state.cadastro.retornoPagSeguro
+        pagSeguro: state.cadastro.retornoPagSeguro,
+        requestLoading: state.cadastro.requestLoading
     }
 }
 
