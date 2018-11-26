@@ -28,7 +28,8 @@ body {
   margin: 0;
   font-family: "Open Sans";
   background-color: #dbdbdb;
-  max-width: 768px; }
+  max-width: 768px;
+  height: 100vh; }
   body .content-wrapper {
     width: 100vw;
     max-width: 768px;
@@ -107,8 +108,7 @@ body {
       font-size: 18px;
       text-decoration: none;
       box-shadow: inset -4px 4px 10px 0 rgba(0, 0, 0, 0.4);
-      height: 4vh;
-      top: -3.5vh; }
+      height: 4vh; }
       body .content-wrapper .main-btn:after {
         background-image: url("https://res.cloudinary.com/hugo-cicarelli/image/upload/v1535311969/errow.png");
         background-position: center;
@@ -123,7 +123,7 @@ body {
         box-shadow: none;
         pointer-events: none; }
       body .content-wrapper .main-btn.goto-pagSeguro {
-        height: 3vh;
+        height: 7vh;
         top: -6vh; }
     body .content-wrapper .input-range {
       height: 30px; }
@@ -189,13 +189,15 @@ body {
       justify-content: center;
       height: 40vh; }
     body .content-wrapper.begin-page .radial-bg.green-bg {
-      height: 44vh; }
+      height: 44vh;
+      min-height: 265px; }
       body .content-wrapper.begin-page .radial-bg.green-bg p {
-        padding-right: 80px; }
+        padding-right: 80px;
+        overflow: hidden; }
         body .content-wrapper.begin-page .radial-bg.green-bg p img {
           margin-top: 10px; }
     body .content-wrapper.begin-page .radial-bg.lighgray-bg {
-      height: 27vh; }
+      height: 23.5vh; }
       body .content-wrapper.begin-page .radial-bg.lighgray-bg:before {
         transform: none; }
     body .content-wrapper.quiz-page {
@@ -273,7 +275,7 @@ body {
         padding-right: 90px;
         margin-bottom: 0; }
     body .content-wrapper.cadastro-page .radial-bg.green-bg {
-      height: 61.4vh;
+      height: 55.5vh;
       padding-top: 25px;
       top: -5.5vh;
       z-index: 2; }
@@ -332,7 +334,7 @@ body {
         height: 3vh;
         width: 20px; }
     body .content-wrapper.resultado-page .radial-bg.lighgray-bg {
-      height: 68vh;
+      height: 64.5vh;
       z-index: 0; }
       body .content-wrapper.resultado-page .radial-bg.lighgray-bg:before {
         transform: skewY(0deg); }
@@ -423,7 +425,8 @@ body {
     body .content-wrapper.detalhes-page .main-btn, body .content-wrapper.analise-resultado .main-btn {
       height: 5.5vh;
       z-index: 2;
-      padding-top: 5vh; }
+      padding-top: 5vh;
+      top: -17px; }
     body .content-wrapper.detalhes-page .items-wrapper {
       height: 58vh;
       overflow-y: auto; }
@@ -477,10 +480,10 @@ body {
         top: 5.5vh;
         right: 0;
         left: auto;
-        width: 40px;
+        width: 50px;
         height: 40px;
         padding: 0;
-        z-index: 2;
+        z-index: 10;
         box-shadow: none;
         background-color: #dbdbdb; }
         body .content-wrapper.analise-page .radial-bg.green-bg .main-btn:after {
@@ -660,7 +663,8 @@ body {
         body .content-wrapper .main-header {
           height: 5.5vh;
           top: -10px;
-          padding: 15px 10px 5px; } }
+          padding: 15px 10px 5px;
+          max-height: 45px; } }
       body .content-wrapper .main-header:before {
         background-color: #494644;
         width: 100%;

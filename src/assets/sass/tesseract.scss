@@ -3,6 +3,7 @@ body {
     font-family: $main-font;
     background-color: $pe-lightgray;
     max-width: 768px;
+    height: 100vh;
 
     .content-wrapper {
         width: 100vw;
@@ -102,7 +103,7 @@ body {
             text-decoration: none;
             box-shadow: inset -4px 4px 10px 0 rgba(black, 0.4);
             height: 4vh;
-            top: -3.5vh;
+            // top: -11px;
 
             &:after {
                 @extend %bfaf;
@@ -121,7 +122,7 @@ body {
                 pointer-events: none;
             }
             &.goto-pagSeguro {
-                height: 3vh;
+                height: 7vh;
                 top: -6vh;
             }
         }
@@ -215,9 +216,11 @@ body {
             .radial-bg {
                 &.green-bg {
                     height: 44vh;
+                    min-height: 265px;
 
                     p {
                         padding-right: 80px;
+                        overflow: hidden;
 
                         img {
                             margin-top: 10px;
@@ -225,7 +228,7 @@ body {
                     }
                 }
                 &.lighgray-bg {
-                    height: 27vh;
+                    height: 23.5vh;
 
                     &:before {
                         transform: none;
@@ -357,7 +360,7 @@ body {
                     }
                 }
                 &.green-bg {
-                    height: 61.4vh;
+                    height: 55.5vh;
                     padding-top: 25px;
                     top: -5.5vh;
                     z-index: 2;
@@ -455,7 +458,7 @@ body {
         &.resultado-page {
             .radial-bg {
                 &.lighgray-bg {
-                    height: 68vh;
+                    height: 64.5vh;
                     z-index: 0;
 
                     &:before {
@@ -590,6 +593,7 @@ body {
                 height: 5.5vh;
                 z-index: 2;
                 padding-top: 5vh;
+                top: -17px;
             }
         }
         &.detalhes-page {
@@ -678,10 +682,10 @@ body {
                         top: 5.5vh;
                         right: 0;
                         left: auto;
-                        width: 40px;
+                        width: 50px;
                         height: 40px;
                         padding: 0;
-                        z-index: 2;
+                        z-index: 10;
                         box-shadow: none;
                         background-color: $pe-lightgray;
 
@@ -942,6 +946,7 @@ body {
                 height: 5.5vh;
                 top: -10px;
                 padding: 15px 10px 5px;
+                max-height: 45px;
             }
             &:before {
                 @extend %bfaf;

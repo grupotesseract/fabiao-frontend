@@ -26,7 +26,7 @@ class IndexPage extends Component {
             cidade: '',
             cpf: '',
             isCPFValid: false,
-            isEmailValid: false,
+            isEmailValid: (props.dados.email !== '') ? true : false,
             isNomeCompleto: false,
             isEnderecoCompleto: false,
             isNumero: false,
@@ -183,16 +183,6 @@ class IndexPage extends Component {
         if ( pagSeguro !== '' ) {
             window.location.href = pagSeguro
         }
-        console.log(this.state.isCPFValid)
-        console.log(this.state.isEmailValid)
-        console.log(this.state.isNomeCompleto)
-        console.log(this.state.isEnderecoCompleto)
-        console.log(this.state.isNumero)
-        console.log(this.state.isCidade)
-        console.log(this.state.isEstado)
-        console.log(this.state.isCEP)
-        console.log(this.state.isDate)
-        console.log(this.state.isBairro)
 
         return (
             <div className="content-wrapper cadastro-page">
