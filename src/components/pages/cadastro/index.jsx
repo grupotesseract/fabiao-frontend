@@ -34,7 +34,8 @@ class IndexPage extends Component {
             isEstado: false,
             isCEP: false,
             isDate: false,
-            isBairro: false
+            isBairro: false,
+            requesting: false
         }
     }
 
@@ -174,11 +175,17 @@ class IndexPage extends Component {
                 'preco': cuboRetorno.valor_compra
             };
 
+        this.setState({ requesting: true })
+
         this.props.sendDadosCadastro( cadastro );
     }
 
     render() {
-        const { pagSeguro, dados } = this.props;
+        const { pagSeguro, dados, error, requested } = this.props;
+
+        if ( !requested && this.state.requesting ) {
+            this.setState({ requesting: false })
+        }
 
         if ( pagSeguro !== '' ) {
             window.location.href = pagSeguro
@@ -246,7 +253,8 @@ class IndexPage extends Component {
                 {/* <Link to="/posicionamento-estrategico/analise" className={`begin-btn main-btn ${( this.state.isCPFValid && this.state.isNomeCompleto && this.state.isEnderecoCompleto && this.state.isEmailValid ) ? '' : 'disabled'}`}>Começar</Link>
                 */ }
                 <div id="goto" className={`begin-btn main-btn goto-pagSeguro ${( this.state.isCPFValid && this.state.isEmailValid && this.state.isNomeCompleto && this.state.isEnderecoCompleto && this.state.isNumero && this.state.isCidade && this.state.isEstado && this.state.isCEP && this.state.isDate && this.state.isBairro ) ? '' : 'disabled'}`} onClick={ () => { this.dadosToPagSeguro(); } }>
-                    Finalizar compra no PagSeguro
+                    <span className={`text ${( this.state.requesting ) ? 'hidden' : ''}`}>Finalizar compra no PagSeguro</span>
+                    <span className={`loading ${( !this.state.requesting && !requested ) ? 'hidden' : ''}`}><svg width="45px"  height="45px"  xmlns="https://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" className="lds-double-ring"><circle cx="50" cy="50" fill="none" strokeLinecap="round" r="40" strokeWidth="4" stroke="#4c59a4" strokeDasharray="62.83185307179586 62.83185307179586" transform="rotate(335.943 50 50)"><animateTransform attributeName="transform" type="rotate" calcMode="linear" values="0 50 50;360 50 50" keyTimes="0;1" dur="1s" begin="0s" repeatCount="indefinite"></animateTransform></circle><circle cx="50" cy="50" fill="none" strokeLinecap="round" r="35" strokeWidth="4" stroke="#cb151a" strokeDasharray="54.97787143782138 54.97787143782138" strokeDashoffset="54.97787143782138" transform="rotate(-335.943 50 50)"><animateTransform attributeName="transform" type="rotate" calcMode="linear" values="0 50 50;-360 50 50" keyTimes="0;1" dur="1s" begin="0s" repeatCount="indefinite"></animateTransform></circle></svg></span>
                 </div>
             </div>
         );
@@ -263,7 +271,8 @@ const mapStateToProps = (state) => {
         dados: state.index,
         cuboRetorno: state.cubo.cuboRetorno,
         pagSeguro: state.cadastro.retornoPagSeguro,
-        // requestLoading: state.cadastro.requestLoading
+        error: state.cadastro.error,
+        requested: state.cadastro.requested
     }
 }
 

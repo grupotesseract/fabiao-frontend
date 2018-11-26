@@ -6,6 +6,7 @@ import {
 
 const INITIAL_STATE = {
     requesting: false,
+    requested: false,
     error: false,
     success: false,
     retornoPagSeguro: ''
