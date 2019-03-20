@@ -2,16 +2,21 @@ body {
     margin: 0;
     font-family: $main-font;
     background-color: $pe-lightgray;
-    max-width: 768px;
+    // max-width: 768px;
     height: 100vh;
 
     .content-wrapper {
-        width: 100vw;
-        max-width: 768px;
+        width: 100%;
+        max-width: 480px;
         height: 100vh;
         overflow: hidden;
         position: relative;
+        margin: 0 auto;
+        border: 2px solid $pe-darkgray;
 
+        @include phone {
+            border: none;
+        }
         // GERAIS
         .red-bg {
             background-color: $pe-red;
@@ -55,7 +60,7 @@ body {
         }
         #iphone-banner {
             height: 100px;
-            width: 100vw;
+            width: 100%;
             max-width: 768px;
             background-color: white;
             border: 2px solid $pe-darkgray;
@@ -93,11 +98,11 @@ body {
         }
         .main-btn {
             display: flex;
-            padding: 3.4vh 12vw 3.4vh 6vw;
+            padding: 3.4vh 12% 3.4vh 6%;
             position: relative;
             background-color: $pe-yellow;
             color: $pe-darkgray;
-            width: 82vw;
+            width: 82%;
             text-transform: uppercase;
             font-size: 18px;
             text-decoration: none;
@@ -112,7 +117,7 @@ body {
                 background-repeat: no-repeat;
                 background-size: contain;
                 top: 20px;
-                right: 6vw;
+                right: 6%;
                 height: calc(100% - 40px);
                 width: 20px;
             }
@@ -183,9 +188,9 @@ body {
         // BARRA PROGRESSO
         .progress-bar {
             position: absolute;
-            width: 88vw;
+            width: 88%;
             bottom: 1vh;
-            left: 6vw;
+            left: 6%;
             display: flex;
             justify-content: center;
 
@@ -378,15 +383,15 @@ body {
 
                         .cadastro-fields {
                             font-size: 13px;
-                            width: 34.9vw;
+                            width: 34.9%;
                             float: left;
                             // height: 40px;
                             margin-bottom: 5px;
                             background-color: rgba(white, .4);
-                            padding: 0 4vw;
+                            padding: 0 4%;
 
                             &:nth-child(even) {
-                                margin-left: 2vw;
+                                margin-left: 2%;
                             }
                             &:nth-child(1), &:nth-child(2) {
                                 // width: 100%;
@@ -426,8 +431,8 @@ body {
             // }
             .back-btn {
                 background-color: $pe-lightgray;
-                width: 82vw;
-                padding: 3.5vh 12vw 3.5vh 6vw;
+                width: 82%;
+                padding: 3.5vh 12% 3.5vh 6%;
                 text-align: center;
                 text-decoration: none;
                 color: $pe-darkgray;
@@ -942,12 +947,12 @@ body {
             height: 90px;
             padding: 15px 15px 0;
 
-            @include phone {
+            // @include phone {
                 height: 5.5vh;
                 top: -10px;
                 padding: 15px 10px 5px;
                 max-height: 45px;
-            }
+            // }
             &:before {
                 @extend %bfaf;
                 background-color: $pe-darkgray;
@@ -958,11 +963,11 @@ body {
                 top: -4vh;
                 transform: skewY(-2deg);
 
-                @include phone {
-                    height: 100%;
-                    top: 0;
+                // @include phone {
+                    height: calc(100% + 5px);
+                    top: -5px;
                     transform: skewY(-3deg);
-                }
+                // }
             }
             a {
                 display: inline-block;
@@ -972,9 +977,9 @@ body {
                 z-index: 1;
                 height: 60px;
 
-                @include phone {
+                // @include phone {
                     height: 40px;
-                }
+                // }
             }
         }
         .radial-bg {
@@ -983,10 +988,10 @@ body {
             color: #fff;
             position: relative;
 
-            @include phone {
+            // @include phone {
                 top: -11px;
-                padding: 0 6vw 0;
-            }
+                padding: 0 6% 0;
+            // }
             &:before {
                 @extend %bfaf;
                 z-index: 0;
@@ -1014,13 +1019,13 @@ body {
                 }
             }
             &.lighgray-bg {
-                @include phone {
+                // @include phone {
                     flex-direction: column;
                     padding-top: 4vh;
                     padding-bottom: 9vh;
                     top: -3.5vh;
                     z-index: 2;
-                }
+                // }
 
                 &:before {
                     background: $pe-lightgray;
@@ -1036,10 +1041,10 @@ body {
                     border: none;
                     font-family: $main-font;
 
-                    @include phone {
+                    // @include phone {
                         height: 20px;
                         padding: 5px 10px;
-                    }
+                    // }
                 }
             }
             .begin-btn {

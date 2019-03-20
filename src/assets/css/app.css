@@ -28,14 +28,18 @@ body {
   margin: 0;
   font-family: "Open Sans";
   background-color: #dbdbdb;
-  max-width: 768px;
   height: 100vh; }
   body .content-wrapper {
-    width: 100vw;
-    max-width: 768px;
+    width: 100%;
+    max-width: 480px;
     height: 100vh;
     overflow: hidden;
-    position: relative; }
+    position: relative;
+    margin: 0 auto;
+    border: 2px solid #494644; }
+    @media (min-width: 319px) and (max-width: 767px) {
+      body .content-wrapper {
+        border: none; } }
     body .content-wrapper .red-bg {
       background-color: #cb151a; }
     body .content-wrapper .blue-bg {
@@ -68,7 +72,7 @@ body {
         background-color: #00B1EB; }
     body .content-wrapper #iphone-banner {
       height: 100px;
-      width: 100vw;
+      width: 100%;
       max-width: 768px;
       background-color: white;
       border: 2px solid #494644;
@@ -99,11 +103,11 @@ body {
           width: 18px; }
     body .content-wrapper .main-btn {
       display: flex;
-      padding: 3.4vh 12vw 3.4vh 6vw;
+      padding: 3.4vh 12% 3.4vh 6%;
       position: relative;
       background-color: #f7e83a;
       color: #494644;
-      width: 82vw;
+      width: 82%;
       text-transform: uppercase;
       font-size: 18px;
       text-decoration: none;
@@ -115,7 +119,7 @@ body {
         background-repeat: no-repeat;
         background-size: contain;
         top: 20px;
-        right: 6vw;
+        right: 6%;
         height: calc(100% - 40px);
         width: 20px; }
       body .content-wrapper .main-btn.disabled {
@@ -167,9 +171,9 @@ body {
         display: none; }
     body .content-wrapper .progress-bar {
       position: absolute;
-      width: 88vw;
+      width: 88%;
       bottom: 1vh;
-      left: 6vw;
+      left: 6%;
       display: flex;
       justify-content: center; }
       body .content-wrapper .progress-bar .item {
@@ -287,13 +291,13 @@ body {
         margin-bottom: 15px; }
       body .content-wrapper.cadastro-page .radial-bg.green-bg .formulario-cadastro .cadastro-fields {
         font-size: 13px;
-        width: 34.9vw;
+        width: 34.9%;
         float: left;
         margin-bottom: 5px;
         background-color: rgba(255, 255, 255, 0.4);
-        padding: 0 4vw; }
+        padding: 0 4%; }
         body .content-wrapper.cadastro-page .radial-bg.green-bg .formulario-cadastro .cadastro-fields:nth-child(even) {
-          margin-left: 2vw; }
+          margin-left: 2%; }
         body .content-wrapper.cadastro-page .radial-bg.green-bg .formulario-cadastro .cadastro-fields.error {
           background-color: rgba(203, 21, 26, 0.2); }
           body .content-wrapper.cadastro-page .radial-bg.green-bg .formulario-cadastro .cadastro-fields.error:before, body .content-wrapper.cadastro-page .radial-bg.green-bg .formulario-cadastro .cadastro-fields.error:after {
@@ -310,8 +314,8 @@ body {
           height: 20px; }
     body .content-wrapper.cadastro-page .back-btn {
       background-color: #dbdbdb;
-      width: 82vw;
-      padding: 3.5vh 12vw 3.5vh 6vw;
+      width: 82%;
+      padding: 3.5vh 12% 3.5vh 6%;
       text-align: center;
       text-decoration: none;
       color: #494644;
@@ -658,13 +662,11 @@ body {
       position: relative;
       z-index: 5;
       height: 90px;
-      padding: 15px 15px 0; }
-      @media (min-width: 319px) and (max-width: 767px) {
-        body .content-wrapper .main-header {
-          height: 5.5vh;
-          top: -10px;
-          padding: 15px 10px 5px;
-          max-height: 45px; } }
+      padding: 15px 15px 0;
+      height: 5.5vh;
+      top: -10px;
+      padding: 15px 10px 5px;
+      max-height: 45px; }
       body .content-wrapper .main-header:before {
         background-color: #494644;
         width: 100%;
@@ -672,30 +674,24 @@ body {
         z-index: 0;
         left: 0;
         top: -4vh;
-        transform: skewY(-2deg); }
-        @media (min-width: 319px) and (max-width: 767px) {
-          body .content-wrapper .main-header:before {
-            height: 100%;
-            top: 0;
-            transform: skewY(-3deg); } }
+        transform: skewY(-2deg);
+        height: calc(100% + 5px);
+        top: -5px;
+        transform: skewY(-3deg); }
       body .content-wrapper .main-header a {
         display: inline-block; }
       body .content-wrapper .main-header img {
         position: relative;
         z-index: 1;
-        height: 60px; }
-        @media (min-width: 319px) and (max-width: 767px) {
-          body .content-wrapper .main-header img {
-            height: 40px; } }
+        height: 60px;
+        height: 40px; }
     body .content-wrapper .radial-bg {
       display: flex;
       flex-direction: column;
       color: #fff;
-      position: relative; }
-      @media (min-width: 319px) and (max-width: 767px) {
-        body .content-wrapper .radial-bg {
-          top: -11px;
-          padding: 0 6vw 0; } }
+      position: relative;
+      top: -11px;
+      padding: 0 6% 0; }
       body .content-wrapper .radial-bg:before {
         z-index: 0;
         width: 100%;
@@ -713,28 +709,25 @@ body {
         font-size: 20px; }
         body .content-wrapper .radial-bg.green-bg p img {
           width: 100%; }
-      @media (min-width: 319px) and (max-width: 767px) {
-        body .content-wrapper .radial-bg.lighgray-bg {
-          flex-direction: column;
-          padding-top: 4vh;
-          padding-bottom: 9vh;
-          top: -3.5vh;
-          z-index: 2; } }
-      body .content-wrapper .radial-bg.lighgray-bg:before {
-        background: #dbdbdb; }
-      body .content-wrapper .radial-bg.lighgray-bg p {
-        color: #494644;
-        font-size: 14px; }
-      body .content-wrapper .radial-bg.lighgray-bg input {
-        background-color: rgba(255, 255, 255, 0.5);
-        z-index: 1;
-        position: relative;
-        border: none;
-        font-family: "Open Sans"; }
-        @media (min-width: 319px) and (max-width: 767px) {
-          body .content-wrapper .radial-bg.lighgray-bg input {
-            height: 20px;
-            padding: 5px 10px; } }
+      body .content-wrapper .radial-bg.lighgray-bg {
+        flex-direction: column;
+        padding-top: 4vh;
+        padding-bottom: 9vh;
+        top: -3.5vh;
+        z-index: 2; }
+        body .content-wrapper .radial-bg.lighgray-bg:before {
+          background: #dbdbdb; }
+        body .content-wrapper .radial-bg.lighgray-bg p {
+          color: #494644;
+          font-size: 14px; }
+        body .content-wrapper .radial-bg.lighgray-bg input {
+          background-color: rgba(255, 255, 255, 0.5);
+          z-index: 1;
+          position: relative;
+          border: none;
+          font-family: "Open Sans";
+          height: 20px;
+          padding: 5px 10px; }
       body .content-wrapper .radial-bg .begin-btn {
         z-index: 1;
         padding-top: 30px;
