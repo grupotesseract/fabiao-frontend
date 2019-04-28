@@ -250,7 +250,7 @@ class IndexPage extends Component {
                     <span className="warning-message">* Todos os Campos são obrigatórios</span>
                 </div>
 
-                {/* <Link to="/posicionamento-estrategico/analise" className={`begin-btn main-btn ${( this.state.isCPFValid && this.state.isNomeCompleto && this.state.isEnderecoCompleto && this.state.isEmailValid ) ? '' : 'disabled'}`}>Começar</Link>
+                {/* <Link to="/analise" className={`begin-btn main-btn ${( this.state.isCPFValid && this.state.isNomeCompleto && this.state.isEnderecoCompleto && this.state.isEmailValid ) ? '' : 'disabled'}`}>Começar</Link>
                 */ }
                 <div id="goto" className={`begin-btn main-btn goto-pagSeguro ${( this.state.isCPFValid && this.state.isEmailValid && this.state.isNomeCompleto && this.state.isEnderecoCompleto && this.state.isNumero && this.state.isCidade && this.state.isEstado && this.state.isCEP && this.state.isDate && this.state.isBairro ) ? '' : 'disabled'}`} onClick={ () => { this.dadosToPagSeguro(); } }>
                     <span className={`text ${( this.state.requesting ) ? 'hidden' : ''}`}>Finalizar compra no PagSeguro</span>

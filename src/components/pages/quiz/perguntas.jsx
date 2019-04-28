@@ -144,7 +144,7 @@ class PerguntasItem extends Component {
 
         if ( success === true ) {
             return <Redirect push to={{
-                    pathname: '/posicionamento-estrategico/quiz/resultado',
+                    pathname: '/quiz/resultado',
                     state: {
                         cubeColor: this.state.cubeColor
                     }

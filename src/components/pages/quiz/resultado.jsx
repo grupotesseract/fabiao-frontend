@@ -34,7 +34,7 @@ class QuizResultado extends Component {
                 </div>
 
                 <Link to={{
-                        pathname: "/posicionamento-estrategico/quiz/detalhes",
+                        pathname: "/quiz/detalhes",
                         state: {
                             resultado: this.state.resultado
                         }

@@ -75,7 +75,7 @@ class AnaliseResultado extends Component {
                     </div>
                 </div>
 
-                <Link to="/posicionamento-estrategico/analise/agradecimento" className="main-btn yellow">
+                <Link to="/analise/agradecimento" className="main-btn yellow">
                     Continuar
                 </Link>
             </div>

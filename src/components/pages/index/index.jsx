@@ -94,7 +94,7 @@ class IndexPage extends Component {
                 </div>
 
                 <Link to={{
-                        pathname: "/posicionamento-estrategico/quiz",
+                        pathname: "/quiz",
                     }}
                     className={`begin-btn main-btn  ${( !this.state.emailValid || perguntasList.perguntas.length === 0 ) ? 'disabled' : ''}`}>Começar</Link>
 

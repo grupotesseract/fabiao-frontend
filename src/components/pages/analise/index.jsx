@@ -100,7 +100,7 @@ class AnalisePage extends Component {
     render() {
         if ( this.state.redirect ) {
             return <Redirect push to={{
-                    pathname: "/posicionamento-estrategico/analise/resultado",
+                    pathname: "/analise/resultado",
                     state: {
                         items: this.state.iniciativaNotas,
                         secoes: this.state.iniciativasPai
