@@ -1,37 +1,37 @@
 import {
-    REQUEST_FULFILLED_INDEX,
-    REQUEST_LOADING_INDEX,
-    REQUEST_REJECTED_INDEX
+    FETCH_PERGUNTAS,
+    REQUEST_LOADING_PERGUNTAS,
+    REQUEST_REJECTED_PERGUNTAS
 } from './action';
 import axios from '../../utils/axios';
 
-export function requestIndex() {
+export function requestPerguntas() {
     return dispatch => {
         dispatch(requestLoading());
 
         return axios
-            .get('conteudo/expedicoes/')
-            .then(response => dispatch(fetchIndex(response.data)))
+            .get('perguntas')
+            .then(response => dispatch(fetchPerguntas(response.data)))
             .catch(error => dispatch(requestRejected(error.message)));
     }
 }
 
 export function requestLoading() {
     return {
-        type: REQUEST_LOADING_INDEX
+        type: REQUEST_LOADING_PERGUNTAS
     };
 }
 
 export function requestRejected(response) {
     return {
-        type: REQUEST_REJECTED_INDEX,
+        type: REQUEST_REJECTED_PERGUNTAS,
         payload: response
     };
 }
 
-function fetchIndex(response) {
+function fetchPerguntas(response) {
     return {
-        type: REQUEST_FULFILLED_INDEX,
+        type: FETCH_PERGUNTAS,
         payload: response
     };
 }

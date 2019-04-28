@@ -1,11 +1,11 @@
 import {
-    REQUEST_FULFILLED_INDEX,
-    REQUEST_LOADING_INDEX,
-    REQUEST_REJECTED_INDEX
-} from '../actions/index/action';
+    FETCH_PERGUNTAS,
+    REQUEST_LOADING_PERGUNTAS,
+    REQUEST_REJECTED_PERGUNTAS
+} from '../actions/perguntas/action';
 
 const INITIAL_STATE = {
-    content: null,
+    perguntas: [],
     fetching: false,
     fetched: false,
     error: null,
@@ -13,23 +13,23 @@ const INITIAL_STATE = {
 
 export default function (state = INITIAL_STATE, action) {
     switch (action.type) {
-        case REQUEST_LOADING_INDEX:
+        case REQUEST_LOADING_PERGUNTAS:
             return {
                 ...state,
                 fetching: true,
                 fetched: INITIAL_STATE.fetched
             };
-        case REQUEST_REJECTED_INDEX:
+        case REQUEST_REJECTED_PERGUNTAS:
             return {
                 ...state,
                 fetching: INITIAL_STATE.fetching,
                 fetched: INITIAL_STATE.fetched,
                 error: action.payload
             };
-        case REQUEST_FULFILLED_INDEX:
+        case FETCH_PERGUNTAS:
             return {
                 ...state,
-                content: action.payload,
+                perguntas: action.payload,
                 fetching: INITIAL_STATE.fetching,
                 fetched: true
             };

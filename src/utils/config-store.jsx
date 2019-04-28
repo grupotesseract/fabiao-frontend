@@ -13,9 +13,9 @@ export default function configureStore(initialState = {}) {
     ]
 
     const store = createStore(
-        reducers
-        , initialState
-        , compose(...enhancers)
+        reducers,
+        initialState,
+        compose(...enhancers)
     )
 
     // Extensions

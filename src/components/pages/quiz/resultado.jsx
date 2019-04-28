@@ -5,8 +5,17 @@ import {Link} from 'react-router-dom';
 
 class QuizResultado extends Component {
 
-    render() {
+    constructor(props) {
+        super(props);
 
+        this.state = {
+            resultado: 'Reabastecer o tanque',
+            cubeColor: ( props.location.state.cubeColor !== '' ) ? props.location.state.cubeColor : 'blue'
+        }
+    }
+
+    render() {
+        const { cuboRetorno } = this.props;
 
         return (
             <div className="content-wrapper resultado-page">
@@ -18,18 +27,29 @@ class QuizResultado extends Component {
                     </h3>
 
                     <div className="perfil-resultado">
-                        <div className="perfil-cube blue">
-                            <p>Reabastecer o tanque</p>
+                        <div className={`${this.state.cubeColor} perfil-cube`}>
+                            <p>{cuboRetorno.descritivo}</p>
                         </div>
                     </div>
-
-                    <Link to="/" className="main-btn yellow">
-                        Veja as melhores ações para sua empresa
-                    </Link>
                 </div>
+
+                <Link to={{
+                        pathname: "/quiz/detalhes",
+                        state: {
+                            resultado: this.state.resultado
+                        }
+                    }} className="main-btn yellow">
+                    Veja as melhores ações para sua empresa
+                </Link>
             </div>
         );
     }
 }
 
-export default (QuizResultado);
+const mapStateToProps = (state) => {
+    return {
+        cuboRetorno: state.cubo.cuboRetorno
+    }
+}
+
+export default connect(mapStateToProps)(QuizResultado);

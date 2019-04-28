@@ -1,6 +1,12 @@
 import { combineReducers } from 'redux';
-import index from './index-page';
+import index from './home';
+import perguntas from './perguntas';
+import cubo from './cubo';
+import cadastro from './cadastro';
 
 export default combineReducers({
-    index
+    index,
+    perguntas,
+    cubo,
+    cadastro
 });

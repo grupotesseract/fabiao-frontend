@@ -2,16 +2,18 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import Header from '../header';
 import {Link} from 'react-router-dom';
+import 'react-input-range/lib/css/index.css';
+import InputRange from 'react-input-range';
 
-class QuizResultadoDetalhes extends Component {
+class AnaliseResultado extends Component {
 
     constructor(props) {
         super(props);
 
         this.state = {
-            items: [],
-            secoes: [],
-        };
+            items: this.props.location.state.items,
+            secoes: this.props.location.state.secoes
+        }
     }
 
     renderItems = (descritivo_pai) => {
@@ -26,6 +28,16 @@ class QuizResultadoDetalhes extends Component {
 
                 return <div className="sub-item" key={`iniciativa-${key}`}>
                     <p><span className={`prioridade ${iniciativa.prioridade === 1 ? `primeira` : `segunda`}`}></span> { iniciativa.nome }</p>
+                    <div className="nota-wrapper">
+                        <InputRange
+                            className="range-slider"
+                            maxValue={100}
+                            minValue={0}
+                            value={ iniciativa.nota }
+                            onChange={ () => { return } }
+                            />
+                        <div className="nota" style={rangeStyle}></div>
+                    </div>
                 </div>
             }
         });
@@ -46,30 +58,12 @@ class QuizResultadoDetalhes extends Component {
 
     render() {
         const { cuboRetorno } = this.props;
-        
-        if ( cuboRetorno.length !== 0 ) {
-            let notasArr = this.state.items,
-                secoesArr = this.state.secoes;
-
-            cuboRetorno.textos_iniciativa.map((item, key) => {
-                notasArr.push({
-                    nome: item.descritivo,
-                    pai: item.descritivo_pai,
-                    prioridade: item.prioridade,
-                    nota: 0
-                });
-
-                if ( secoesArr.indexOf(item.descritivo_pai) < 0 ) {
-                    secoesArr.push(item.descritivo_pai);
-                }
-            });
-        }
 
         return (
-            <div className="content-wrapper detalhes-page">
+            <div className="content-wrapper analise-resultado">
                 <Header />
 
-                <div className="green-bg radial-bg">
+                <div className="lighgray-bg radial-bg">
                     <h1 className="detalhe-header blue">{cuboRetorno.descritivo}</h1>
                     <div className="legenda">
                         <p><span className="prioridade primeira"></span>1ª prioridade</p>
@@ -81,7 +75,7 @@ class QuizResultadoDetalhes extends Component {
                     </div>
                 </div>
 
-                <Link to="/analise" className="main-btn yellow">
+                <Link to="/analise/agradecimento" className="main-btn yellow">
                     Continuar
                 </Link>
             </div>
@@ -95,4 +89,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps)(QuizResultadoDetalhes);
+export default connect(mapStateToProps)(AnaliseResultado);
